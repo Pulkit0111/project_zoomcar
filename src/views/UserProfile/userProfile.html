@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoom Car</title>
+  <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../Landingpage/index.css">
+  <link rel="stylesheet" href="userProfile.css">
+  <!-- <script src="index.js"></script> -->
+</head>
+
+<body>
+  <div id="h_page">
+    <div id="home">
+      <nav id="navbar">
+        <div id="logo">
+          <a href="../Homepage-main.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
+        </div>
+        <ul id="nav_ul">
+          <li class="item"><a href="../OffersPage/Offers.html">OFFERS</a></li>
+          <li class="item hov">
+            <a href="#">SUBSCRIPTION</a>
+            <div class="details" id="sub_det_item">
+              <div class="arrowmiddle"></div>
+              <div class="subscr_detail">
+                <span class="subscr-logo1"></span>
+                <p>Hassle-free way of getting your personal car for flexible long term duration. You also have an option
+                  to share your car with other Zoomcar customers &amp; save up to 70% of the monthly subscription fee.
+                </p>
+                <button class="subscr_btn">KNOW MORE</button>
+              </div>
+            </div>
+          </li>
+          <li class="item"><a href="#">AMIGO</a>
+            <div class="details2">
+              <div class="arrowmiddle2"></div>
+              <div class="amigo_detail">
+                <span class="amigo-logo2"></span>
+                <p>A unique Community Vehicle Pooling program that allows you to share your car with your community and
+                  friends while the car not in use and earn money.</p>
+                <button class="subscr_btn">KNOW MORE</button>
+              </div>
+            </div>
+          </li>
+          <li class="item"><a href="#">ZMS</a>
+            <div class="details3">
+              <div class="arrowmiddle3"></div>
+              <div class="zms_detail">
+                <span class="zms-logo3"></span>
+                <p>Connected technology offerings and shared mobility solutions for businesses worldwide.</p>
+                <button class="subscr_btn">KNOW MORE</button>
+              </div>
+            </div>
+          </li>
+          <li class="item mob_wid"><a href="#">MOBILE APP
+              <div class="mob_det">
+                <div class="arrowmiddle4"></div>
+                <div class="details4">
+                  <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
+                    class="mob_anc">
+                    <div class="mob1">
+                      <img src="./img/g_play_logo2.png" alt="">Google Play
+                    </div>
+                  </a>
+                  <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
+                    class="mob_anc">
+                    <div class="mob2"><img src="./img/apple_log.png" alt="">Apple Store</div>
+                  </a>
+                </div>
+              </div>
+
+          </li>
+          <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
+          <li class="item" id="login_btn"><a href="#" id="login_text1">LOGIN</a></li>
+
+        </ul>
+      </nav>
+    </div>
+    </div>
+    </body>
+
+    <div class="main-data">
+            <div id="left-data">
+                <div id="user">
+                    <img src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" alt="" width="80px"
+                        id="profile-picture">
+                    <p id="fetchUserName">Jagadish</p>
+                </div>
+                <div id="user-edits">
+                    <ul>
+                        <li onclick="window.location.href='userProfile.html'">
+                            <div>Profile</div>
+                            <div><i class="fas fa-user"></i></div>
+                        </li>
+                        <li onclick="window.location.href ='../UserAccount/userAccount.html'">
+                            <div>Account</div>
+                            <div><i class="fas fa-cog"></i></div>
+                        </li>
+                        <!-- <li onclick="window.location.href ='userSupport.html'">
+                            <div>Support</div>
+                            <div><i class="fas fa-headset"></i></div>
+                        </li> -->
+                        <li>
+                            <div onclick="userLogOut()">Log out</div>
+                            <div><i class="fas fa-sign-out-alt"></i></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!------- User profile ------>
+            <div id="right-data-userProfile">
+                <div id="profile-img-div"><img src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png"
+                        alt="" width="150px" id="profile-picture1"></div>
+                <div id="changeProfilePicture" onclick="updateProfilePicture()">Click to change profile picture</div>
+                <p>PROFILE</p>
+
+                <div class="grid user-profile-form">
+                    <div id="user-input-name">Name<br />
+                        <input type="text" placeholder="Enter your name" id="user-name" readonly>
+                    </div>
+                    <div id="user-input-phone">Phone Number<br />
+                        <input type="text" placeholder="Enter your mobile number" id="user-phone" readonly>
+                    </div>
+                    <div id="user-input-Gender" readonly>Gender<br />
+                        <input type="text" id="user-gender">
+                        <i class="fas fa-male" onclick="changeGender('Male')" id="male-icon"></i>
+                        <i class="fas fa-female" onclick="changeGender('Female')" id="female-icon"></i>
+                        <i class="fas fa-transgender" id="transgender-icon" onclick="changeGender('Other')"></i>
+                    </div>
+                    <div id="user-input-email">Email<br />
+                        <input type="email" placeholder="Enter your email id" id="user-email">
+                    </div>
+                    <div id="user-profile-button">
+                        <button id="discard" onclick="window.location.href = 'userProfile.html'">Discard</button>
+                        <button id="save" onclick="editUser()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./userProfile.js">
+    
+</script>
+

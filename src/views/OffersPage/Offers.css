@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  box-sizing: border-box;
+}
+#offerstitlediv {
+  width: 81%;
+  margin: auto;
+  /* height: 20px; */
+  /* border: 2px solid red; */
+  border-bottom: 1px solid grey;
+  margin-top: 5%;
+}
+#offerstitle {
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#promocodedetaisdiv {
+  width: 81%;
+  height: 90vh;
+  margin: auto;
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: 49% 49%;
+  grid-template-rows: 48% 48%;
+  row-gap: 4%;
+  column-gap: 2%;
+}
+#promocodedetaisdiv > div {
+  border: 1.5px solid black;
+}
+#promocodedetaisdiv > div > img {
+  height: 88%;
+  width: 100%;
+  /* border: 1px solid black; */
+  cursor: pointer;
+}
+#promocodedetaisdiv > div > span {
+  margin: 6px 2px;
+}
+.left-float {
+  float: left;
+}
+.right-float {
+  float: right;
+}
+.bold-text-font {
+  font-weight: bold;
+}

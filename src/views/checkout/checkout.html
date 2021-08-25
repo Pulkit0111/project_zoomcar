@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
+  <title>Zoomcar</title>
+  <link rel="stylesheet" href="./checkout.css">
+  <link rel="icon" href="https://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+    type="image/x-icon">
+</head>
+
+<body>
+  <div id="offers">
+    <nav id="navbar">
+      <div id="logo">
+        <a href="../Homepage-main.html"><img src="../img/logo-f38397447048ccba047af6980364e92e.svg"
+            alt="Zoom_Car" /></a>
+      </div>
+      <ul id="nav_ul">
+        <li class="item hov">
+          <a href="#">SUBSCRIPTION</a>
+          <div class="details" id="sub_det_item">
+            <div class="arrowmiddle"></div>
+            <div class="subscr_detail">
+              <span class="subscr-logo1"></span>
+              <p>Hassle-free way of getting your personal car for flexible long term duration. You also have an option
+                to share your car with other Zoomcar customers &amp; save up to 70% of the monthly subscription fee.
+              </p>
+              <button class="subscr_btn">KNOW MORE</button>
+            </div>
+          </div>
+        </li>
+        <li class="item"><a href="#">AMIGO</a>
+          <div class="details2">
+            <div class="arrowmiddle2"></div>
+            <div class="amigo_detail">
+              <span class="amigo-logo2"></span>
+              <p>A unique Community Vehicle Pooling program that allows you to share your car with your community and
+                friends while the car not in use and earn money.</p>
+              <button class="subscr_btn">KNOW MORE</button>
+            </div>
+          </div>
+        </li>
+        <li class="item"><a href="#">ZMS</a>
+          <div class="details3">
+            <div class="arrowmiddle3"></div>
+            <div class="zms_detail">
+              <span class="zms-logo3"></span>
+              <p>Connected technology offerings and shared mobility solutions for businesses worldwide.</p>
+              <button class="subscr_btn">KNOW MORE</button>
+            </div>
+          </div>
+        </li>
+        <li class="item mob_wid"><a href="#">MOBILE APP
+            <div class="mob_det">
+              <div class="arrowmiddle4"></div>
+              <div class="details4">
+                <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
+                  class="mob_anc">
+                  <div class="mob1">
+                    <img src="../img/g_play_logo2.png" alt="">Google Play
+                  </div>
+                </a>
+                <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
+                  class="mob_anc">
+                  <div class="mob2"><img src="../img/apple_log.png" alt="">Apple Store</div>
+                </a>
+              </div>
+            </div>
+
+        </li>
+        <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
+        <li class="item" id="login_btn"><a href="#">LOGIN</a></li>
+
+      </ul>
+    </nav>
+
+
+
+
+    <!-- SIGNUP POPUP -->
+    <div id="pop1">
+      <div class="log_in_cont">
+        <div class="close1">+</div>
+        <!-- div slider started  -->
+        <div class="slider">
+          <div class="slides">
+
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+
+            <div class="slide first">
+              <div id="zoomPromo1">
+                <div class="zc_1">
+                  <img src="../img/promo-3.fuel.png" alt="" />
+                </div>
+                <h2>Free Fuel</h2>
+                <p>
+                  The fuel is on us for your complete trip. In case you re-fuel a
+                  zoomcar, we will re-fill your pockets and that’s a promise.
+                </p>
+              </div>
+            </div>
+
+            <div class="slide">
+              <div id="zoomPromo2">
+                <div class="zc_1">
+                  <img src="../img/super_log-removebg-preview.png" alt="" />
+                </div>
+                <h2>Supermiler Club</h2>
+                <p>
+                  Premium club which rewards you everytime you drive with us.
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div id="zoomPromo3">
+                <div class="zc_1">
+                  <img src="../img/pro1.png" alt="" />
+                </div>
+                <h2>Refer &amp; Earn</h2>
+                <p>
+                  Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="navigation_auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="log_right">
+          <div class="log_r_top">
+            <div class="log_r_top_logo">
+              <img src="../img/zoom-logo-color.png" alt="">
+            </div>
+            <div class="log_r_top_cont">
+              <label for="">Continue with</label>
+            </div>
+          </div>
+          <div class="log_r_bot">
+            <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+            <div class="log_r_bot_btn">
+              <button class="btn_log_sub" onclick="signinacc(event)"></button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN POPUP -->
+    <div id="pop2">
+      <div class="log_in_cont2">
+        <div class="close12">+</div>
+        <!-- div slider started  -->
+        <div class="slider22">
+          <div class="slides22">
+
+            <input type="radio" name="radio-btn2" id="radio12">
+            <input type="radio" name="radio-btn2" id="radio22">
+            <input type="radio" name="radio-btn2" id="radio32">
+
+
+            <div class="slide22 first2">
+              <div id="zoomPromo12">
+                <div class="zc_12">
+                  <img src="img/promo-3.fuel.png" alt="" />
+                </div>
+                <h2>Free Fuel</h2>
+                <p>
+                  The fuel is on us for your complete trip. In case you re-fuel a
+                  zoomcar, we will re-fill your pockets and that’s a promise.
+                </p>
+              </div>
+            </div>
+
+            <div class="slide22">
+              <div id="zoomPromo22">
+                <div class="zc_12">
+                  <img src="../img/super_log-removebg-preview.png" alt="" />
+                </div>
+                <h2>Supermiler Club</h2>
+                <p>
+                  Premium club which rewards you everytime you drive with us.
+                </p>
+              </div>
+            </div>
+            <div class="slide22">
+              <div id="zoomPromo32">
+                <div class="zc_12">
+                  <img src="../img/pro1.png" alt="" />
+                </div>
+                <h2>Refer &amp; Earn</h2>
+                <p>
+                  Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="navigation_auto2">
+              <div class="auto-btn12"></div>
+              <div class="auto-btn22"></div>
+              <div class="auto-btn32"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="log_right2">
+          <div class="log_r_top2">
+            <div class="log_r_top_logo2">
+              <img src="../img/zoom-logo-color.png" alt="">
+            </div>
+            <div class="log_r_top_cont2">
+              <label for="">Continue with your</label>
+            </div>
+          </div>
+          <div class="log_r_bot2">
+            <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob2">
+            <div class="log_r_bot_btn2">
+              <button class="btn_log_sub2" onclick="loginacc(event)"></button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="count">
+    <div id="count_inner">
+      <div id="inner_padding">
+        <div id="blocks">
+          <div id="circle" class="green">1</div>
+          <div id="txt">Login/Signup</div>
+        </div>
+        <div id="blocks">
+          <div id="horizontal_line" class="green_line"></div>
+        </div>
+        <div id="blocks">
+          <div id="circle" class="green">2</div>
+          <div id="txt">Checkout</div>
+        </div>
+        <div id="blocks">
+          <div id="horizontal_line"></div>
+        </div>
+        <div id="blocks">
+          <div id="circle">3</div>
+          <div id="txt">Payment</div>
+        </div>
+        <div id="blocks">
+          <div id="horizontal_line"></div>
+        </div>
+        <div id="blocks">
+          <div id="circle">4</div>
+          <div id="txt">Profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="front_box">
+
+    <div id="che_out">
+      <div id="cont1">
+        <div class="ch_head">
+          <h1>CHECKOUT</h1>
+        </div>
+        <hr>
+        <div id="book_fee">
+          <div id="book_fee_left">
+            <h3>Booking Fee</h3>
+            <p>Booking fee excludes fuel cost</p>
+          </div>
+          <div id="bookfee_amt">
+            <p>₹</p>
+            <p id="bkn_amount">9,259</p>
+          </div>
+        </div>
+        <hr>
+        <div class="ch_head">
+          <h2>Promotional Code</h2> <input type="text" onkeypress="ValidatePromoCode(event)" id="promocode"
+            placeholder="Have a Coupon Code?">
+          <p id="discountAmount"></p>
+        </div>
+        <hr class="vw_hr_top">
+        <div id="viewoff"><a href="../OffersPage/Offers.html">View Offers</a></div>
+        <hr class="vw_hr_btm">
+        <div id="ref_amt">
+          <div id="ref_lef">
+            <h3>Refundable Deposit(?)</h3>
+            <input type="checkbox"><label>Pay Now(?)</label>
+          </div>
+          <div id="ref_ri">
+            <p>₹</p>
+            <p id="ref_amount">1499</p>
+          </div>
+        </div>
+        <hr class="vw_hr_top">
+        <div id="total">
+          <div id="total_pay_tit">
+            <p>Total Payable Amount</p>
+          </div>
+          <div id="total_div">
+            <p>Total Amount: ₹</p>
+            <p id="total_amount">6699</p>
+          </div>
+        </div>
+      </div>
+      <div id="b_check_div"><button class="checkout_btn" onclick="gotopaypg()">CHECKOUT</button></div>
+    </div>
+
+    <div id="sumry">
+      <div id="top_w_img">
+        <p class="heading_sumry">SUMMARY</p>
+        <img src="../img/sum_car_img.png" alt="" id="right_car">
+        <p id="car_name">KUV 100</p>
+        <p id="seating_cap">(5 Seater)</p>
+      </div>
+      <hr>
+      <div id="pdt_ddt">
+        <div id="pdt">
+          <h2 id="pi_ti">12:30</h2>
+          <hr class="time_hr">
+          <p id="pi_dt">19JUN 21</p>
+        </div>
+        <div class="to">TO</div>
+        <div id="ddt">
+          <h2 id="dr_ti">23:30</h2>
+          <hr class="time_hr">
+          <p id="dr_dt">24 JUN 21</p>
+        </div>
+      </div>
+      <div id="navi_box">
+        <img src="../img/navi_sum_pg.png" alt="">
+      </div>
+      <div id="fr_ek_div">
+        <div id="fr_ek_lef">
+          <p class="fkml">Free Km(?)</p>
+          <p class="fkml">Excess Km(?)</p>
+        </div>
+        <div id="fr_ek_rig">
+          <p id="freekmsvalue" class="fkmr">630.0 Km</p>
+          <p id="excesskmsvalue" class="fkmr">₹ 15/km</p>
+        </div>
+      </div>
+      <hr>
+      <div id="fare_inc_div">
+        <img src="../img/fare_inc_sum.png" alt="">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div id="last">
+    <div class="footer">
+      <div class="Button">
+        <button id="1" onmouseover="changeColor(1)" onmouseout="initial(1)"><a class="link" href=""><img
+              src="../img/Question logo.svg" alt="How Zoomcar works" width="50px" height="50px"
+              data-src="/build/img/zc-works.2adcbe18edb84c7c1fdf0c8d6c894f8b.svg"
+              src="/build/img/zc-works.2adcbe18edb84c7c1fdf0c8d6c894f8b.svg">
+          </a>
+          <p id="p1">How zoomcar works?</p>
+        </button>
+        <button id="2" onmouseover="changeColor(2)" onmouseout="initial(2)"><a class="link" href=""><img
+              src="../img/policies.svg" alt="How Zoomcar Policies" width="50px" height="50px"
+              data-src="/build/img/policies.ceddb15a4eef16af85ba8666b1522741.svg"
+              src="/build/img/policies.ceddb15a4eef16af85ba8666b1522741.svg">
+          </a>
+          <p id="p2">Policies</p>
+        </button>
+        <button id="3" onmouseover="changeColor(3)" onmouseout="initial(3)"><a class="link" href=""><img
+              src="../img/help-support.svg" alt="Help Support" width="50px" height="50px"
+              data-src="/build/img/help-support.acf244c0683e201bd2d978f1ddc5d33d.svg"
+              src="/build/img/help-support.acf244c0683e201bd2d978f1ddc5d33d.svg">
+          </a>
+          <p id="p3">Help Support</p>
+        </button>
+        <button id="4" onmouseover="changeColor(4)" onmouseout="initial(4)"><a class="link" href=""><img
+              src="../img/safety.svg" alt="Zoom Safety" width="50px" height="50px"
+              data-src="/build/img/safety.127607759cd86e3d75f5698a641d5b83.svg"
+              src="/build/img/safety.127607759cd86e3d75f5698a641d5b83.svg">
+          </a>
+          <p id="p4">Zoom in Safety</p>
+        </button>
+
+      </div>
+
+      <h4>About Us</h4>
+      <div class="aboutus">
+        <div><a href="https://www.zoomcar.com/about">Zoomcar Team</a></div>
+        <div><a href="https://www.zoomcar.com/zap/subscribe">Zoomcar Subscription</div></a>
+        <div><a href="https://www.zoomcar.com/blog/">Zoomcar Blog</a></div>
+        <div><a href="https://www.zoomcar.com/careers">Careers @ Zoomcar</a></div>
+        <div><a href="https://www.zoomcar.com/location">Locations & Cars</a></div>
+        <div><a href="https://www.zoomcar.com/mumbai/">Self Drive Cars</a></div>
+        <div><a
+            href="https://info.ourcrowd.com/zoomcar/?utm_source=zoomcar&utm_medium=website&utm_campaign=invest_button">Invest
+            via OurCrowd</a></div>
+      </div>
+      <h4>Cities</h4>
+      <div class="cities">
+        <div class="help"><a href="https://www.zoomcar.com/bangalore/">Self drive cars in Bangalore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/pune/">Self drive cars in Pune</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/delhi/">Self drive cars in Delhi </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/mumbai/">Self drive cars in Mumbai</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/chennai/">Self drive cars in Chennai </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/hyderabad/">Self drive cars in Hyderabad</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/chandigarh/">Self drive cars in Chandigarh</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/kolkata/">Self drive cars in Kolkata </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/ahmedabad/">Self drive cars in Ahmedabad</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/coimbatore/">Self drive cars in Coimbatore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/indore/">Self drive cars in Indore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/jaipur/">Self drive cars in Jaipur</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/ludhiana/">Self drive cars in Ludhiana</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/mangalore/">Self drive cars in Mangalore-Manipal</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/mysore/">Self drive cars in Mysore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/vizag/">Self drive cars in Vizag</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/nagpur/">Self drive cars in Nagpur</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/kochi/">Self drive cars in Kochi</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/udaipur/">Self drive cars in Udaipur</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/vijayawada/">Self drive cars in Vijayawada</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/surat/">Self drive cars in Surat</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/siliguri/">Self drive cars in Siliguri</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/lucknow/">Self drive cars in Lucknow </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/guwahati/">Self drive cars in Guwahati</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/bhubaneswar/">Self drive cars in Bhubaneswar</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/hassan/">Self drive cars in Hassan</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/vadodara/">Self drive cars in Vadodara</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/trivandrum/">Self drive cars in Trivandrum</a></div>
+      </div>
+
+      <h4>Airport Services</h4>
+      <div class="airport">
+        <div><a href="https://www.zoomcar.com/bangalore/airport-taxi-service">Car rental from Bangalore Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/pune/airport-taxi-service">Car rental from Pune Airport</a></div>
+        <div><a href="https://www.zoomcar.com/delhi/airport-taxi-service">Car rental from Delhi Airport</a></div>
+        <div><a href="https://www.zoomcar.com/mumbai/airport-taxi-service">Car rental from Mumbai Airport</a></div>
+        <div><a href="https://www.zoomcar.com/chennai/airport-taxi-service">Car rental from Chennai Airport</a></div>
+        <div><a href="https://www.zoomcar.com/hyderabad/airport-taxi-service">Car rental from Hyderabad Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/chandigarh/airport-taxi-service">Car rental from Chandigarh Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/kolkata/airport-taxi-service">Car rental from Kolkata Airport</a></div>
+        <div><a href="https://www.zoomcar.com/ahmedabad/airport-taxi-service">Car rental from Ahmedabad Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/coimbatore/airport-taxi-service">Car rental from Coimbatore Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/indore/airport-taxi-service">Car rental from Indore Airport</a></div>
+        <div><a href="https://www.zoomcar.com/jaipur/airport-taxi-service">Car rental from Jaipur Airport</a></div>
+        <div><a href="https://www.zoomcar.com/vizag/airport-taxi-service">Car rental from Vizag Airport</a></div>
+        <div><a href="https://www.zoomcar.com/udaipur/airport-taxi-service">Car rental from Udaipur Airport</a></div>
+        <div><a href="https://www.zoomcar.com/surat/airport-taxi-service">Car rental from Surat Airport</a></div>
+        <div><a href="https://www.zoomcar.com/lucknow/airport-taxi-service">Car rental from Lucknow Airport</a></div>
+        <div><a href="https://www.zoomcar.com/guwahati/airport-taxi-service">Car rental from Guwahati Airport</a></div>
+      </div>
+
+      <hr>
+      </hr>
+      <div class="address">
+        <h4>Let's Keep in Touch</h4>
+        <p>7th Floor, Tower-B, Diamond District, 150, HAL Airport Road, Kodihalli, Bangalore – 560008</p>
+        <div class="social">
+          <a class="link" href="https://www.facebook.com/zoomcar.in?ref=hl" rel="nofollow" target="_blank"
+            title="Connect with us on Facebook!">
+            <img src="../img/FB logo.svg" alt="zoomcar-facebook"
+              data-src="/build/img/FB.71c8c954ebf0a73be3a2fa723bd62747.svg"></a>
+          <a class="link" href="https://twitter.com/ZoomCarIndia" rel="nofollow" target="_blank"
+            title="Follow us on Twitter!">
+            <img src="../img/Twitter.svg" alt="zoomcar-twitter" class="lazy-img"
+              data-src="/build/img/Twitter_2.1fcd40979beb7132d30c04e19c76deab.svg"></a>
+          <a class="link" href="https://www.instagram.com/zoomcar_india/" rel="nofollow" target="_blank"
+            title="Follow us on Instagram!">
+            <img src="../img/Instagram logo.svg" alt="zoomcar-instagram"
+              data-src="/build/img/Insta.aa7386bfed43a8acf0551e8c276b559f.svg"></a>
+          <a class="link" href="https://www.youtube.com/channel/UCIX42GaSQ6S_1RMwNfO-DYA/" rel="nofollow"
+            target="_blank" title="Youtube"><img src="../img/Youtube.svg" alt="zoomcar-twitter" class="lazy-img"
+              data-src="/build/img/Youtube.44df3b5bfd3ac80cf0d292928e29dd89.svg"></a>
+          <a class="link" href="https://www.zoomcar.com/blog/" rel="nofollow" target="_blank"
+            title="Catch up with us on our Blog!">
+            <img src="../img/Blog.svg" alt="zoomcar-blog"
+              data-src="/build/img/Blog_2.d0a034e8ec8e3ba6897a6d3b3de13e27.svg"></a>
+          <a class="link" href="https://in.linkedin.com/company/zoomcar-india-pvt-ltd-" rel="nofollow" target="_blank"
+            title="Follow us on LinkedIn!">
+            <img src="../img/LinkdIn.svg" alt="zoomcar-linkedIn"
+              data-src="/build/img/LinkdIn.660ed09532750dce008ff1d3543e3d0d.svg"></a>
+        </div>
+        <p>© Copyright 2017 Zoomcar India Private Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
+<script src="./checkout.js">
+
+</script>
