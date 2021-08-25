@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="progress.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <!-- add icon link -->
+    <link rel="icon" href="http://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+        type="image/x-icon">
+    <title>Book a car in Mumbai | Rent Cars @ Most Affordable Rates - ZoomCar</title>
+</head>
+
+<body>
+    <!-- Progress Bar Header-->
+    <div id="progress_head">
+        <div id="progress_bar">
+            <div class="item">
+                <div class="circle selected"></div>
+                <div class="green_position">Starting Point</div>
+            </div>
+            <div class="item">
+                <div class="circle"></div>
+                <div class="green_position">Pickup Time</div>
+            </div>
+            <div class="item">
+                <div class="circle"></div>
+                <div id="green_position">Dropoff Time</div>
+            </div>
+        </div> <a href=""><img
+                src="https://www.zoomcar.com/assets/component-images/home-icon.148123dbffda052b1327ffd47f245138.png"
+                alt="Homepage" id="homepage"></a>
+    </div>
+
+    <!-- Location Selector -->
+    <div id="location_form">
+        <div id="location_heading">Tell us your Starting Point</div>
+        <div id="locationFinder">
+            <div class="locationInput active">
+                <div class="dropdown">
+                    <div onclick="cities()" id="choosed">
+                        <div id="fill_back"></div>
+                        <div id="selectedCity">Mumbai</div> <span></span>
+                    </div>
+                </div> <input type="text" placeholder="Tell us your Starting point in Mumbai" id="searches">
+                <div class="live_location">
+                    <div class="locate"><img
+                            src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+                            alt="">
+                        <div id="labelled">Locate me</div>
+                    </div>
+                </div>
+            </div>
+            <div onclick="on()" id="map">show map</div>
+            <div id="overlay" onclick="off()">
+                <div id="window">
+                    <div id="paddings">
+                        <div id="locationFinder">
+                            <div class="locationInput active">
+                                <div class="dropdown">
+                                    <div id="choosed">
+                                        <div id="selectedCity">Mumbai</div> <span></span>
+                                    </div>
+                                </div> <input type="text" placeholder="Tell us your Starting point in Mumbai"
+                                    id="searches1">
+                                <div class="live_location">
+                                    <div class="locate"><img
+                                            src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+                                            alt="">
+                                        <div id="labelled">Locate me</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d53276.96940096514!2d72.8580143895903!3d19.102793006782186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1627076718076!5m2!1sen!2sin"
+                            width="625" height="390"  allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="oneway-toggle">
+            <div>
+                I want to drop my car in a different city
+            </div>
+            <div class="component-toggle toggle"><label class="switch"><input type="checkbox">
+                    <div class="slider round"></div>
+                </label></div>
+        </div>
+
+        <div class="searchHelper">
+            <div class="component-popular-locations">
+                <div class="heading">Popular Pick-up points</div>
+                <div onclick="setBox1()" id="item1" class="items">
+                    Kandivali West
+                </div>
+                <div onclick="setBox2()" id="item2" class="items">
+                    Thane
+                </div>
+                <div onclick="setBox3()" id="item3" class="items">
+                    Kharghar
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="airport">
+        <div class="component-airport">
+            <div class="airport-terminals-container">
+                <div class="terminals">
+                    <div class="heading">Need Zoomcar at <span class="heading-airport-name">Mumbai airport</span>
+                    </div>
+                    <div onclick="setBox4()" id="terminal1" class="terminal">
+                        International Terminal (T2)
+                    </div>
+                    <div onclick="setBox5()" id="terminal2" class="terminal">
+                        Domestic Terminal (T1A/T1B)
+                    </div>
+                </div>
+                <div class="faq">How Zoom Airport works?</div>
+            </div>
+        </div>
+    </div>
+    <div class="component-breadcrumb">
+        <div class="breadcrumb">
+            <div class="item selected">
+                <div class="name">STARTING POINT</div>
+                <div class="breadcrumb-location">
+                    <div class="breadcrumb-location-container">
+                        <div id="addressDisplay" class="label">Choose Address</div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <!---->
+        </div>
+        <div class="actions">
+            <!----> <a id="proceeding" href="../StartTimeSelection/PickUpTimeSelection.html"><button
+                    class="proceed">Next</button></a>
+        </div>
+    </div>
+</body>
+
+<script src="PickUpLocation.js"></script>

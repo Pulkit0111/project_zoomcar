@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="progress.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <!-- add icon link -->
+    <link rel="icon" href="http://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+        type="image/x-icon">
+    <title>Book a car in Mumbai | Rent Cars @ Most Affordable Rates - ZoomCar</title>
+</head>
+
+<body>
+    <div>
+        <div class="search-input">
+            <div id="progress_head">
+                <div id="progress_bar">
+                    <div class="item finished">
+                        <div class="circle"></div>
+                        <div class="green_position">Starting Point</div>
+                    </div>
+                    <div class="item finished">
+                        <div class="circle"></div>
+                        <div class="green_position">Pickup Time</div>
+                    </div>
+                    <div class="item">
+                        <div class="circle selected"></div>
+                        <div id="green_position">Dropoff Time</div>
+                    </div>
+                </div> <a href=""><img
+                        src="https://www.zoomcar.com/assets/component-images/home-icon.148123dbffda052b1327ffd47f245138.png"
+                        alt="Homepage" id="homepage"></a>
+            </div>
+            <div class="component-start-date">
+                <div class="title">Till when do you need it? </div>
+                <div class="component-month">
+                    <div class="heading">Select a month</div>
+                    <div class="months">
+                        <div onclick="setMonth1()" id="month1" class="month">
+                            Jul
+                        </div>
+                        <div onclick="setMonth2()" id="month2" class="month">
+                            Aug
+                        </div>
+                        <div onclick="setMonth3()" id="month3" class="month">
+                            Sep
+                        </div>
+                        <div onclick="setMonth4()" id="month4" class="month">
+                            Oct
+                        </div>
+                        <div onclick="setMonth5()" id="month5" class="month">
+                            Nov
+                        </div>
+                        <div onclick="setMonth6()" id="month6" class="month">
+                            Dec
+                        </div>
+                        <div onclick="setMonth7()" id="month7" class="month">
+                            Jan
+                        </div>
+                    </div>
+                </div>
+                <div class="component-date">
+                    <div class="heading">Start date <i>(Prices will be higher than usual on Weekends/Festive days)</i>
+                    </div>
+                    <div class="days">
+                        <div onclick="setEndDate1()" id="day1" class="day low-price">
+                            <div class="text">Sun</div>
+                            25
+                        </div>
+                        <div onclick="setEndDate2()" id="day2" class="day low-price">
+                            <div class="text">Mon</div>
+                            26
+                        </div>
+                        <div onclick="setEndDate3()" id="day3" class="day low-price">
+                            <div class="text">Tue</div>
+                            27
+                        </div>
+                        <div onclick="setEndDate4()" id="day4" class="day low-price">
+                            <div class="text">Wed</div>
+                            28
+                        </div>
+                        <div onclick="setEndDate5()" id="day5" class="day low-price">
+                            <div class="text">Thu</div>
+                            29
+                        </div>
+                        <div onclick="setEndDate6()" id="day6" class="day low-price">
+                            <div class="text">Fri</div>
+                            30
+                        </div>
+                        <div onclick="setEndDate7()" id="day7" class="day low-price">
+                            <div class="text">Sat</div>
+                            31
+                        </div>
+                        <div class="show-more">show more</div>
+                    </div>
+                    <!---->
+                </div>
+                <div class="component-time">
+                    <div class="heading">
+                        Select time
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="time">
+                        <div onclick="setEndTime1()" id="time1" class="select_time">0:00</div>
+                        <div onclick="setEndTime2()" id="time2" class="select_time">2:00</div>
+                        <div onclick="setEndTime3()" id="time3" class="select_time">4:00</div>
+                        <div onclick="setEndTime4()" id="time4" class="select_time">6:00</div>
+                        <div onclick="setEndTime5()" id="time5" class="select_time">8:00</div>
+                        <div onclick="setEndTime6()" id="time6" class="select_time">10:00</div>
+                        <div onclick="setEndTime7()" id="time7" class="select_time">12:00</div>
+                        <div onclick="setEndTime8()" id="time8" class="select_time">14:00</div>
+                        <div onclick="setEndTime9()" id="time9" class="select_time">16:00</div>
+                        <div onclick="setEndTime10()" id="time10" class="select_time">18:00</div>
+                        <div onclick="setEndTime11()" id="time11" class="select_time">20:00</div>
+                        <div onclick="setEndTime12()" id="time12" class="select_time">22:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="component-breadcrumb">
+            <div class="breadcrumb">
+                <div onclick="drive1()" class="item">
+                    <div class="name">STARTING POINT</div>
+                    <div class="breadcrumb-location">
+                        <div class="breadcrumb-location-container">
+                            <div id="addressDisplay" class="label"></div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="drive2()" class="item">
+                    <div class="name">PICKUP TIME</div>
+                    <div class="breadcrumb-location">
+                        <div id="startDetailsDisplay" class="label time-label">Sat 24 Jul, 2021 08:30 morning</div>
+                    </div>
+                </div>
+                <div class="item selected">
+                    <div class="name">DROP OFF TIME</div>
+                    <div class="breadcrumb-location">
+                        <div id="endDetailsDisplay" class="label time-label">Sat 24 Jul, 2021 08:00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <!----> <a href="../CarsAvailabilityPage/carsAvailability.html"><button
+                        class="proceed">Done</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="DropTimeSelection.js"></script>
