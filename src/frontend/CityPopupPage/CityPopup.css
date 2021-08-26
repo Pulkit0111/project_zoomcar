@@ -7,22 +7,7 @@ body,
     Helvetica, Arial, sans-serif;
 }
 
-#modalouter {
-  /* display: block; Hidden by default */
-  /* position: fixed; Stay in place */
-  z-index: 1; /* Sit on top */
-  /* padding-top: 100px; Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  /* background-color: rgb(0, 0, 0); Fallback color */
-  background-color: rgba(0, 0, 0, 0.2); /*Black w/ opacity*/
-}
 #modalbox {
-  /* height: 70vh; */
-  /* text-align: center; */
   background-color: #f9f9f9;
 }
 #citypopuptitle {
@@ -39,7 +24,7 @@ body,
   margin-left: 0;
   border: 0px;
   background-color: #f9f9f9;
-  border-bottom: 0.25px solid gray;
+  border-bottom: 0.25px solid lightgray;
   margin-top: 1.15%;
   display: flex;
   justify-content: center;
@@ -54,13 +39,12 @@ body,
   font-size: 20px;
   /* justify-content: center; */
   /* justify-items: center; */
-  border-bottom: 0.25px solid gray;
+  border-bottom: 0.25px solid lightgray;
+  color: gray;
   /* display: flex; */
   float: left;
 }
-#popularcitiesdiv {
-  border: 0px solid rgb(151, 147, 147);
-}
+
 #popularcitiestitle {
   font-size: 14px;
   font-weight: 600;
@@ -77,23 +61,40 @@ body,
   /* grid-template-rows: 100%; */
   grid-gap: 3%;
 }
-#popularcitieslist > button {
+.deselectedpopularcities {
   background-color: white;
   padding: 3%;
   border: 0.15px solid gray;
-  /* height: 120%; */
-  /* cursor: ; */
+  color: black;
+  font-size: 14px;
+  opacity: 0.54;
 }
+.selectedpopularcities {
+  background-color: white;
+  padding: 3%;
+  border: 1.5px solid #70ad4d;
+  color: #70ad4d;
+  font-size: 16px;
+  opacity: 0.54;
+}
+.deselectedothercities {
+  border: 0px solid gray;
+  color: black;
+  font-size: 14px;
+  opacity: 0.54;
+}
+.selectedothercities {
+  border: 1.5px solid #70ad4d !important;
+  color: #70ad4d;
+  font-size: 16px;
+  opacity: 0.54;
+}
+
 #popularcitieslist > button > img {
   width: auto;
   height: 40px;
 }
-#popularcitieslist > button > p,
-#othercitieslist > button > p {
-  font-size: 14px;
-  color: black;
-  opacity: 0.54;
-}
+
 #othercitieslist {
   /* border: 1px solid black; */
   margin-right: 6%;
@@ -113,4 +114,10 @@ body,
 input,
 button {
   outline: none;
+}
+#warning {
+  text-align: right;
+  margin-right: 1%;
+  margin-bottom: 3%;
+  color: red;
 }

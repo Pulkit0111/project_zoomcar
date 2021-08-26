@@ -24,7 +24,7 @@
 }
 #promocodedetaisdiv {
   width: 81%;
-  height: 90vh;
+  /* height: 90vh; */
   margin: auto;
   /* border: 2px solid red; */
   display: grid;
@@ -42,15 +42,12 @@
   /* border: 1px solid black; */
   cursor: pointer;
 }
-#promocodedetaisdiv > div > span {
-  margin: 6px 2px;
+.promodiv {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
 }
-.left-float {
-  float: left;
-}
-.right-float {
-  float: right;
-}
-.bold-text-font {
+.promodiv span {
   font-weight: bold;
 }
