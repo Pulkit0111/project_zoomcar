@@ -2,6 +2,10 @@ var popularcitiesdiv = document.getElementById("popularcitieslist");
 var othercitiesdiv = document.getElementById("othercitieslist");
 var landingdiv = document.getElementById("landingdiv");
 var modaldiv = document.getElementById("modalouter");
+var searchBox = document.getElementById("inputcity");
+var warning = document.getElementById("info");
+
+// List of popular cities
 var popularcitieslist = [
   {
     link: "https://s3-ap-southeast-1.amazonaws.com/zoomcar/photos/original/2c335cd7b3bea26f8ee2e399572e7b1bab86a921.png?1497538647",
@@ -41,6 +45,8 @@ var popularcitieslist = [
   },
 ];
 
+// List of other cities
+
 var othercitieslist = [
   "Nashik",
   "Udupi_Manipal",
@@ -64,41 +70,26 @@ var othercitieslist = [
   "Ahmedabad",
 ];
 
+// Adding Popular cities to the page
+
 function AddPopularCities() {
   for (city of popularcitieslist) {
     let btn = document.createElement("button");
+    btn.setAttribute("class", "deselectedpopularcities");
+
     let image = document.createElement("img");
     image.src = city.link;
+
     let p_name = document.createElement("p");
     p_name.innerHTML = city.cityname;
 
-    btn.addEventListener("mouseover", function () {
+    btn.addEventListener("mouseover", () => {
       btn.style.cursor = "pointer";
     });
 
     btn.addEventListener("click", function () {
-      //   console.log(p_name.innerHTML);
-      btn.style.borderColor = "green";
-      p_name.style.color = "green";
-      //   p_name.style.fontWeight = "bold";
-      //   p_name.style.fontSize = "16px";
-      btn.style.border = "1px solid green";
-      // modaldiv.style.display = "none";
       window.location.href = "../Homepage-main.html";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
-      console.log(localStorage.getItem("SelectedCity"));
-      // landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
-      //   "SelectedCity"
-      // )}`;
-    });
-
-    btn.addEventListener("mouseout", function () {
-      // console.log(p_name.innerHTML);
-      btn.style.borderColor = "grey";
-      p_name.style.color = "black";
-      //   p_name.style.fontWeight = "medium";
-      //   p_name.style.fontSize = "14px";
-      btn.style.border = "0.15px solid gray";
     });
 
     btn.append(image, p_name);
@@ -106,40 +97,24 @@ function AddPopularCities() {
   }
 }
 
+// Adding Other cities to the page
+
 function AddOtherCities() {
   for (othercity of othercitieslist) {
     let btn = document.createElement("button");
+    btn.setAttribute("class", "deselectedothercities");
+
     let p_name = document.createElement("p");
     p_name.innerHTML = othercity;
-    // console.log(p_name);
 
-    btn.addEventListener("mouseover", function () {
+    btn.addEventListener("mouseover", () => {
       btn.style.cursor = "pointer";
     });
 
     btn.addEventListener("click", function () {
-      //   console.log(p_name.innerHTML);
-      btn.style.border = "1px solid green";
-      btn.style.borderColor = "green";
-      p_name.style.color = "green";
-      //   p_name.style.fontWeight = "medium";
-      //   p_name.style.fontSize = "16px";
-      // modaldiv.style.display = "none";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
       console.log(localStorage.getItem("SelectedCity"));
       window.location.href = "../Homepage-main.html";
-      // landingdiv.innerHTML = `This is the landing page. The selected city is ${localStorage.getItem(
-      //   "SelectedCity"
-      // )}`;
-    });
-
-    btn.addEventListener("mouseout", function () {
-      // console.log(p_name.innerHTML);
-      btn.style.borderColor = "grey";
-      btn.style.border = "0px solid grey";
-      p_name.style.color = "black";
-      //   p_name.style.fontWeight = "medium";
-      //   p_name.style.fontSize = "14px";
     });
 
     btn.append(p_name);
@@ -149,3 +124,36 @@ function AddOtherCities() {
 
 AddPopularCities();
 AddOtherCities();
+
+// Selected city should always be in Green
+
+let chosenCity = localStorage.getItem("SelectedCity");
+let buttons = document.querySelectorAll("button");
+setInterval(() => {
+  buttons.forEach((el) => {
+    if (el.innerText == chosenCity) {
+      if (el.children.length == 1) {
+        el.setAttribute("class", "selectedothercities");
+      } else {
+        el.setAttribute("class", "selectedpopularcities");
+      }
+    }
+  });
+}, 100);
+
+// Implementing Search Functionality
+searchBox.addEventListener("input", () => {
+  let searchedValue = searchBox.value;
+  searchedValue = searchedValue.toLowerCase();
+  buttons.forEach((el) => {
+    let cityname = el.innerText.toLowerCase();
+    if (cityname.includes(searchedValue)) {
+      el.style.opacity = "0.54";
+      el.disabled = false;
+    } else {
+      el.style.opacity = "0.15";
+      el.disabled = true;
+      el.style.cursor = "default";
+    }
+  });
+});
