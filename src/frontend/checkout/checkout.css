@@ -794,7 +794,8 @@ body {
 }
 .ch_head {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+  padding: 0 3%;
 }
 #viewoff {
   padding: 15px 20px;
@@ -1169,4 +1170,10 @@ button {
 }
 #total_div {
   padding-right: 2%;
+}
+#promocode {
+  text-align: center;
+}
+.hiding {
+  visibility: hidden;
 }
