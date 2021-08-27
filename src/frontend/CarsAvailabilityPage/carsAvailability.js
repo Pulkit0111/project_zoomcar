@@ -1,4 +1,3 @@
-var SelectedCarToBook = {};
 document.title = `Book A Car In ${localStorage.getItem(
   "SelectedCity"
 )} | Rent Cars @ Most Affordable Rates - Zoomcar`;
@@ -13,111 +12,15 @@ var pickupdetails = {
   endTime: localStorage.getItem("endTime"),
 };
 
-var carslist = [
-  {
-    carimage:
-      "https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/669ef153e37fe722e57d75af972c5740662b79e5.png?1503045133",
-    carname: "Hyundai i20",
-    carseatimage: "https://image.flaticon.com/icons/png/128/5102/5102957.png",
-    carseater: "5 Seater",
-    cartransmissionimage:
-      "https://image.flaticon.com/icons/png/128/4259/4259321.png",
-    cartransmissiontype: "Manual",
-    carluggageimage:
-      "https://image.flaticon.com/icons/png/128/5085/5085348.png",
-    carluggagesize: "3 Bags",
-    cardriverage: "AGE LIMIT: 18+",
-    carpickupplace: "4.5",
-    carcategory: "Hatchback",
-    carCostRatio: 131.3,
-    carFreeKMS: 1,
-    fuelRatio: 1,
-    doorDeliveryCharges: 0,
-  },
-  {
-    carimage:
-      "https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/d290ab2ab4721ae87df602e34ddf2219e57b0c4d.png?1523276462",
-    carname: "Maruti Ciaz",
-    carseatimage: "https://image.flaticon.com/icons/png/128/5102/5102957.png",
-    carseater: "5 Seater",
-    cartransmissionimage:
-      "https://image.flaticon.com/icons/png/128/4259/4259321.png",
-    cartransmissiontype: "Manual",
-    carluggageimage:
-      "https://image.flaticon.com/icons/png/128/5085/5085348.png",
-    carluggagesize: "0 Bags",
-    cardriverage: "AGE LIMIT: 18+",
-    carpickupplace: "2.3",
-    carcategory: "Sedan",
-    carCostRatio: 189.6,
-    carFreeKMS: 1,
-    fuelRatio: 1,
-    doorDeliveryCharges: 0,
-  },
-  {
-    carimage:
-      "https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/db8a37dea93bea80173b683d191e228e8afed50b.jpg?1492089335",
-    carname: "Hyundai Creta",
-    carseatimage: "https://image.flaticon.com/icons/png/128/5102/5102957.png",
-    carseater: "5 Seater",
-    cartransmissionimage:
-      "https://image.flaticon.com/icons/png/128/4259/4259321.png",
-    cartransmissiontype: "Manual",
-    carluggageimage:
-      "https://image.flaticon.com/icons/png/128/5085/5085348.png",
-    carluggagesize: "5 Bags",
-    cardriverage: "AGE LIMIT: 18+",
-    carpickupplace: "9.8",
-    carcategory: "SUV",
-    carCostRatio: 214.4,
-    carFreeKMS: 1,
-    fuelRatio: 1,
-    doorDeliveryCharges: 0,
-  },
-  {
-    carimage:
-      "https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/964a9433a21c9b95c25217ecdbe653abb658c9f1.png?1521810661",
-    carname: "Maruti Swift AT",
-    carseatimage: "https://image.flaticon.com/icons/png/128/5102/5102957.png",
-    carseater: "5 Seater",
-    cartransmissionimage:
-      "https://img-premium.flaticon.com/png/128/3785/premium/3785528.png?token=exp=1626976606~hmac=61d893cfa390ec391488d411474d08f3",
-    cartransmissiontype: "Automatic",
-    carluggageimage:
-      "https://image.flaticon.com/icons/png/128/5085/5085348.png",
-    carluggagesize: "3 Bags",
-    cardriverage: "AGE LIMIT: 18+",
-    carpickupplace: "15.6",
-    carcategory: "Hatchback",
-    carCostRatio: 191.3,
-    carFreeKMS: 1,
-    fuelRatio: 1,
-    doorDeliveryCharges: 0,
-  },
-  {
-    carimage:
-      "https://s3-ap-southeast-1.amazonaws.com/zoomcar/pictures/original/442cc622b1d00816cedc3f8ef316ee49aab2ebcd.png?1512544852",
-    carname: "Maruti Vitara Brezza",
-    carseatimage: "https://image.flaticon.com/icons/png/128/5102/5102957.png",
-    carseater: "5 Seater",
-    cartransmissionimage:
-      "https://image.flaticon.com/icons/png/128/4259/4259321.png",
-    cartransmissiontype: "Manual",
-    carluggageimage:
-      "https://image.flaticon.com/icons/png/128/5085/5085348.png",
-    carluggagesize: "4 Bags",
-    cardriverage: "AGE LIMIT: 18+",
-    carpickupplace: "7.5",
-    carcategory: "SUV",
-    carCostRatio: 210.7,
-    carFreeKMS: 1,
-    fuelRatio: 1,
-    doorDeliveryCharges: 0,
-  },
-];
-
 var CarCategoryFilterList = [];
 var CarTransmissionFilterList = [];
+var SelectedCarToBook = {};
+localStorage.setItem("FreeDistance", 1);
+localStorage.setItem("FuelRatio", 1);
+localStorage.setItem("SortLtoH", 0);
+localStorage.setItem("SortHtoL", 0);
+localStorage.setItem("SortDistance", 0);
+var freekmsDB = 100;
 
 // Function to fill the pick up location details from local storage
 function FillPickupLocationDetails() {
@@ -267,10 +170,9 @@ function SetFree100Kms() {
 
   SelectedCarToBook.freekms = freekmsrange.innerHTML;
 
-  for (car of carslist) {
-    car.carFreeKMS = 1;
-  }
-  showCars(carslist);
+  localStorage.setItem("FreeDistance", 1);
+
+  DisplayCars();
 }
 
 function SetFree200Kms() {
@@ -293,11 +195,10 @@ function SetFree200Kms() {
   free300kms.style.color = "black";
 
   SelectedCarToBook.freekms = freekmsrange.innerHTML;
+  freekmsDB = freekmsrange.innerHTML;
 
-  for (car of carslist) {
-    car.carFreeKMS = 1.5;
-  }
-  showCars(carslist);
+  localStorage.setItem("FreeDistance", 1.5);
+  DisplayCars();
 }
 
 function SetFree300Kms() {
@@ -321,11 +222,10 @@ function SetFree300Kms() {
   free200kms.style.color = "black";
 
   SelectedCarToBook.freekms = freekmsrange.innerHTML;
+  freekmsDB = freekmsrange.innerHTML;
 
-  for (car of carslist) {
-    car.carFreeKMS = 2.3;
-  }
-  showCars(carslist);
+  localStorage.setItem("FreeDistance", 2.3);
+  DisplayCars();
 }
 
 // Enables the user to select the desired car type as per their choice from the available options
@@ -525,11 +425,11 @@ function SortLtoH() {
   sortdistance.style.border = "1px solid #d8d8d8";
   sortdistance.color = "#9b9b9b";
 
-  let lowtohighsortedarray = carslist.sort(function (a, b) {
-    return a.carCost - b.carCost;
-  });
+  localStorage.setItem("SortLtoH", 1);
+  localStorage.setItem("SortHtoL", 0);
+  localStorage.setItem("SortDistance", 0);
 
-  showCars(lowtohighsortedarray);
+  DisplayCars();
 }
 
 // Enables the user to sort the vehicles based on distance of availability from pickup location
@@ -547,11 +447,10 @@ function SortDistance() {
   sortlowtohigh.style.border = "1px solid #d8d8d8";
   sortlowtohigh.color = "#9b9b9b";
 
-  let distancesortedarray = carslist.sort(function (a, b) {
-    return a.carpickupplace - b.carpickupplace;
-  });
-
-  showCars(distancesortedarray);
+  localStorage.setItem("SortLtoH", 0);
+  localStorage.setItem("SortHtoL", 0);
+  localStorage.setItem("SortDistance", 1);
+  DisplayCars();
 }
 
 // Enables the user to sort the vehicles based on price - high to low
@@ -569,11 +468,10 @@ function SortHtoL() {
   sortdistance.style.border = "1px solid #d8d8d8";
   sortdistance.color = "#9b9b9b";
 
-  let hightolowsortedarray = carslist.sort(function (a, b) {
-    return b.carCost - a.carCost;
-  });
-
-  showCars(hightolowsortedarray);
+  localStorage.setItem("SortLtoH", 0);
+  localStorage.setItem("SortHtoL", 1);
+  localStorage.setItem("SortDistance", 0);
+  DisplayCars();
 }
 
 // Function to show the car list and costs when user chooses Without Fuel options
@@ -586,10 +484,8 @@ function ExcludeFuelCharges() {
   withfuelcontainer.style.backgroundColor = "#f7f7f7";
   withfuelcontainer.style.color = "black";
 
-  for (car of carslist) {
-    car.fuelRatio = 1;
-  }
-  showCars(carslist);
+  localStorage.setItem("FuelRatio", 1);
+  DisplayCars();
 }
 
 // Function to show the car list and costs when user chooses With Fuel options
@@ -602,14 +498,23 @@ function IncludeFuelCharges() {
   withoutfuelcontainer.style.backgroundColor = "#f7f7f7";
   withoutfuelcontainer.style.color = "black";
 
-  for (car of carslist) {
-    car.fuelRatio = 1.8;
-  }
-  showCars(carslist);
+  localStorage.setItem("FuelRatio", 1.8);
+  DisplayCars();
 }
 
+// Get Data from DB
+let GetCars = async () => {
+  let cars1 = await fetch("http://localhost:4321/cars", { method: "GET" });
+  let cars2 = await cars1.json();
+  // console.log("cars2:", cars2);
+  return cars2;
+};
+
 // Function which helps us display the available cars for the user
-function showCars(cararray) {
+let DisplayCars = async () => {
+  let cararray = await GetCars();
+  // console.log("cararray:", cararray);
+  // function showCars(cararray) {
   var carlistdiv = document.getElementById("carlistdiv");
   carlistdiv.innerHTML = "";
 
@@ -620,7 +525,6 @@ function showCars(cararray) {
     cararray == undefined ||
     cararray.length == 0
   ) {
-    console.log("test");
     let image = document.createElement("img");
     image.src =
       "https://www.zoomcar.com/assets/component-images/search_error.a1e96c2d070759aea2bddeeab6178cee.png";
@@ -631,21 +535,38 @@ function showCars(cararray) {
     msg.style.marginTop = "4%";
     carlistdiv.append(image, msg);
   } else {
+    let sortlhflag = localStorage.getItem("SortLtoH");
+    let sorthlflag = localStorage.getItem("SortHtoL");
+    let sortdistanceflag = localStorage.getItem("SortDistance");
+
+    if (sortlhflag == 1) {
+      cararray.sort((a, b) => {
+        return a.costRatio - b.costRatio;
+      });
+    }
+
+    if (sorthlflag == 1) {
+      cararray.sort((a, b) => {
+        return b.costRatio - a.costRatio;
+      });
+    }
+
+    if (sortdistanceflag == 1) {
+      cararray.sort((a, b) => {
+        return Number(a.pickUpDistance) - Number(b.pickUpDistance);
+      });
+    }
+
     for (car of cararray) {
       carlistdiv.style.textAlign = "left";
       let div = document.createElement("div");
-      div.style.backgroundColor = "white";
-      div.style.display = "flex";
-      div.style.height = "21vh";
+      div.setAttribute("class", "grid-div");
 
       let img_div = document.createElement("div");
-      img_div.style.width = "20%";
-      img_div.style.borderRight = "1px solid lightGrey";
-      img_div.style.paddingTop = "1%";
-      img_div.style.paddingLeft = "2%";
+      img_div.setAttribute("class", "grid-image-div");
 
       let car_pic = document.createElement("img");
-      car_pic.src = car.carimage;
+      car_pic.src = car.image;
       car_pic.style.width = "85%";
       car_pic.style.height = "85%";
       img_div.append(car_pic);
@@ -656,52 +577,47 @@ function showCars(cararray) {
       middlediv.style.width = "60%";
 
       let carnamedetailsdiv = document.createElement("div");
-      carnamedetailsdiv.style.height = "50%";
-      carnamedetailsdiv.style.width = "100%";
-      carnamedetailsdiv.style.padding = "0.5% 1%";
-      carnamedetailsdiv.style.borderBottom = "1px solid lightGrey";
+      carnamedetailsdiv.setAttribute("class", "car-details-div");
 
       let namediv = document.createElement("div");
-      namediv.innerHTML = car.carname;
+      namediv.innerHTML = car.name;
       namediv.setAttribute("class", "carnamestyling");
 
       let detailsdiv = document.createElement("div");
       detailsdiv.style.display = "flex";
 
       let car_seat_pic = document.createElement("img");
-      car_seat_pic.src = car.carseatimage;
+      car_seat_pic.src = car.seatImage;
       car_seat_pic.setAttribute("class", "cardetailimagestyling");
       car_seat_pic.style.marginLeft = "3%";
 
       let car_seat_details = document.createElement("p");
-      car_seat_details.innerHTML = car.carseater;
+      car_seat_details.innerHTML = car.seater;
       car_seat_details.setAttribute("class", "cardetailstyling");
 
       let car_transmission_pic = document.createElement("img");
-      car_transmission_pic.src = car.cartransmissionimage;
+      car_transmission_pic.src = car.transmissionImage;
       car_transmission_pic.setAttribute("class", "cardetailimagestyling");
 
       let car_transmission_details = document.createElement("p");
-      car_transmission_details.innerHTML = car.cartransmissiontype;
+      car_transmission_details.innerHTML = car.transmissionType;
       car_transmission_details.setAttribute("class", "cardetailstyling");
 
       let car_bag_pic = document.createElement("img");
-      car_bag_pic.src = car.carluggageimage;
+      car_bag_pic.src = car.luggageImage;
       car_bag_pic.setAttribute("class", "cardetailimagestyling");
 
       let car_bag_details = document.createElement("p");
-      car_bag_details.innerHTML = car.carluggagesize;
+      car_bag_details.innerHTML = car.luggageSize;
       car_bag_details.setAttribute("class", "cardetailstyling");
 
       let car_driver_details = document.createElement("p");
-      car_driver_details.innerHTML = car.cardriverage;
+      car_driver_details.innerHTML = car.driverAge;
       car_driver_details.setAttribute("class", "cardetailstyling");
       car_driver_details.style.marginLeft = "5%";
 
       let separator = document.createElement("div");
-      separator.style.border = "1.5px solid lightGrey";
-      separator.style.backgroundColor = "lightGrey";
-      separator.style.marginLeft = "5%";
+      separator.setAttribute("class", "separator");
 
       detailsdiv.append(
         car_seat_pic,
@@ -715,9 +631,9 @@ function showCars(cararray) {
       );
 
       let pickuppointdiv = document.createElement("div");
-      pickuppointdiv.innerHTML = `${car.carpickupplace} km from Starting Point`;
-      pickuppointdiv.style.height = "50%";
-      pickuppointdiv.style.width = "100%";
+      pickuppointdiv.innerHTML = `${car.pickUpDistance} km from Starting Point`;
+      // pickuppointdiv.style.height = "50%";
+      // pickuppointdiv.style.width = "100%";
       pickuppointdiv.setAttribute("class", "pickuplocationstyling");
 
       let pricedisplaydiv = document.createElement("div");
@@ -763,14 +679,16 @@ function showCars(cararray) {
       rupeeSpan.setAttribute("class", "rupeespan");
 
       let costSpan = document.createElement("span");
+      let carFuel = localStorage.getItem("FuelRatio");
+      let carFree = localStorage.getItem("FreeDistance");
       costSpan.innerHTML = FindCostOfVehicleBasedOnCategoryAndTime(
-        car.carcategory,
+        car.category,
         totalHours,
-        car.cartransmissiontype,
-        car.carCostRatio,
-        car.carFreeKMS,
-        car.fuelRatio,
-        car.doorDeliveryCharges
+        car.transmissionType,
+        car.costRatio,
+        carFree,
+        carFuel,
+        car.doorDelivery
       );
 
       // console.log(costSpan.innerHTML);
@@ -802,7 +720,7 @@ function showCars(cararray) {
       div.style.marginTop = "2%";
       carlistdiv.append(div);
 
-      booknowbtn.addEventListener("click", function () {
+      booknowbtn.addEventListener("click", async function () {
         SelectedCarToBook.carImage = car_pic.src;
         SelectedCarToBook.carname = namediv.innerHTML;
         // console.log("carname:", namediv.innerHTML);
@@ -820,19 +738,50 @@ function showCars(cararray) {
           "SelectedCarDetails",
           JSON.stringify(SelectedCarToBook)
         );
+        // console.log("freekmsDB:", freekmsDB);
+        let body = {
+          name: namediv.innerHTML,
+          image: car_pic.src,
+          seater: car_seat_details.innerHTML,
+          bookingFee: costSpan.innerHTML,
+          freeDistance: freekmsDB,
+          excessKM: excessCostSpan.innerHTML,
+        };
 
-        window.location.href = "../checkout/checkout.html";
+        body = JSON.stringify(body);
+        console.log("body:", body);
+
+        let sendCar = async () => {
+          let sent = await fetch("http://localhost:4321/checkout", {
+            method: "POST",
+            body: body,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let sent2 = sent.json();
+          return sent2;
+        };
+
+        let movePage = async () => {
+          let res = await sendCar();
+          window.location.href = "../checkout/checkout.html";
+        };
+
+        movePage();
       });
     }
   }
-}
+  // }
+  // showCars(carslistnew);
+};
 
 function FilterCarsBasedOnChoice() {
   if (
     CarTransmissionFilterList.length == 0 &&
     CarCategoryFilterList.length == 0
   ) {
-    showCars(carslist);
+    DisplayCars();
   } else if (
     CarCategoryFilterList.length == 0 &&
     CarTransmissionFilterList.length != 0
@@ -962,13 +911,13 @@ function AddDoorDeliveryCharges() {
     for (car of carslist) {
       car.doorDeliveryCharges = 0;
     }
-    showCars(carslist);
+    DisplayCars();
     deliveryToggle = false;
   } else {
     for (car of carslist) {
       car.doorDeliveryCharges = 299;
     }
-    showCars(carslist);
+    DisplayCars();
     deliveryToggle = true;
   }
 }
@@ -977,7 +926,8 @@ FillPickupDropOffDateTimeDetails();
 FillPickupLocationDetails();
 CarTypeFiltering();
 TransmissionTypeFiltering();
-showCars(carslist);
 SetFree100Kms();
 SortDistance();
 // SetFree100Kms();
+
+DisplayCars();

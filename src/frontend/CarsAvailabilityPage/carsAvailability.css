@@ -394,7 +394,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   /* margin: 0px 0 10px 20px; */
-  padding: 20px 20px 0px;
+  padding: 15px 20px 0px;
   opacity: 0.6;
 }
 .pricedisplaydiv {
@@ -513,4 +513,26 @@ button {
 }
 .left-float {
   float: left;
+}
+.grid-div {
+  background-color: white;
+  display: flex;
+  /* height : 21vh; */
+}
+.grid-image-div {
+  width: 20%;
+  border-right: 1px solid lightGrey;
+  padding-top: 1%;
+  padding-left: 2%;
+}
+.car-details-div {
+  height: 50%;
+  width: 100%;
+  padding: 0.5% 1%;
+  border-bottom: 1px solid lightGrey;
+}
+.separator {
+  border: 1.5px solid lightGrey;
+  background-color: lightGrey;
+  margin-left: 5%;
 }

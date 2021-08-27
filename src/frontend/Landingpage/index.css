@@ -631,7 +631,7 @@ body {
   box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
 }
 .log_r_top_cont_face {
-  background-color: blue;
+  background-color: #39579A;
   margin: 20px auto 20px;
   width: 300px;
   height: 20px;
@@ -643,7 +643,7 @@ body {
   color: white;
 }
 .log_r_top_cont_gmail {
-  background-color: red;
+  background-color: #DC4E41;
   margin: 20px auto 20px;
   width: 300px;
   color: white;
@@ -816,7 +816,7 @@ body {
   box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
 }
 .log_r_top_cont_face2 {
-  background-color: blue;
+  background-color: #39579A;
   margin: 20px auto 20px;
   width: 300px;
   height: 20px;
@@ -828,7 +828,7 @@ body {
   color: white;
 }
 .log_r_top_cont_gmail2 {
-  background-color: red;
+  background-color: #DC4E41;
   margin: 20px auto 20px;
   width: 300px;
   color: white;
@@ -984,9 +984,9 @@ body {
   padding: 0%;
 }
 #supermillerhead {
-  margin-top: 270px;
+  margin-top: 260px;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background: url(./img/car_bg.jpg);
   background-size: cover;
 }
@@ -1001,29 +1001,21 @@ body {
 #supermillerhead h2 {
   text-align: center;
   padding-top: 30px;
-
-  font-size: 24px;
+  font-size: 26px;
   text-transform: uppercase;
   margin: 0;
-
-  /* position: absolute; */
   top: 20px;
   left: 40%;
-
   color: #fff;
 }
 
 .title_para {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
-
-  /* position: absolute; */
-
-  padding-top: 20px;
+  padding-top: 5px;
   top: 20px;
   left: 30%;
-
   color: #fff;
 }
 
@@ -1032,7 +1024,7 @@ body {
 }
 
 .carList {
-  width: 70%;
+  width: 75%;
 }
 .row {
   /* display: flex;
@@ -1046,7 +1038,7 @@ body {
   top: 120px;
   left: 220px;
   right: 220px;
-  margin-left: 150px;
+  margin-left: 110px;
 
   color: #fff;
 
@@ -1054,26 +1046,26 @@ body {
 }
 
 .row .carimg {
-  margin-top: -180px;
+  margin-top: -230px;
   margin-left: 150px;
-  height: 150px;
-
+  height: 190px;
   float: left;
 }
 .row .name {
   margin-top: -250px;
-  margin-left: 450px;
+  margin-left: 500px;
   font-size: 60px;
 }
 
 .row .price {
   font-size: 22px;
-  margin-left: 450px;
-}
+  margin-left: 500px; 
+} 
 
 .row .groups {
-  font-size: 18px;
-  margin-left: 450px;
+  font-size: 16px;
+  margin-left: 500px;
+  width: 59%;
 }
 
 .changep {
@@ -1082,29 +1074,31 @@ body {
   font-weight: bold;
   color: whitesmoke;
   margin-left: 170px;
+  margin-top: 60px;
 }
 
 .arrowmiddle {
   top: 0;
-  height: 120px;
-  width: 120px;
+  height: 130px;
+  width: 130px;
   border: 0;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
   display: inline-block;
   cursor: pointer;
+  /* margin-top: 100px; */
 }
 
 .leftmiddle {
-  margin-top: 0px;
+  /* margin-top: 25px; */
   transform: rotate(130deg);
   margin-left: 100px;
 }
 
 .rightmiddle {
-  margin-top: -121px;
+  margin-top: -128px;
   transform: rotate(-45deg);
-  margin-left: 1120px;
+  margin-left: 1125px;
 }
 
 .howItWorks {
@@ -1266,8 +1260,8 @@ body {
 }
 
 .arrowend {
-  height: 120px;
-  width: 120px;
+  height: 130px;
+  width: 130px;
   border: 0;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -1284,7 +1278,7 @@ body {
 .rightend {
   margin-top: 60px;
   transform: rotate(-45deg);
-  margin-left: 465px;
+  margin-left: 440px;
 }
 
 #ending .press {
@@ -1314,7 +1308,7 @@ body {
 }
 #ending .wrap {
   width: 100%;
-  padding: 0 20px;
+  padding: 0 40px;
   /* margin-left: 55px; */
   /* transform-style: preserve-3d; */
 }
@@ -1331,7 +1325,7 @@ body {
     display: block;
   } */
 #ending .wrap .slides1 > .container {
-  width: 350px;
+  width: 320px;
   height: 100px;
   padding: 0 20px;
   margin-left: 5px;
