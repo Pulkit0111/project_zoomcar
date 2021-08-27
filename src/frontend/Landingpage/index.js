@@ -98,10 +98,10 @@ function signinacc(e) {
 
   let usermob_check = JSON.parse(localStorage.getItem("logs"));
 
-  // console.log("usermob_check:", usermob_check);
+  console.log("usermob_check:", usermob_check);
 
   var havedata = false;
-  if (usermob_check != null) {
+  if (usermob_check.length != 0) {
     for (let i = 0; i < usermob_check.length; i++) {
       if (usermob_check[i].mob_num == mob_no) {
         havedata = true;
