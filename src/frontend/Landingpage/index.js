@@ -138,10 +138,10 @@ const saveData = async (e) => {
   let name = form.name.value.toString();
   let email = form.email.value.toString();
   let password = form.password.value.toString();
-  // if (mob_num == "" || name == "" || email == "" || password == "") {
-  //   alert("PLEASE FILL ALL MANDATORY DETAILS");
-  //   e.prevent();
-  // }
+  if (mob_num == "" || name == "" || email == "" || password == "") {
+    alert("PLEASE FILL ALL MANDATORY DETAILS");
+    e.prevent();
+  }
 
   let userData = {
     mobile: mob_num,
@@ -152,38 +152,7 @@ const saveData = async (e) => {
   console.log(userData);
 
   await axios.post("http://localhost:4321/users", userData);
-
-  // fetch("http://localhost:4321/users", {
-  //   method: "POST",
-  //   mode: "no-cors",
-  //   body: userData,
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Accept: "application/json",
-  //   },
-  // })
-  //   .then((response) => {
-  //     return response.json();
-  //   })
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-  // let s_arr = localStorage.getItem("logs", userData);
-
-  // if (s_arr == null) {
-  //   s_arr = [];
-  // } else {
-  //   s_arr = JSON.parse(s_arr);
-  // }
-  // s_arr.push(userData);
-
-  // localStorage.setItem("logs", JSON.stringify(s_arr));
-
-  // alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  // window.location.href = "./Homepage-main.html";
+  window.location.href = "./Homepage-main.html";
 };
 
 //LOGIN AFTERCLICK IN POPUP
