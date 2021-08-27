@@ -20,6 +20,7 @@ localStorage.setItem("FuelRatio", 1);
 localStorage.setItem("SortLtoH", 0);
 localStorage.setItem("SortHtoL", 0);
 localStorage.setItem("SortDistance", 0);
+var freekmsDB = 100;
 
 // Function to fill the pick up location details from local storage
 function FillPickupLocationDetails() {
@@ -170,6 +171,7 @@ function SetFree100Kms() {
   SelectedCarToBook.freekms = freekmsrange.innerHTML;
 
   localStorage.setItem("FreeDistance", 1);
+
   DisplayCars();
 }
 
@@ -193,6 +195,7 @@ function SetFree200Kms() {
   free300kms.style.color = "black";
 
   SelectedCarToBook.freekms = freekmsrange.innerHTML;
+  freekmsDB = freekmsrange.innerHTML;
 
   localStorage.setItem("FreeDistance", 1.5);
   DisplayCars();
@@ -219,6 +222,7 @@ function SetFree300Kms() {
   free200kms.style.color = "black";
 
   SelectedCarToBook.freekms = freekmsrange.innerHTML;
+  freekmsDB = freekmsrange.innerHTML;
 
   localStorage.setItem("FreeDistance", 2.3);
   DisplayCars();
@@ -502,7 +506,7 @@ function IncludeFuelCharges() {
 let GetCars = async () => {
   let cars1 = await fetch("http://localhost:4321/cars", { method: "GET" });
   let cars2 = await cars1.json();
-  console.log("cars2:", cars2);
+  // console.log("cars2:", cars2);
   return cars2;
 };
 
@@ -716,7 +720,7 @@ let DisplayCars = async () => {
       div.style.marginTop = "2%";
       carlistdiv.append(div);
 
-      booknowbtn.addEventListener("click", function () {
+      booknowbtn.addEventListener("click", async function () {
         SelectedCarToBook.carImage = car_pic.src;
         SelectedCarToBook.carname = namediv.innerHTML;
         // console.log("carname:", namediv.innerHTML);
@@ -734,8 +738,37 @@ let DisplayCars = async () => {
           "SelectedCarDetails",
           JSON.stringify(SelectedCarToBook)
         );
+        // console.log("freekmsDB:", freekmsDB);
+        let body = {
+          name: namediv.innerHTML,
+          image: car_pic.src,
+          seater: car_seat_details.innerHTML,
+          bookingFee: costSpan.innerHTML,
+          freeDistance: freekmsDB,
+          excessKM: excessCostSpan.innerHTML,
+        };
 
-        window.location.href = "../checkout/checkout.html";
+        body = JSON.stringify(body);
+        console.log("body:", body);
+
+        let sendCar = async () => {
+          let sent = await fetch("http://localhost:4321/checkout", {
+            method: "POST",
+            body: body,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          let sent2 = sent.json();
+          return sent2;
+        };
+
+        let movePage = async () => {
+          let res = await sendCar();
+          window.location.href = "../checkout/checkout.html";
+        };
+
+        movePage();
       });
     }
   }
