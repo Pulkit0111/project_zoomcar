@@ -101,7 +101,7 @@ function signinacc(e) {
   console.log("usermob_check:", usermob_check);
 
   var havedata = false;
-  if (usermob_check.length != 0) {
+  if (usermob_check != null) {
     for (let i = 0; i < usermob_check.length; i++) {
       if (usermob_check[i].mob_num == mob_no) {
         havedata = true;
@@ -131,43 +131,60 @@ function signinacc(e) {
       </div>`;
 }
 
-function saveData(e) {
+const saveData = async (e) => {
+  e.preventDefault();
   let form = document.getElementById("signup_form");
-
-  let mob_num = form.mob_num.value;
-
-  let name = form.name.value;
-
-  let email = form.email.value;
-
-  let password = form.password.value;
-
-  if (mob_num == "" || name == "" || email == "" || password == "") {
-    alert("PLEASE FILL ALL MANDATORY DETAILS");
-    e.prevent();
-  }
+  let mob_num = form.mob_num.value.toString();
+  let name = form.name.value.toString();
+  let email = form.email.value.toString();
+  let password = form.password.value.toString();
+  // if (mob_num == "" || name == "" || email == "" || password == "") {
+  //   alert("PLEASE FILL ALL MANDATORY DETAILS");
+  //   e.prevent();
+  // }
 
   let userData = {
-    mob_num: mob_num,
+    mobile: mob_num,
     name: name,
     email: email,
-    password: password,
+    pass: password,
   };
+  console.log(userData);
 
-  let s_arr = localStorage.getItem("logs", userData);
+  await axios.post("http://localhost:4321/users", userData);
 
-  if (s_arr == null) {
-    s_arr = [];
-  } else {
-    s_arr = JSON.parse(s_arr);
-  }
-  s_arr.push(userData);
+  // fetch("http://localhost:4321/users", {
+  //   method: "POST",
+  //   mode: "no-cors",
+  //   body: userData,
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json",
+  //   },
+  // })
+  //   .then((response) => {
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  // let s_arr = localStorage.getItem("logs", userData);
 
-  localStorage.setItem("logs", JSON.stringify(s_arr));
+  // if (s_arr == null) {
+  //   s_arr = [];
+  // } else {
+  //   s_arr = JSON.parse(s_arr);
+  // }
+  // s_arr.push(userData);
 
-  alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "./Homepage-main.html";
-}
+  // localStorage.setItem("logs", JSON.stringify(s_arr));
+
+  // alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
+  // window.location.href = "./Homepage-main.html";
+};
 
 //LOGIN AFTERCLICK IN POPUP
 
