@@ -112,6 +112,7 @@ async function addPopularPlaces() {
   }
 }
 
+
 /*let proceeding = document.getElementById("nextbtn");
 
 let checkNext = setInterval(() => {
@@ -128,6 +129,7 @@ let checkNext = setInterval(() => {
     clearInterval(checkNext);
   }
 }, 100);
+
 
 search.addEventListener("keypress", () => {
   let val = search.value;

@@ -7,6 +7,11 @@ startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
   "startMonth"
 )}, 2021 ${localStorage.getItem("startTime")}`;
 var endDetailsDisplayDiv = document.getElementById("endDetailsDisplay");
+localStorage.setItem("endMonth", "");
+localStorage.setItem("endDate", "");
+localStorage.setItem("endTime", "");
+localStorage.setItem("endweekDay", "");
+
 function setMonth1() {
   let month1 = document.getElementById("month1");
   let month2 = document.getElementById("month2");
@@ -36,9 +41,9 @@ function setMonth1() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "July");
+  localStorage.setItem("endMonth", month1.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -72,9 +77,9 @@ function setMonth2() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "August");
+  localStorage.setItem("endMonth", month2.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -108,9 +113,9 @@ function setMonth3() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "September");
+  localStorage.setItem("endMonth", month3.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -144,9 +149,9 @@ function setMonth4() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "October");
+  localStorage.setItem("endMonth", month4.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -180,9 +185,9 @@ function setMonth5() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "November");
+  localStorage.setItem("endMonth", month5.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -216,9 +221,9 @@ function setMonth6() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "December");
+  localStorage.setItem("endMonth", month6.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -252,9 +257,9 @@ function setMonth7() {
 
   month6.style.border = "1px solid rgb(50, 58, 68)";
   month6.style.boxShadow = "none";
-  localStorage.setItem("endMonth", "January");
+  localStorage.setItem("endMonth", month7.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -268,7 +273,23 @@ function setEndDate1() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
-  console.log(document.getElementById("day1"));
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate1.style.border = "2px solid rgb(112, 173, 77)";
   endDate1.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -289,10 +310,10 @@ function setEndDate1() {
 
   endDate7.style.border = "1px solid rgb(50, 58, 68)";
   endDate7.style.boxShadow = "none";
-  localStorage.setItem("endDate", "25");
-  localStorage.setItem("weekDay", "Sun");
+  localStorage.setItem("endDate", date1.innerHTML);
+  localStorage.setItem("endweekDay", weekday1.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -305,6 +326,23 @@ function setEndDate2() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate2.style.border = "2px solid rgb(112, 173, 77)";
   endDate2.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -325,10 +363,10 @@ function setEndDate2() {
 
   endDate7.style.border = "1px solid rgb(50, 58, 68)";
   endDate7.style.boxShadow = "none";
-  localStorage.setItem("endDate", "26");
-  localStorage.setItem("weekDay", "Mon");
+  localStorage.setItem("endDate", date2.innerHTML);
+  localStorage.setItem("endweekDay", weekday2.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -341,6 +379,23 @@ function setEndDate3() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate3.style.border = "2px solid rgb(112, 173, 77)";
   endDate3.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -361,10 +416,10 @@ function setEndDate3() {
 
   endDate7.style.border = "1px solid rgb(50, 58, 68)";
   endDate7.style.boxShadow = "none";
-  localStorage.setItem("endDate", "27");
-  localStorage.setItem("weekDay", "Tue");
+  localStorage.setItem("endDate", date3.innerHTML);
+  localStorage.setItem("endweekDay", weekday3.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -377,6 +432,23 @@ function setEndDate4() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate4.style.border = "2px solid rgb(112, 173, 77)";
   endDate4.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -397,10 +469,10 @@ function setEndDate4() {
 
   endDate7.style.border = "1px solid rgb(50, 58, 68)";
   endDate7.style.boxShadow = "none";
-  localStorage.setItem("endDate", "28");
-  localStorage.setItem("weekDay", "Wed");
+  localStorage.setItem("endDate", date4.innerHTML);
+  localStorage.setItem("endweekDay", weekday4.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -413,6 +485,23 @@ function setEndDate5() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate5.style.border = "2px solid rgb(112, 173, 77)";
   endDate5.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -433,10 +522,10 @@ function setEndDate5() {
 
   endDate7.style.border = "1px solid rgb(50, 58, 68)";
   endDate7.style.boxShadow = "none";
-  localStorage.setItem("endDate", "29");
-  localStorage.setItem("weekDay", "Thu");
+  localStorage.setItem("endDate", date5.innerHTML);
+  localStorage.setItem("endweekDay", weekday5.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -450,6 +539,23 @@ function setEndDate6() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate6.style.border = "2px solid rgb(112, 173, 77)";
   endDate6.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -470,10 +576,10 @@ function setEndDate6() {
 
   endDate7.style.border = "1px solid rgb(50, 58, 68)";
   endDate7.style.boxShadow = "none";
-  localStorage.setItem("endDate", "30");
-  localStorage.setItem("weekDay", "Fri");
+  localStorage.setItem("endDate", date6.innerHTML);
+  localStorage.setItem("endweekDay", weekday6.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -487,6 +593,23 @@ function setEndDate7() {
   let endDate5 = document.getElementById("day5");
   let endDate6 = document.getElementById("day6");
   let endDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   endDate7.style.border = "2px solid rgb(112, 173, 77)";
   endDate7.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -507,10 +630,10 @@ function setEndDate7() {
 
   endDate6.style.border = "1px solid rgb(50, 58, 68)";
   endDate6.style.boxShadow = "none";
-  localStorage.setItem("endDate", "31");
-  localStorage.setItem("weekDay", "Sat");
+  localStorage.setItem("endDate", date7.innerHTML);
+  localStorage.setItem("endweekDay", weekday7.innerHTML);
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -567,7 +690,7 @@ function setEndTime1() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "00:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -623,7 +746,7 @@ function setEndTime2() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "02:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -679,7 +802,7 @@ function setEndTime3() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "04:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -735,7 +858,7 @@ function setEndTime4() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "06:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -791,7 +914,7 @@ function setEndTime5() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "08:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -847,7 +970,7 @@ function setEndTime6() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "10:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -903,7 +1026,7 @@ function setEndTime7() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "12:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -959,7 +1082,7 @@ function setEndTime8() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "14:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -1015,7 +1138,7 @@ function setEndTime9() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "16:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -1071,7 +1194,7 @@ function setEndTime10() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "18:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -1127,7 +1250,7 @@ function setEndTime11() {
   time12.style.boxShadow = "none";
   localStorage.setItem("endTime", "20:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -1183,7 +1306,7 @@ function setEndTime12() {
   time1.style.boxShadow = "none";
   localStorage.setItem("endTime", "22:00");
   endDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
-    "weekDay"
+    "endweekDay"
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
@@ -1196,5 +1319,117 @@ function drive2() {
   window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
 }
 
+FillDates();
 setEndDate1();
 setMonth1();
+
+function FillDates() {
+  let mon1 = document.getElementById("month1");
+  let mon2 = document.getElementById("month2");
+  let mon3 = document.getElementById("month3");
+  let mon4 = document.getElementById("month4");
+  let mon5 = document.getElementById("month5");
+  let mon6 = document.getElementById("month6");
+  let mon7 = document.getElementById("month7");
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let today = new Date();
+  let mon = today.getMonth();
+  // console.log("mon:", mon);
+  mon1.innerHTML = months[(mon + 0) % 12];
+  mon2.innerHTML = months[(mon + 1) % 12];
+  mon3.innerHTML = months[(mon + 2) % 12];
+  mon4.innerHTML = months[(mon + 3) % 12];
+  mon5.innerHTML = months[(mon + 4) % 12];
+  mon6.innerHTML = months[(mon + 5) % 12];
+  mon7.innerHTML = months[(mon + 6) % 12];
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
+  weekday1.innerHTML = days[today.getDay() % 7];
+  date1.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday2.innerHTML = days[today.getDay() % 7];
+  date2.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday3.innerHTML = days[today.getDay() % 7];
+  date3.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday4.innerHTML = days[today.getDay() % 7];
+  date4.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday5.innerHTML = days[today.getDay() % 7];
+  date5.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday6.innerHTML = days[today.getDay() % 7];
+  date6.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday7.innerHTML = days[today.getDay() % 7];
+  date7.innerHTML = today.getDate();
+}
+
+async function SendData() {
+  let body = {
+    location: `${localStorage.getItem("address")}`,
+    startdate: `${localStorage.getItem("startDate")}`,
+    enddate: `${localStorage.getItem("endDate")}`,
+    startmonth: `${localStorage.getItem("startMonth")}`,
+    endmonth: `${localStorage.getItem("endMonth")}`,
+    starttime: `${localStorage.getItem("startTime")}`,
+    endtime: `${localStorage.getItem("endTime")}`,
+  };
+
+  body = JSON.stringify(body);
+  console.log("body:", body);
+
+  let senddetails = await fetch("http://localhost:4321/details", {
+    method: "POST",
+    body: body,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let details = await senddetails.json();
+  console.log("details:", details);
+  console.log("test");
+  window.location.href = "../CarsAvailabilityPage/carsAvailability.html";
+}

@@ -6,15 +6,21 @@ const userController = require("./controllers/user.controller");
 const carsController = require("./controllers/car.controller");
 const checkoutController = require("./controllers/checkout.controller");
 const popularpointsController = require("./controllers/popularpoints.controller");
+const bookingdetailController = require("./controllers/bookingdetail.controller");
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/tests", testController);
+app.use(cors());
 app.use("/users", userController);
+app.use(cors());
 app.use("/cars", carsController);
+app.use(cors());
 app.use("/checkout", checkoutController);
 app.use(cors());
 app.use("/popularpoints", popularpointsController);
+app.use(cors());
+app.use("/details", bookingdetailController);
 
 app.listen(4321, async () => {
   await connect();

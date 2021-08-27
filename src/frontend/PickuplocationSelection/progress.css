@@ -5,6 +5,7 @@ body {
   height: auto;
   margin: 20px 60px;
   font-family: "Open Sans", sans-serif;
+  /* width: 100%; */
 }
 
 #progress_head {
