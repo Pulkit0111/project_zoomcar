@@ -444,7 +444,7 @@ async function FillSummaryDetailsFromDB() {
   let tempcarDetails = await fetch("http://localhost:4321/checkout/");
   let carDetailsnew = await tempcarDetails.json();
   let carDetails = carDetailsnew[0];
-  console.log("carDetails:", carDetails);
+  // console.log("carDetails:", carDetails);
   carImg_parent.src = carDetails.image;
   // console.log("carImage:", DetailsOfBookingCar.carImage);
 
@@ -506,11 +506,14 @@ function ThousandsSeparatorForAmount(num) {
   return num_parts.join(".");
 }
 
-function ValidatePromoCode(e) {
+async function ValidatePromoCode(e) {
+  let tempcarDetails = await fetch("http://localhost:4321/checkout/");
+  let carDetailsnew = await tempcarDetails.json();
+  let carDetails = carDetailsnew[0];
   if (e.code == "Enter") {
     let promoCodeEntered = document.getElementById("promocode");
     let discountp = document.getElementById("discountAmount");
-    let tempbookvalue1 = DetailsOfBookingCar.bookingFee.split("");
+    let tempbookvalue1 = carDetails.bookingFee.split("");
     // console.log("tempbookvalue:", tempbookvalue);
     let comma1index1 = tempbookvalue1.indexOf(",");
     // console.log("comma1index:", comma1index);
@@ -522,7 +525,7 @@ function ValidatePromoCode(e) {
       );
       discountp.innerHTML = `Discount Applicable: ₹ ${discount_Price}`;
       let book_parent = document.getElementById("bkn_amount");
-      book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+      book_parent.innerHTML = carDetails.bookingFee;
 
       let ref_amt = document.getElementById("ref_amount");
       ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
@@ -553,7 +556,7 @@ function ValidatePromoCode(e) {
       );
       discountp.innerHTML = `Discount Applicable: ₹ ${discount_Price}`;
       let book_parent = document.getElementById("bkn_amount");
-      book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+      book_parent.innerHTML = carDetails.bookingFee;
 
       let ref_amt = document.getElementById("ref_amount");
       ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
