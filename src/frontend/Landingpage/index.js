@@ -155,38 +155,22 @@ const saveData = async (e) => {
   window.location.href = "./Homepage-main.html";
 };
 
-//LOGIN AFTERCLICK IN POPUP
-
-const getData = async () => {
-  let response = await fetch("http://localhost:4321/users");
-  let data = await response.json();
-  return data;
-};
-let data = getData().then((res) => {
-  res.forEach((el) => {
-    console.log(el.name);
-  });
-});
-// for (let i = 0; i < x.length; i++) {
-//   console.log(x[i].name);
-// }
-
-function loginacc(e) {
+const loginacc = async (e) => {
   let login_par_box2 = document.querySelector(".log_right2");
-  let mob_no = document.querySelector(".log_input_email_mob2").value;
+  let mob_no = document.querySelector(".log_input_email_mob2").value.toString();
   if (mob_no == "") {
     alert("Please Enter the Registered Mobile Number");
     e.prevent();
   }
-
-  var userData = JSON.parse(localStorage.getItem("logs"));
+  let data = await axios.get("http://localhost:4321/users");
+  let userData = data.data;
 
   if (userData == null) {
-    alert("Please First SignUp to Zoom Car Website");
+    alert("Please First get yourself Registered to the website");
   } else {
-    var havedata = false;
+    let havedata = false;
     for (let i = 0; i < userData.length; i++) {
-      if (userData[i].mob_num == mob_no) {
+      if (userData[i].mobile == mob_no) {
         havedata = true;
       }
     }
@@ -205,48 +189,38 @@ function loginacc(e) {
         <button class="deta_add_btn" onclick="checkData(event)">Submit</button>
       </div>`;
     } else {
-      alert("Please First SignUp to Zoom Car Website");
+      alert("Please First get yourself Registered to the website");
     }
   }
-}
+};
 
-function checkData(e) {
+const checkData = async (e) => {
   let form = document.getElementById("login_form");
-
-  let mob_num2 = form.mob_num2.value;
-
-  let password2 = form.password2.value;
-
+  let mob_num2 = form.mob_num2.value.toString();
+  let password2 = form.password2.value.toString();
   if (mob_num2 == "" || password2 == "") {
-    alert("PLEASE FILL ALL MANDATORY DETAILS");
+    alert("Please fill in the madatory fields");
     e.prevent();
   }
 
-  let userData = {
-    mob_num2: mob_num2,
-    password2: password2,
-  };
-
-  var userData2 = JSON.parse(localStorage.getItem("logs"));
-
-  var havedata2 = false;
-  for (let i = 0; i < userData2.length; i++) {
-    if (
-      userData2[i].mob_num == mob_num2 &&
-      userData2[i].password == password2
-    ) {
-      havedata2 = true;
+  let data = await axios.get("http://localhost:4321/users");
+  let userData = data.data;
+  let havedata = false;
+  for (let i = 0; i < userData.length; i++) {
+    if (userData[i].mobile == mob_num2 && userData[i].pass == password2) {
+      havedata = true;
     }
   }
-  if (havedata2) {
-    //   alert("You are sucessfully Login to Zoom Car");
-    changeNav();
-    localStorage.setItem("logindone", JSON.stringify("yes"));
+  if (havedata) {
+    alert("You have successfully logged in");
+    window.location.href = "./Homepage-main.html";
+    // changeNav();
+    // localStorage.setItem("logindone", JSON.stringify("yes"));
   } else {
-    alert("Please check your Mobile number or Password");
-    localStorage.setItem("logindone", JSON.stringify("no"));
+    alert("Please check your Mobile number or Password that you have entered");
+    // localStorage.setItem("logindone", JSON.stringify("no"));
   }
-}
+};
 var user_name;
 function changeNav() {
   let pop_up22 = document.querySelector("#pop2");
