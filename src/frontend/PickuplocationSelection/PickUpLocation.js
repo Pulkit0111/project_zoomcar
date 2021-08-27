@@ -55,12 +55,12 @@ list.addEventListener("click", trigger);
 var addressDisplayDiv = document.getElementById("addressDisplay");
 
 //next button function
-// var proceeding = document.getElementById("proceeding");
-// function onProceed() {
-//   var data = document.getElementById("searches").value;
-//   localStorage.setItem("address", `${data}`);
-// }
-// proceeding.addEventListener("click", onProceed);
+var proceeding1 = document.getElementById("proceeding");
+function onProceed() {
+  var data = document.getElementById("searches").value;
+  localStorage.setItem("address", `${data}`);
+}
+proceeding1.addEventListener("click", onProceed);
 
 // Adding popular pick points
 async function addPopularPlaces() {
@@ -112,11 +112,11 @@ async function addPopularPlaces() {
   }
 }
 
-let proceeding = document.getElementById("nextbtn");
+/*let proceeding = document.getElementById("nextbtn");
 
 let checkNext = setInterval(() => {
   let address = localStorage.getItem("address");
-  console.log("address:", address);
+  //   console.log("address:", address);
   if (address == "") {
     proceeding.disabled = true;
     proceeding.style.cursor = "default";
@@ -124,9 +124,16 @@ let checkNext = setInterval(() => {
   } else {
     proceeding.style.cursor = "pointer";
     proceeding.style.backgroundColor = "#70ad4d";
+    proceeding.dis = false;
     clearInterval(checkNext);
   }
 }, 100);
+
+search.addEventListener("keypress", () => {
+  let val = search.value;
+  console.log("val:", val);
+  localStorage.setItem("address", val);
+});*/
 
 addPopularPlaces();
 
