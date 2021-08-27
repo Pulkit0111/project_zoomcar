@@ -112,21 +112,30 @@ async function addPopularPlaces() {
   }
 }
 
-// let proceeding = document.getElementById("nextbtn");
 
-// let checkNext = setInterval(() => {
-//   let address = localStorage.getItem("address");
-//   console.log("address:", address);
-//   if (address == "") {
-//     proceeding.disabled = true;
-//     proceeding.style.cursor = "default";
-//     proceeding.style.backgroundColor = "grey";
-//   } else {
-//     proceeding.style.cursor = "pointer";
-//     proceeding.style.backgroundColor = "#70ad4d";
-//     clearInterval(checkNext);
-//   }
-// }, 100);
+/*let proceeding = document.getElementById("nextbtn");
+
+let checkNext = setInterval(() => {
+  let address = localStorage.getItem("address");
+  //   console.log("address:", address);
+  if (address == "") {
+    proceeding.disabled = true;
+    proceeding.style.cursor = "default";
+    proceeding.style.backgroundColor = "grey";
+  } else {
+    proceeding.style.cursor = "pointer";
+    proceeding.style.backgroundColor = "#70ad4d";
+    proceeding.dis = false;
+    clearInterval(checkNext);
+  }
+}, 100);
+
+
+search.addEventListener("keypress", () => {
+  let val = search.value;
+  console.log("val:", val);
+  localStorage.setItem("address", val);
+});*/
 
 addPopularPlaces();
 
