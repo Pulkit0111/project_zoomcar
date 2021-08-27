@@ -157,12 +157,25 @@ const saveData = async (e) => {
 
 //LOGIN AFTERCLICK IN POPUP
 
+const getData = async () => {
+  let response = await fetch("http://localhost:4321/users");
+  let data = await response.json();
+  return data;
+};
+let data = getData().then((res) => {
+  res.forEach((el) => {
+    console.log(el.name);
+  });
+});
+// for (let i = 0; i < x.length; i++) {
+//   console.log(x[i].name);
+// }
+
 function loginacc(e) {
   let login_par_box2 = document.querySelector(".log_right2");
-
   let mob_no = document.querySelector(".log_input_email_mob2").value;
   if (mob_no == "") {
-    alert("Please write your Mob No");
+    alert("Please Enter the Registered Mobile Number");
     e.prevent();
   }
 
