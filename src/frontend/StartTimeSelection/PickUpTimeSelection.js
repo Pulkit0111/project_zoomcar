@@ -1,6 +1,12 @@
 var addressDisplayDiv = document.getElementById("addressDisplay");
 addressDisplayDiv.innerHTML = `${localStorage.getItem("address")}`;
 var startDetailsDisplayDiv = document.getElementById("startDetailsDisplay");
+localStorage.setItem("startMonth", "");
+localStorage.setItem("startDate", "");
+localStorage.setItem("startMonth", "");
+localStorage.setItem("startTime", "");
+localStorage.setItem("weekDay", "");
+
 function setStartMonth1() {
   let month1 = document.getElementById("month1");
   let month2 = document.getElementById("month2");
@@ -30,7 +36,7 @@ function setStartMonth1() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "July");
+  localStorage.setItem("startMonth", month1.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -66,7 +72,7 @@ function setStartMonth2() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "August");
+  localStorage.setItem("startMonth", month2.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -102,7 +108,7 @@ function setStartMonth3() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "September");
+  localStorage.setItem("startMonth", month3.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -138,7 +144,7 @@ function setStartMonth4() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "October");
+  localStorage.setItem("startMonth", month4.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -174,7 +180,7 @@ function setStartMonth5() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "November");
+  localStorage.setItem("startMonth", month5.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -210,7 +216,7 @@ function setStartMonth6() {
 
   month7.style.border = "1px solid rgb(50, 58, 68)";
   month7.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "December");
+  localStorage.setItem("startMonth", month6.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -246,7 +252,7 @@ function setStartMonth7() {
 
   month6.style.border = "1px solid rgb(50, 58, 68)";
   month6.style.boxShadow = "none";
-  localStorage.setItem("startMonth", "January");
+  localStorage.setItem("startMonth", month7.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -262,7 +268,23 @@ function setStartDate1() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
-  console.log(document.getElementById("day1"));
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate1.style.border = "2px solid rgb(112, 173, 77)";
   startDate1.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -283,8 +305,8 @@ function setStartDate1() {
 
   startDate7.style.border = "1px solid rgb(50, 58, 68)";
   startDate7.style.boxShadow = "none";
-  localStorage.setItem("startDate", "25");
-  localStorage.setItem("weekDay", "Sun");
+  localStorage.setItem("startDate", date1.innerHTML);
+  localStorage.setItem("weekDay", weekday1.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -299,6 +321,23 @@ function setStartDate2() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate2.style.border = "2px solid rgb(112, 173, 77)";
   startDate2.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -319,8 +358,8 @@ function setStartDate2() {
 
   startDate7.style.border = "1px solid rgb(50, 58, 68)";
   startDate7.style.boxShadow = "none";
-  localStorage.setItem("startDate", "26");
-  localStorage.setItem("weekDay", "Mon");
+  localStorage.setItem("startDate", date2.innerHTML);
+  localStorage.setItem("weekDay", weekday2.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -335,6 +374,23 @@ function setStartDate3() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate3.style.border = "2px solid rgb(112, 173, 77)";
   startDate3.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -355,8 +411,8 @@ function setStartDate3() {
 
   startDate7.style.border = "1px solid rgb(50, 58, 68)";
   startDate7.style.boxShadow = "none";
-  localStorage.setItem("startDate", "27");
-  localStorage.setItem("weekDay", "Tue");
+  localStorage.setItem("startDate", date3.innerHTML);
+  localStorage.setItem("weekDay", weekday3.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -371,6 +427,23 @@ function setStartDate4() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate4.style.border = "2px solid rgb(112, 173, 77)";
   startDate4.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -391,8 +464,8 @@ function setStartDate4() {
 
   startDate7.style.border = "1px solid rgb(50, 58, 68)";
   startDate7.style.boxShadow = "none";
-  localStorage.setItem("startDate", "28");
-  localStorage.setItem("weekDay", "Wed");
+  localStorage.setItem("startDate", date4.innerHTML);
+  localStorage.setItem("weekDay", weekday4.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -407,6 +480,23 @@ function setStartDate5() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate5.style.border = "2px solid rgb(112, 173, 77)";
   startDate5.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -427,8 +517,8 @@ function setStartDate5() {
 
   startDate7.style.border = "1px solid rgb(50, 58, 68)";
   startDate7.style.boxShadow = "none";
-  localStorage.setItem("startDate", "29");
-  localStorage.setItem("weekDay", "Thu");
+  localStorage.setItem("startDate", date5.innerHTML);
+  localStorage.setItem("weekDay", weekday5.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -444,6 +534,23 @@ function setStartDate6() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate6.style.border = "2px solid rgb(112, 173, 77)";
   startDate6.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -464,8 +571,8 @@ function setStartDate6() {
 
   startDate7.style.border = "1px solid rgb(50, 58, 68)";
   startDate7.style.boxShadow = "none";
-  localStorage.setItem("startDate", "30");
-  localStorage.setItem("weekDay", "Fri");
+  localStorage.setItem("startDate", date6.innerHTML);
+  localStorage.setItem("weekDay", weekday6.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -481,6 +588,23 @@ function setStartDate7() {
   let startDate5 = document.getElementById("day5");
   let startDate6 = document.getElementById("day6");
   let startDate7 = document.getElementById("day7");
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
   startDate7.style.border = "2px solid rgb(112, 173, 77)";
   startDate7.style.boxShadow = "0 4px 12px rgb(0 0 0 / 18%)";
 
@@ -501,8 +625,8 @@ function setStartDate7() {
 
   startDate6.style.border = "1px solid rgb(50, 58, 68)";
   startDate6.style.boxShadow = "none";
-  localStorage.setItem("startDate", "31");
-  localStorage.setItem("weekDay", "Sat");
+  localStorage.setItem("startDate", date7.innerHTML);
+  localStorage.setItem("weekDay", weekday7.innerHTML);
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -1187,5 +1311,90 @@ function drive1() {
   window.location.href = "../PickuplocationSelection/PickUpLocation.html";
 }
 
+FillDates();
 setStartDate1();
 setStartMonth1();
+
+function FillDates() {
+  let mon1 = document.getElementById("month1");
+  let mon2 = document.getElementById("month2");
+  let mon3 = document.getElementById("month3");
+  let mon4 = document.getElementById("month4");
+  let mon5 = document.getElementById("month5");
+  let mon6 = document.getElementById("month6");
+  let mon7 = document.getElementById("month7");
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let today = new Date();
+  let mon = today.getMonth();
+  // console.log("mon:", mon);
+  mon1.innerHTML = months[(mon + 0) % 12];
+  mon2.innerHTML = months[(mon + 1) % 12];
+  mon3.innerHTML = months[(mon + 2) % 12];
+  mon4.innerHTML = months[(mon + 3) % 12];
+  mon5.innerHTML = months[(mon + 4) % 12];
+  mon6.innerHTML = months[(mon + 5) % 12];
+  mon7.innerHTML = months[(mon + 6) % 12];
+
+  let weekday1 = document.getElementById("weekday1");
+  let weekday2 = document.getElementById("weekday2");
+  let weekday3 = document.getElementById("weekday3");
+  let weekday4 = document.getElementById("weekday4");
+  let weekday5 = document.getElementById("weekday5");
+  let weekday6 = document.getElementById("weekday6");
+  let weekday7 = document.getElementById("weekday7");
+
+  let date1 = document.getElementById("date1");
+  let date2 = document.getElementById("date2");
+  let date3 = document.getElementById("date3");
+  let date4 = document.getElementById("date4");
+  let date5 = document.getElementById("date5");
+  let date6 = document.getElementById("date6");
+  let date7 = document.getElementById("date7");
+
+  weekday1.innerHTML = days[today.getDay() % 7];
+  date1.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday2.innerHTML = days[today.getDay() % 7];
+  date2.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday3.innerHTML = days[today.getDay() % 7];
+  date3.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday4.innerHTML = days[today.getDay() % 7];
+  date4.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday5.innerHTML = days[today.getDay() % 7];
+  date5.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday6.innerHTML = days[today.getDay() % 7];
+  date6.innerHTML = today.getDate();
+
+  today.setDate(today.getDate() + 1);
+
+  weekday7.innerHTML = days[today.getDay() % 7];
+  date7.innerHTML = today.getDate();
+}
