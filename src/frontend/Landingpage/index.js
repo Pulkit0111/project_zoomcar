@@ -482,7 +482,7 @@ const book = () => {
   } else {
     window.location.href = "./PickuplocationSelection/PickUpLocation.html";
   }
-  localStorage.setItem("logindone", JSON.stringify("no"));
+  // localStorage.setItem("logindone", JSON.stringify("no"));
 };
 //click signup
 const showlogin = () => {
