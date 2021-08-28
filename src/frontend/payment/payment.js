@@ -411,13 +411,13 @@ date_parent2.innerText = get_dr_dt;*/
 // let book_parent = document.getElementById("bkn_amount");
 // book_parent.innerText = bookingPrice;
 
-let carName = JSON.parse(localStorage.getItem("car_name"));
+/*let carName = JSON.parse(localStorage.getItem("car_name"));
 let carNm_parent = document.getElementById("car_name");
 carNm_parent.innerText = carName;
 
 let carImg = JSON.parse(localStorage.getItem("car_img_src"));
 let carImg_parent = document.getElementById("right_car");
-carImg_parent.src = carImg;
+carImg_parent.src = carImg;*/
 
 // let bk_amt = document.getElementById("bkn_amount").innerText;
 // bk_amt = Number(bk_amt);
@@ -484,16 +484,19 @@ function paymentdone(e) {
   }
 }
 
-function FillSummaryDetailsFromLocalStorage() {
+async function FillSummaryDetailsFromLocalStorage() {
   let carImg_parent = document.getElementById("right_car");
-  carImg_parent.src = DetailsOfBookingCar.carImage;
+  let tempcarDetails = await fetch("http://localhost:4321/checkout/");
+  let carDetailsnew = await tempcarDetails.json();
+  let carDetails = carDetailsnew[0];
+  carImg_parent.src = carDetails.image;
   // console.log("carImage:", DetailsOfBookingCar.carImage);
 
   let carNm_parent = document.getElementById("car_name");
-  carNm_parent.innerText = DetailsOfBookingCar.carname;
+  carNm_parent.innerText = carDetails.name;
 
   let carseat_parent = document.getElementById("seating_cap");
-  carseat_parent.innerText = `( ${DetailsOfBookingCar.carseater} )`;
+  carseat_parent.innerText = `( ${carDetails.seater} )`;
 
   let time_parent = document.getElementById("pi_ti");
   let date_parent = document.getElementById("pi_dt");
@@ -506,10 +509,10 @@ function FillSummaryDetailsFromLocalStorage() {
   date_parent2.innerText = `${DetailsOfBookingCar.bookingEndDate} ${DetailsOfBookingCar.bookingEndMonth}`;
 
   let freekms = document.getElementById("freekmsvalue");
-  freekms.innerHTML = DetailsOfBookingCar.freekms;
+  freekms.innerHTML = carDetails.freeDistance;
 
   let excesskms = document.getElementById("excesskmsvalue");
-  let tempstore = DetailsOfBookingCar.excessKmsDetails.split("");
+  let tempstore = carDetails.excessKM.split("");
   // console.log("tempstore:", tempstore);
   let cropped = tempstore.splice(0, 7);
   // console.log("cropped:", cropped);

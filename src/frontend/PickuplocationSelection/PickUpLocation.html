@@ -43,7 +43,7 @@
                         <div id="fill_back"></div>
                         <div id="selectedCity">Mumbai</div> <span></span>
                     </div>
-                </div> <input type="text" placeholder="Tell us your Starting point in Mumbai" id="searches">
+                </div> <input type="text" id="searches">
                 <div class="live_location">
                     <div class="locate"><img
                             src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
@@ -92,7 +92,8 @@
         <div class="searchHelper">
             <div class="component-popular-locations">
                 <div class="heading">Popular Pick-up points</div>
-                <div onclick="setBox1()" id="item1" class="items">
+                <div id="popularpoints"></div>
+                <!--<div onclick="setBox1()" id="item1" class="items">
                     Kandivali West
                 </div>
                 <div onclick="setBox2()" id="item2" class="items">
@@ -100,7 +101,7 @@
                 </div>
                 <div onclick="setBox3()" id="item3" class="items">
                     Kharghar
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -108,14 +109,15 @@
         <div class="component-airport">
             <div class="airport-terminals-container">
                 <div class="terminals">
-                    <div class="heading">Need Zoomcar at <span class="heading-airport-name">Mumbai airport</span>
+                    <div class="heading">Need Zoomcar at <span class="heading-airport-name" id="airport_text"></span>
                     </div>
-                    <div onclick="setBox4()" id="terminal1" class="terminal">
+                    <!-- <div onclick="setBox4()" id="terminal1" class="terminal">
                         International Terminal (T2)
                     </div>
                     <div onclick="setBox5()" id="terminal2" class="terminal">
                         Domestic Terminal (T1A/T1B)
-                    </div>
+                    </div> -->
+                    <div id="terminal_names"></div>
                 </div>
                 <div class="faq">How Zoom Airport works?</div>
             </div>
@@ -127,7 +129,7 @@
                 <div class="name">STARTING POINT</div>
                 <div class="breadcrumb-location">
                     <div class="breadcrumb-location-container">
-                        <div id="addressDisplay" class="label">Choose Address</div>
+                        <div class="label"><i id="addressDisplay">Select Pick-up Location</i></div>
                     </div>
                 </div>
             </div>
@@ -136,7 +138,7 @@
         </div>
         <div class="actions">
             <!----> <a id="proceeding" href="../StartTimeSelection/PickUpTimeSelection.html"><button
-                    class="proceed">Next</button></a>
+                    class="proceed" id="nextbtn">Next</button></a>
         </div>
     </div>
 </body>

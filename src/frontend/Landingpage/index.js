@@ -98,7 +98,7 @@ function signinacc(e) {
 
   let usermob_check = JSON.parse(localStorage.getItem("logs"));
 
-  // console.log("usermob_check:", usermob_check);
+  console.log("usermob_check:", usermob_check);
 
   var havedata = false;
   if (usermob_check != null) {
@@ -131,63 +131,46 @@ function signinacc(e) {
       </div>`;
 }
 
-function saveData(e) {
+const saveData = async (e) => {
+  e.preventDefault();
   let form = document.getElementById("signup_form");
-
-  let mob_num = form.mob_num.value;
-
-  let name = form.name.value;
-
-  let email = form.email.value;
-
-  let password = form.password.value;
-
+  let mob_num = form.mob_num.value.toString();
+  let name = form.name.value.toString();
+  let email = form.email.value.toString();
+  let password = form.password.value.toString();
   if (mob_num == "" || name == "" || email == "" || password == "") {
     alert("PLEASE FILL ALL MANDATORY DETAILS");
     e.prevent();
   }
 
   let userData = {
-    mob_num: mob_num,
+    mobile: mob_num,
     name: name,
     email: email,
-    password: password,
+    pass: password,
   };
+  console.log(userData);
 
-  let s_arr = localStorage.getItem("logs", userData);
-
-  if (s_arr == null) {
-    s_arr = [];
-  } else {
-    s_arr = JSON.parse(s_arr);
-  }
-  s_arr.push(userData);
-
-  localStorage.setItem("logs", JSON.stringify(s_arr));
-
-  alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
+  await axios.post("http://localhost:4321/users", userData);
   window.location.href = "./Homepage-main.html";
-}
+};
 
-//LOGIN AFTERCLICK IN POPUP
-
-function loginacc(e) {
+const loginacc = async (e) => {
   let login_par_box2 = document.querySelector(".log_right2");
-
-  let mob_no = document.querySelector(".log_input_email_mob2").value;
+  let mob_no = document.querySelector(".log_input_email_mob2").value.toString();
   if (mob_no == "") {
-    alert("Please write your Mob No");
+    alert("Please Enter the Registered Mobile Number");
     e.prevent();
   }
-
-  var userData = JSON.parse(localStorage.getItem("logs"));
+  let data = await axios.get("http://localhost:4321/users");
+  let userData = data.data;
 
   if (userData == null) {
-    alert("Please First SignUp to Zoom Car Website");
+    alert("Please First get yourself Registered to the website");
   } else {
-    var havedata = false;
+    let havedata = false;
     for (let i = 0; i < userData.length; i++) {
-      if (userData[i].mob_num == mob_no) {
+      if (userData[i].mobile == mob_no) {
         havedata = true;
       }
     }
@@ -206,48 +189,38 @@ function loginacc(e) {
         <button class="deta_add_btn" onclick="checkData(event)">Submit</button>
       </div>`;
     } else {
-      alert("Please First SignUp to Zoom Car Website");
+      alert("Please First get yourself Registered to the website");
     }
   }
-}
+};
 
-function checkData(e) {
+const checkData = async (e) => {
   let form = document.getElementById("login_form");
-
-  let mob_num2 = form.mob_num2.value;
-
-  let password2 = form.password2.value;
-
+  let mob_num2 = form.mob_num2.value.toString();
+  let password2 = form.password2.value.toString();
   if (mob_num2 == "" || password2 == "") {
-    alert("PLEASE FILL ALL MANDATORY DETAILS");
+    alert("Please fill in the madatory fields");
     e.prevent();
   }
 
-  let userData = {
-    mob_num2: mob_num2,
-    password2: password2,
-  };
-
-  var userData2 = JSON.parse(localStorage.getItem("logs"));
-
-  var havedata2 = false;
-  for (let i = 0; i < userData2.length; i++) {
-    if (
-      userData2[i].mob_num == mob_num2 &&
-      userData2[i].password == password2
-    ) {
-      havedata2 = true;
+  let data = await axios.get("http://localhost:4321/users");
+  let userData = data.data;
+  let havedata = false;
+  for (let i = 0; i < userData.length; i++) {
+    if (userData[i].mobile == mob_num2 && userData[i].pass == password2) {
+      havedata = true;
     }
   }
-  if (havedata2) {
-    //   alert("You are sucessfully Login to Zoom Car");
-    changeNav();
-    localStorage.setItem("logindone", JSON.stringify("yes"));
+  if (havedata) {
+    alert("You have successfully logged in");
+    window.location.href = "./Homepage-main.html";
+    // changeNav();
+    // localStorage.setItem("logindone", JSON.stringify("yes"));
   } else {
-    alert("Please check your Mobile number or Password");
-    localStorage.setItem("logindone", JSON.stringify("no"));
+    alert("Please check your Mobile number or Password that you have entered");
+    // localStorage.setItem("logindone", JSON.stringify("no"));
   }
-}
+};
 var user_name;
 function changeNav() {
   let pop_up22 = document.querySelector("#pop2");

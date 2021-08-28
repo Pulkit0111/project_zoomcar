@@ -798,6 +798,8 @@ body {
 }
 .ch_head {
   display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
 }
 #viewoff {
   padding: 15px 20px;
@@ -828,10 +830,18 @@ body {
 #total_div {
   display: flex;
 }
+
 #total_div {
   margin-left: 17%;
   color:rgb(88, 180, 85);
   font-weight: 600;
+}
+#total_div,
+#total {
+  /* margin-left: -5%; */
+  display: flex;
+  justify-content: space-between;
+
 }
 #ref_lef {
   width: 540px;
@@ -1102,7 +1112,7 @@ body {
 #discountAmount {
   justify-content: right;
   text-align: right;
-  margin-left: 2%;
+  margin-left: 6%;
 }
 
 /* Creating Count Procedure */
@@ -1174,4 +1184,13 @@ div {
 input,
 button {
   outline: none;
+}
+#total_div {
+  padding-right: 2%;
+}
+#promocode {
+  text-align: center;
+}
+.hiding {
+  visibility: hidden;
 }

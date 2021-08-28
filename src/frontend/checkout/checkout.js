@@ -439,16 +439,20 @@ function gotopaypg() {
   window.location.href = "../payment/payment.html";
 }
 
-function FillSummaryDetailsFromLocalStorage() {
+async function FillSummaryDetailsFromDB() {
   let carImg_parent = document.getElementById("right_car");
-  carImg_parent.src = DetailsOfBookingCar.carImage;
+  let tempcarDetails = await fetch("http://localhost:4321/checkout/");
+  let carDetailsnew = await tempcarDetails.json();
+  let carDetails = carDetailsnew[0];
+  // console.log("carDetails:", carDetails);
+  carImg_parent.src = carDetails.image;
   // console.log("carImage:", DetailsOfBookingCar.carImage);
 
   let carNm_parent = document.getElementById("car_name");
-  carNm_parent.innerText = DetailsOfBookingCar.carname;
+  carNm_parent.innerText = carDetails.name;
 
   let carseat_parent = document.getElementById("seating_cap");
-  carseat_parent.innerText = `( ${DetailsOfBookingCar.carseater} )`;
+  carseat_parent.innerText = `( ${carDetails.seater} )`;
 
   let time_parent = document.getElementById("pi_ti");
   let date_parent = document.getElementById("pi_dt");
@@ -461,10 +465,10 @@ function FillSummaryDetailsFromLocalStorage() {
   date_parent2.innerText = `${DetailsOfBookingCar.bookingEndDate} ${DetailsOfBookingCar.bookingEndMonth}`;
 
   let freekms = document.getElementById("freekmsvalue");
-  freekms.innerHTML = DetailsOfBookingCar.freekms;
+  freekms.innerHTML = carDetails.freeDistance;
 
   let excesskms = document.getElementById("excesskmsvalue");
-  let tempstore = DetailsOfBookingCar.excessKmsDetails.split("");
+  let tempstore = carDetails.excessKM.split("");
   // console.log("tempstore:", tempstore);
   let cropped = tempstore.splice(0, 7);
   // console.log("cropped:", cropped);
@@ -472,7 +476,7 @@ function FillSummaryDetailsFromLocalStorage() {
   excesskms.innerHTML = tempstore.join("");
 
   let book_parent = document.getElementById("bkn_amount");
-  book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+  book_parent.innerHTML = carDetails.bookingFee;
 
   let ref_amt = document.getElementById("ref_amount");
   ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
@@ -502,21 +506,26 @@ function ThousandsSeparatorForAmount(num) {
   return num_parts.join(".");
 }
 
-function ValidatePromoCode(e) {
+async function ValidatePromoCode(e) {
+  let tempcarDetails = await fetch("http://localhost:4321/checkout/");
+  let carDetailsnew = await tempcarDetails.json();
+  let carDetails = carDetailsnew[0];
   if (e.code == "Enter") {
     let promoCodeEntered = document.getElementById("promocode");
     let discountp = document.getElementById("discountAmount");
-    let tempbookvalue1 = DetailsOfBookingCar.bookingFee.split("");
+    let tempbookvalue1 = carDetails.bookingFee.split("");
     // console.log("tempbookvalue:", tempbookvalue);
     let comma1index1 = tempbookvalue1.indexOf(",");
     // console.log("comma1index:", comma1index);
     let comma1_1 = tempbookvalue1.splice(comma1index1, 1);
     // console.log("comma1:", comma1);
     if (promoCodeEntered.value == "MASAI25") {
-      let discount_Price = (Number(tempbookvalue1.join("")) * 25) / 100;
+      let discount_Price = Math.ceil(
+        (Number(tempbookvalue1.join("")) * 25) / 100
+      );
       discountp.innerHTML = `Discount Applicable: ₹ ${discount_Price}`;
       let book_parent = document.getElementById("bkn_amount");
-      book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+      book_parent.innerHTML = carDetails.bookingFee;
 
       let ref_amt = document.getElementById("ref_amount");
       ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
@@ -542,10 +551,12 @@ function ValidatePromoCode(e) {
       promoCodeEntered.value = "";
       localStorage.setItem("CheckoutPaymentTotal", tt_amt.innerHTML);
     } else if (promoCodeEntered.value == "FTWEB10") {
-      let discount_Price = (Number(tempbookvalue1.join("")) * 60) / 100;
+      let discount_Price = Math.ceil(
+        (Number(tempbookvalue1.join("")) * 60) / 100
+      );
       discountp.innerHTML = `Discount Applicable: ₹ ${discount_Price}`;
       let book_parent = document.getElementById("bkn_amount");
-      book_parent.innerHTML = DetailsOfBookingCar.bookingFee;
+      book_parent.innerHTML = carDetails.bookingFee;
 
       let ref_amt = document.getElementById("ref_amount");
       ref_amt.innerHTML = `${ThousandsSeparatorForAmount(1499)}`;
@@ -577,4 +588,4 @@ function ValidatePromoCode(e) {
   }
 }
 
-FillSummaryDetailsFromLocalStorage();
+FillSummaryDetailsFromDB();
