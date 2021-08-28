@@ -868,12 +868,13 @@ margin-right: 50px;
 }
 
 #paymentApp {
-  width: 65%;
+  width: 45%;
   display: inline-block;
+  margin-left: 10%;
 }
 
 .payableAmount {
-  width: 880px;
+  width: 580px;
   background-color: #f2f8ed;
   border: 1px solid #ccc;
   padding: 5px 15px;
@@ -901,7 +902,7 @@ margin-right: 50px;
   padding-right: 5px;
 }
 .paymentMethods {
-  width: 100%;
+  width: 97%;
   border: 1px solid #ccc;
   background-color: #fff;
 }
@@ -945,6 +946,13 @@ margin-right: 50px;
   border-left: 3px solid #ccc;
   cursor: pointer;
 }
+.paymentMethods .content .tabs .tab2 {
+  font-size: 15px;
+  padding: 15px 0 15px 12px;
+  border-bottom: 1px solid #ccc;
+  border-left: 3px solid #ccc;
+  cursor: pointer;
+}
 
 .paymentMethods .content .tabs {
   width: 30%;
@@ -960,8 +968,8 @@ margin-right: 50px;
 }
 
 .cardPayment .card {
-  width: 300px;
-  height: 165px;
+  width: 280px;
+  height: 135px;
   border-radius: 5px;
   background-image: linear-gradient(
     45deg,
@@ -976,7 +984,7 @@ margin-right: 50px;
   background-size: 4px 4px;
   margin: 20px auto;
   text-align: left;
-  padding: 20px;
+  padding: 18px;
   /* position: relative; */
 }
 .cardPayment .card .cardNumber {
@@ -1030,20 +1038,23 @@ background-color: inherit;
   background-color: #ccc;
   /* margin-left: 30px; */
   height: 50px;
-  width: 100%;
+  width: 92%;
   color: #fff;
   cursor: pointer;
+  margin-left: 4%;
+  border: none;
 }
 #pay_div_btn {
   display: flex;
-  margin-left: 280px;
+  /* margin-left: 280px; */
+  justify-content: center;
 }
 #sumry {
   width: 300px;
   height: 850px;
-  border: 1px solid black;
   text-align: center;
-  margin-left: 70px;
+  /* margin-left: 10px; */
+  border: 1px solid #ccc;
 }
 
 #top_w_img {

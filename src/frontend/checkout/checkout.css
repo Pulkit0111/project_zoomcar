@@ -770,11 +770,15 @@ body {
 #b_check_div .checkout_btn {
   width: 100%;
   height: 100%;
-  background-color: rgb(99, 161, 62);
+  background-color: #70AD4D;
   color: white;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
+}
+#b_check_div .checkout_btn:hover{
+   background-color: #5FAB14;
 }
 #book_fee,
 #ref_amt,
@@ -801,7 +805,7 @@ body {
   background-color: rgb(228, 241, 220);
 }
 #viewoff a {
-  color: green;
+  color: #4A90E2;
 }
 .vw_hr_btm {
   margin-top: 0%;
@@ -813,6 +817,8 @@ body {
   width: 540px;
   padding-left: 20px;
   box-sizing: border-box;
+  color: #323A44;
+  font-weight: 500;
 }
 #bookfee_amt {
   color: blue;
@@ -823,7 +829,9 @@ body {
   display: flex;
 }
 #total_div {
-  margin-left: -5%;
+  margin-left: 17%;
+  color:rgb(88, 180, 85);
+  font-weight: 600;
 }
 #ref_lef {
   width: 540px;
@@ -831,6 +839,8 @@ body {
 #ref_lef h3 {
   margin: 5px 15px;
   padding: 0;
+  color: #323A44;
+  font-weight: 500;
 }
 #total {
   padding-left: 15px;
@@ -842,6 +852,8 @@ body {
 #total_pay_tit p {
   width: 420px;
   font-size: 18px;
+  color: #323A44;
+  font-weight:600;
 }
 
 #sumry {
@@ -849,7 +861,7 @@ body {
   height: 850px;
   border: 1px solid lightgrey;
   text-align: center;
-  margin-left: 70px;
+  margin-left: 24px;
   background-color: white;
 }
 #top_w_img {
