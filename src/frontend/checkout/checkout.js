@@ -1,6 +1,6 @@
-var DetailsOfBookingCar = JSON.parse(
-  localStorage.getItem("SelectedCarDetails")
-);
+// var DetailsOfBookingCar = JSON.parse(
+//   localStorage.getItem("SelectedCarDetails")
+// );
 // console.log("DetailsOfBookingCar:", DetailsOfBookingCar);
 //LogIn POP
 var logIn = document.getElementById("login_btn");
@@ -444,6 +444,11 @@ async function FillSummaryDetailsFromDB() {
   let tempcarDetails = await fetch("http://localhost:4321/checkout/");
   let carDetailsnew = await tempcarDetails.json();
   let carDetails = carDetailsnew[0];
+
+  let bookingDetailsold = await fetch("http://localhost:4321/details/");
+  let bookingDetails = await bookingDetailsold.json();
+  bookingDetails = bookingDetails[0];
+
   // console.log("carDetails:", carDetails);
   carImg_parent.src = carDetails.image;
   // console.log("carImage:", DetailsOfBookingCar.carImage);
@@ -456,13 +461,13 @@ async function FillSummaryDetailsFromDB() {
 
   let time_parent = document.getElementById("pi_ti");
   let date_parent = document.getElementById("pi_dt");
-  time_parent.innerText = DetailsOfBookingCar.bookingStartTime;
-  date_parent.innerText = `${DetailsOfBookingCar.bookingStartDate} ${DetailsOfBookingCar.bookingStartMonth}`;
+  time_parent.innerText = bookingDetails.starttime;
+  date_parent.innerText = `${bookingDetails.startdate} ${bookingDetails.startmonth}`;
 
   let time_parent2 = document.getElementById("dr_ti");
   let date_parent2 = document.getElementById("dr_dt");
-  time_parent2.innerText = DetailsOfBookingCar.bookingEndTime;
-  date_parent2.innerText = `${DetailsOfBookingCar.bookingEndDate} ${DetailsOfBookingCar.bookingEndMonth}`;
+  time_parent2.innerText = bookingDetails.endtime;
+  date_parent2.innerText = `${bookingDetails.enddate} ${bookingDetails.endmonth}`;
 
   let freekms = document.getElementById("freekmsvalue");
   freekms.innerHTML = carDetails.freeDistance;

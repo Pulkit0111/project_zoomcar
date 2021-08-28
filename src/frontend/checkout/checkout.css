@@ -1190,6 +1190,7 @@ button {
 }
 #promocode {
   text-align: center;
+  height: 30px;
 }
 .hiding {
   visibility: hidden;
