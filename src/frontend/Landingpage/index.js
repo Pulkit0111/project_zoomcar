@@ -212,17 +212,15 @@ const checkData = async (e) => {
     }
   }
   if (havedata) {
-    alert("You have successfully logged in");
-    window.location.href = "./Homepage-main.html";
-    // changeNav();
-    // localStorage.setItem("logindone", JSON.stringify("yes"));
+    localStorage.setItem("logindone", JSON.stringify("yes"));
+    changeNav();
   } else {
     alert("Please check your Mobile number or Password that you have entered");
-    // localStorage.setItem("logindone", JSON.stringify("no"));
+    localStorage.setItem("logindone", JSON.stringify("no"));
   }
 };
 var user_name;
-function changeNav() {
+const changeNav = async () => {
   let pop_up22 = document.querySelector("#pop2");
   pop_up22.style.display = "none";
   let sign_btn = document.getElementById("signup_btn");
@@ -231,17 +229,17 @@ function changeNav() {
   login_btn.style.display = "none";
 
   let form = document.getElementById("login_form");
-
-  let mob_num2 = form.mob_num2.value;
-
-  let password2 = form.password2.value;
-  let userData_name = JSON.parse(localStorage.getItem("logs"));
+  let mob_num2 = form.mob_num2.value.toString();
+  let password2 = form.password2.value.toString();
+  let data = await axios.get("http://localhost:4321/users");
+  let userData_name = data.data;
+  // let userData_name = JSON.parse(localStorage.getItem("logs"));
 
   let havData = false;
   for (let i = 0; i < userData_name.length; i++) {
     if (
-      userData_name[i].mob_num == mob_num2 &&
-      userData_name[i].password == password2
+      userData_name[i].mobile == mob_num2 &&
+      userData_name[i].pass == password2
     ) {
       havData = true;
       user_name = userData_name[i].name;
@@ -292,7 +290,7 @@ function changeNav() {
   </div>`;
 
   parent_ul.append(li_name);
-}
+};
 
 function show_dr_box() {
   var dropdown_5 = document.getElementById("dropdown_5");
