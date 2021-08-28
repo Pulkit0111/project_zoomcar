@@ -202,7 +202,6 @@ const checkData = async (e) => {
     alert("Please fill in the madatory fields");
     e.prevent();
   }
-
   let data = await axios.get("http://localhost:4321/users");
   let userData = data.data;
   let havedata = false;
@@ -233,7 +232,6 @@ const changeNav = async () => {
   let password2 = form.password2.value.toString();
   let data = await axios.get("http://localhost:4321/users");
   let userData_name = data.data;
-  // let userData_name = JSON.parse(localStorage.getItem("logs"));
 
   let havData = false;
   for (let i = 0; i < userData_name.length; i++) {
@@ -243,6 +241,7 @@ const changeNav = async () => {
     ) {
       havData = true;
       user_name = userData_name[i].name;
+      localStorage.setItem("loggedinwith", JSON.stringify(user_name));
     } else {
       havData = false;
     }
@@ -300,7 +299,6 @@ function show_dr_box() {
     dropdown_5.style.display = "block";
   }
 }
-localStorage.setItem("logindone", JSON.stringify("no"));
 
 function add() {
   window.location.href = "./UserProfile/userProfile.html";
@@ -372,9 +370,7 @@ setInterval(function () {
 }, 3000);
 
 function checkCity() {
-  // console.log("TEST");
   var city = document.getElementById("city").value;
-  // localStorage.setItem("city", JSON.stringify(city));
   window.location.href = "./CityPopupPage/CityPopup.html";
 }
 
@@ -479,11 +475,8 @@ function initial(id) {
   drag.style.color = "rgb(255, 255, 255)";
 }
 
-// mouse.addEventListener('mouseover', changeColor);
-// mouse.addEventListener('mouseout', initial);
-
 //click signup
-function showlogin() {
+const showlogin = () => {
   var logarr = JSON.parse(localStorage.getItem("logs"));
   var log = document.getElementById("login_text");
   if (logarr.name == undefined) {
@@ -491,5 +484,5 @@ function showlogin() {
   } else {
     log.innerHTML = logarr.name;
   }
-}
+};
 showlogin();
