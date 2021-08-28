@@ -475,6 +475,15 @@ function initial(id) {
   drag.style.color = "rgb(255, 255, 255)";
 }
 
+const book = () => {
+  let check = JSON.parse(localStorage.getItem("logindone"));
+  if (check == null || check == "no") {
+    alert("To make a booking, please login to the website first");
+  } else {
+    window.location.href = "./PickuplocationSelection/PickUpLocation.html";
+  }
+  localStorage.setItem("logindone", JSON.stringify("no"));
+};
 //click signup
 const showlogin = () => {
   var logarr = JSON.parse(localStorage.getItem("logs"));
