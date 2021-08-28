@@ -598,8 +598,8 @@ body {
   box-sizing: border-box;
   text-align: center;
   border-radius: 4px;
-  border: 2px solid gray;
-  box-shadow: 0px 2px 2px 2px grey;
+  border: 2px solid rgb(221, 217, 217);
+  box-shadow: 0px 2px 2px 2px rgb(250, 248, 248);
   color: gray;
   margin-left: 50px;
 }
@@ -629,14 +629,18 @@ body {
   margin-left: 5px;
   border-bottom: 1px solid rgb(255, 253, 253);
   box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
+  margin-top: 15px;
+  font-weight: 600;
+  color: grey;
 }
 .log_r_top_cont_face {
   background-color: #39579A;
   margin: 20px auto 20px;
   width: 300px;
-  height: 20px;
+  height: 22px;
   padding: 12px 0;
   color: white;
+  border-radius: 4px;
 }
 .log_r_top_cont a {
   text-decoration: none;
@@ -647,8 +651,9 @@ body {
   margin: 20px auto 20px;
   width: 300px;
   color: white;
-  height: 20px;
+  height: 22px;
   padding: 12px 0;
+  border-radius: 4px;
 }
 .log_r_top_cont a {
   text-decoration: none;
@@ -656,6 +661,7 @@ body {
 }
 .log_r_bot {
   height: 190px;
+  border: none;
 }
 .btn_log_sub {
   background: url(./img/log_sub_btn.png) no-repeat top left / cover;
@@ -669,7 +675,8 @@ body {
   width: 300px;
   height: 35px;
   border-radius: 5px;
-  border: 2px solid grey;
+  border: 1px solid grey;
+  padding-left: 4%;
 }
 .close1 {
   position: absolute;
@@ -783,8 +790,8 @@ body {
   box-sizing: border-box;
   text-align: center;
   border-radius: 4px;
-  border: 2px solid gray;
-  box-shadow: 0px 2px 2px 2px grey;
+  border: 1px solid rgb(211, 205, 205);
+  box-shadow: 0px 2px 2px 2px rgb(247, 231, 231);
   color: gray;
   margin-left: 50px;
 }
@@ -814,14 +821,18 @@ body {
   margin-left: 5px;
   border-bottom: 1px solid rgb(255, 253, 253);
   box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
+  margin-top: 15px;
+  color: grey;
+  font-weight: 600;
 }
 .log_r_top_cont_face2 {
   background-color: #39579A;
   margin: 20px auto 20px;
   width: 300px;
-  height: 20px;
+  height: 22px;
   padding: 12px 0;
   color: white;
+  border-radius: 4px;
 }
 .log_r_top_cont2 a {
   text-decoration: none;
@@ -832,8 +843,9 @@ body {
   margin: 20px auto 20px;
   width: 300px;
   color: white;
-  height: 20px;
+  height: 22px;
   padding: 12px 0;
+  border-radius: 4px;
 }
 .log_r_top_cont2 a {
   text-decoration: none;
@@ -854,7 +866,8 @@ body {
   width: 300px;
   height: 35px;
   border-radius: 5px;
-  border: 2px solid grey;
+  border: 1px solid grey;
+  padding-left: 4%;
 }
 .close12 {
   position: absolute;
@@ -1024,10 +1037,10 @@ body {
 }
 
 .carList {
-  width: 75%;
+  width: 70%;
 }
 .row {
-  /* display: flex;
+ /*  display: flex;
       -ms-flex-pack: distribute;
       justify-content: space-around; */
 
@@ -1035,14 +1048,15 @@ body {
 
   padding-top: 70px;
 
-  top: 120px;
+  /* top: 120px;
   left: 220px;
-  right: 220px;
+  right: 220px; */
   margin-left: 110px;
 
   color: #fff;
 
   display: none;
+  width: 100%;
 }
 
 .row .carimg {
@@ -1073,14 +1087,14 @@ body {
   text-align: center;
   font-weight: bold;
   color: whitesmoke;
-  margin-left: 170px;
+  margin-left: 260px;
   margin-top: 60px;
 }
 
 .arrowmiddle {
   top: 0;
-  height: 130px;
-  width: 130px;
+  height: 135px;
+  width: 135px;
   border: 0;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -1090,13 +1104,13 @@ body {
 }
 
 .leftmiddle {
-  /* margin-top: 25px; */
-  transform: rotate(130deg);
+  margin-top: 0px;
+  transform: rotate(135deg);
   margin-left: 100px;
 }
 
 .rightmiddle {
-  margin-top: -128px;
+  margin-top: -125px;
   transform: rotate(-45deg);
   margin-left: 1125px;
 }
@@ -1271,7 +1285,7 @@ body {
 
 .leftend {
   margin-top: 65px;
-  transform: rotate(130deg);
+  transform: rotate(135deg);
   margin-left: 80px;
 }
 

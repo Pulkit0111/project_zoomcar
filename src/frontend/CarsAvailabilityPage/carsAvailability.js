@@ -2,15 +2,15 @@ document.title = `Book A Car In ${localStorage.getItem(
   "SelectedCity"
 )} | Rent Cars @ Most Affordable Rates - Zoomcar`;
 // Details coming from local storage - stored from selector page's details
-var pickupdetails = {
-  address: localStorage.getItem("address"),
-  startDate: localStorage.getItem("startDate"),
-  startMonth: localStorage.getItem("startMonth"),
-  startTime: localStorage.getItem("startTime"),
-  endDate: localStorage.getItem("endDate"),
-  endMonth: localStorage.getItem("endMonth"),
-  endTime: localStorage.getItem("endTime"),
-};
+// var pickupdetails = {
+//   address: localStorage.getItem("address"),
+//   startDate: localStorage.getItem("startDate"),
+//   startMonth: localStorage.getItem("startMonth"),
+//   startTime: localStorage.getItem("startTime"),
+//   endDate: localStorage.getItem("endDate"),
+//   endMonth: localStorage.getItem("endMonth"),
+//   endTime: localStorage.getItem("endTime"),
+// };
 
 var CarCategoryFilterList = [];
 var CarTransmissionFilterList = [];
@@ -20,12 +20,16 @@ localStorage.setItem("FuelRatio", 1);
 localStorage.setItem("SortLtoH", 0);
 localStorage.setItem("SortHtoL", 0);
 localStorage.setItem("SortDistance", 0);
+localStorage.setItem("doordelivery", 0);
 var freekmsDB = 100;
 
 // Function to fill the pick up location details from local storage
-function FillPickupLocationDetails() {
+async function FillPickupLocationDetails() {
   var pickuppointaddress = document.getElementById("pickuppointaddress");
-  pickuppointaddress.innerHTML = pickupdetails.address;
+  let bookingDetailsold = await fetch("http://localhost:4321/details/");
+  let bookingDetails = await bookingDetailsold.json();
+  bookingDetails = bookingDetails[0];
+  pickuppointaddress.innerHTML = bookingDetails.location;
 
   pickuppointaddress.addEventListener("mouseover", function () {
     pickuppointaddress.style.cursor = "pointer";
@@ -38,28 +42,32 @@ function FillPickupLocationDetails() {
 }
 
 // Function to fill the pick up and drop off date and time from local storage
-function FillPickupDropOffDateTimeDetails() {
+async function FillPickupDropOffDateTimeDetails() {
   // Function to fill the pick up and drop off date from local storage
+  let bookingDetailsold = await fetch("http://localhost:4321/details/");
+  let bookingDetails = await bookingDetailsold.json();
+  bookingDetails = bookingDetails[0];
+
   var startdatedisplay = document.getElementById("startdatedisplay");
-  startdatedisplay.innerHTML = pickupdetails.startDate;
+  startdatedisplay.innerHTML = bookingDetails.startdate;
   var enddatedisplay = document.getElementById("enddatedisplay");
-  enddatedisplay.innerHTML = pickupdetails.endDate;
+  enddatedisplay.innerHTML = bookingDetails.enddate;
 
   // Function to fill the pick up and drop off month from local storage
   var startmonthdisplay = document.getElementById("startmonthdisplay");
-  startmonthdisplay.innerHTML = pickupdetails.startMonth;
+  startmonthdisplay.innerHTML = bookingDetails.startmonth;
   var endmonthdisplay = document.getElementById("endmonthdisplay");
-  endmonthdisplay.innerHTML = pickupdetails.endMonth;
+  endmonthdisplay.innerHTML = bookingDetails.endmonth;
 
   // Function to fill the pick up and drop off time from local storage
   var starttimedisplay = document.getElementById("starttimedisplay");
-  if (pickupdetails.startTime > "12:00") {
-    var time1 = pickupdetails.startTime.split("");
+  if (bookingDetails.starttime > "12:00") {
+    var time1 = bookingDetails.starttime.split("");
     var res = time1[0] + time1[1];
     if (Number(res) < 12) {
-      res = pickupdetails.startTime + " am";
+      res = bookingDetails.starttime + " am";
     } else if (Number(res) == "12") {
-      res = pickupdetails.startTime + " pm";
+      res = bookingDetails.starttime + " pm";
     } else {
       res = Number(res) - 12;
       // console.log(res.l);
@@ -72,17 +80,17 @@ function FillPickupDropOffDateTimeDetails() {
       // console.log(res);
     }
   } else {
-    var res = pickupdetails.startTime + " am";
+    var res = bookingDetails.starttime + " am";
   }
   starttimedisplay.innerHTML = res;
   var endtimedisplay = document.getElementById("endtimedisplay");
-  if (pickupdetails.endTime > "12:00") {
-    var time2 = pickupdetails.endTime.split("");
+  if (bookingDetails.endtime > "12:00") {
+    var time2 = bookingDetails.endtime.split("");
     var res1 = time2[0] + time2[1];
     if (Number(res1) < 12) {
-      res1 = pickupdetails.startTime + " am";
+      res1 = bookingDetails.starttime + " am";
     } else if (Number(res1) == "12") {
-      res1 = pickupdetails.startTime + " pm";
+      res1 = bookingDetails.starttime + " pm";
     } else {
       res1 = Number(res1) - 12;
       // console.log(res1.l);
@@ -95,7 +103,7 @@ function FillPickupDropOffDateTimeDetails() {
       // console.log(res1);
     }
   } else {
-    var res1 = pickupdetails.endTime + " am";
+    var res1 = bookingDetails.endtime + " am";
   }
   endtimedisplay.innerHTML = res1;
 
@@ -513,6 +521,13 @@ let GetCars = async () => {
 // Function which helps us display the available cars for the user
 let DisplayCars = async () => {
   let cararray = await GetCars();
+
+  let bookingDetailsold = await fetch("http://localhost:4321/details/");
+  let bookingDetails = await bookingDetailsold.json();
+  bookingDetails = bookingDetails[0];
+
+  // showData(bookingDetails, cararray);
+
   // console.log("cararray:", cararray);
   // function showCars(cararray) {
   var carlistdiv = document.getElementById("carlistdiv");
@@ -656,18 +671,17 @@ let DisplayCars = async () => {
 
       let formattedStartDate = new Date(
         new Date().getFullYear(),
-        monthArray.indexOf(pickupdetails.startMonth),
-        pickupdetails.startDate,
-        pickupdetails.startTime[0] + pickupdetails.startTime[1],
-        pickupdetails.startTime[3] + pickupdetails.startTime[4],
-        0
+        monthArray.indexOf(bookingDetails.startmonth),
+        bookingDetails.startdate,
+        bookingDetails.starttime[0] + bookingDetails.starttime[1],
+        bookingDetails.starttime[3] + bookingDetails.starttime[4]
       );
       let formattedEndDate = new Date(
         new Date().getFullYear(),
-        monthArray.indexOf(pickupdetails.endMonth),
-        pickupdetails.endDate,
-        pickupdetails.endTime[0] + pickupdetails.endTime[1],
-        pickupdetails.endTime[3] + pickupdetails.endTime[4]
+        monthArray.indexOf(bookingDetails.endmonth),
+        bookingDetails.enddate,
+        bookingDetails.endtime[0] + bookingDetails.endtime[1],
+        bookingDetails.endtime[3] + bookingDetails.endtime[4]
       );
       let totalHours = FindHoursDifferencebetweenPickupAndDrop(
         formattedStartDate,
@@ -681,6 +695,7 @@ let DisplayCars = async () => {
       let costSpan = document.createElement("span");
       let carFuel = localStorage.getItem("FuelRatio");
       let carFree = localStorage.getItem("FreeDistance");
+      let deliveryfee = Number(localStorage.getItem("doordelivery"));
       costSpan.innerHTML = FindCostOfVehicleBasedOnCategoryAndTime(
         car.category,
         totalHours,
@@ -688,7 +703,7 @@ let DisplayCars = async () => {
         car.costRatio,
         carFree,
         carFuel,
-        car.doorDelivery
+        deliveryfee
       );
 
       // console.log(costSpan.innerHTML);
@@ -721,7 +736,7 @@ let DisplayCars = async () => {
       carlistdiv.append(div);
 
       booknowbtn.addEventListener("click", async function () {
-        SelectedCarToBook.carImage = car_pic.src;
+        /*SelectedCarToBook.carImage = car_pic.src;
         SelectedCarToBook.carname = namediv.innerHTML;
         // console.log("carname:", namediv.innerHTML);
         SelectedCarToBook.carseater = car_seat_details.innerHTML;
@@ -737,7 +752,7 @@ let DisplayCars = async () => {
         localStorage.setItem(
           "SelectedCarDetails",
           JSON.stringify(SelectedCarToBook)
-        );
+        );*/
         // console.log("freekmsDB:", freekmsDB);
         let body = {
           name: namediv.innerHTML,
@@ -908,15 +923,11 @@ function ThousandsSeparatorForPrice(num) {
 var deliveryToggle = false;
 function AddDoorDeliveryCharges() {
   if (deliveryToggle) {
-    for (car of carslist) {
-      car.doorDeliveryCharges = 0;
-    }
+    localStorage.setItem("doordelivery", 0);
     DisplayCars();
     deliveryToggle = false;
   } else {
-    for (car of carslist) {
-      car.doorDeliveryCharges = 299;
-    }
+    localStorage.setItem("doordelivery", 299);
     DisplayCars();
     deliveryToggle = true;
   }

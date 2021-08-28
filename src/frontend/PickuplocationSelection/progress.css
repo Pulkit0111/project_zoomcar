@@ -5,6 +5,7 @@ body {
   height: auto;
   margin: 20px 60px;
   font-family: "Open Sans", sans-serif;
+  /* width: 100%; */
 }
 
 #progress_head {
@@ -121,27 +122,27 @@ body {
 }
 
 .locationInput.active {
-  border: 0.5px solid #70ad4d;
+  border: 0.5px solid #70ad4d !important;
 }
 .locationInput {
   width: 628px;
   height: 50px;
   border-radius: 2px;
   background-color: #fff;
-  box-shadow: -1.5px 2.5px 7.5px 0 rgb(0 0 0 / 20%);
-  border: 0.5px solid #70ad4d;
+  box-shadow: -1.5px 2.5px 7.5px 0 rgb(0 0 0 / 20%) !important;
+  border: 0.5px solid #70ad4d !important;
   display: flex;
   flex-direction: row;
 }
 .dropdown {
-  border-right: 1px solid #70ad4d;
+  border-right: 1px solid #70ad4d !important;
 }
 .dropdown {
   position: relative;
   width: 175px;
   height: 48px;
   line-height: 48px;
-  border-right: 1px solid #70ad4d;
+  border-right: 1px solid #70ad4d !important;
   cursor: pointer;
 }
 #choosed {
@@ -166,9 +167,9 @@ body {
   position: absolute;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #323a44;
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+  border-top: 6px solid #323a44 !important;
   top: 21px;
   right: 10px;
 }
@@ -453,9 +454,9 @@ body {
   -o-transform: scaleX(-0.3) scaleY(0.707) rotate(-45deg);
   z-index: 1;
   background-color: #414f5e;
-  border-left: 1px solid #bdbdbd;
+  border-left: 1px solid #bdbdbd !important;
   border-radius: 5px 0 50px 6px;
-  border-top: 1px solid #bdbdbd;
+  border-top: 1px solid #bdbdbd !important;
   font-weight: 700;
   font-size: 22px;
 }
@@ -512,11 +513,14 @@ body {
 
 .proceed {
   padding: 10px 60px;
-  background-color: #70ad4d;
+  background-color: rgb(112, 173, 77);
+  cursor: pointer;
   color: #fff;
   border-radius: 3px;
   margin-left: 50px;
   position: relative;
+  border: 0px;
+  font-size: large;
 }
 
 .component-popular-locations .items.picked {
@@ -536,7 +540,7 @@ body {
 #next {
   width: 300px;
   height: 80px;
-  border: 5px dashed red;
+  /* border: 5px dashed red !important; */
   float: right;
 }
 
@@ -550,7 +554,7 @@ ul {
   width: 160px;
   top: 48px;
   left: 0;
-  border: 1px solid #bdbdbd;
+  border: 1px solid #bdbdbd !important;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
@@ -562,7 +566,7 @@ ul {
 li {
   text-indent: 10px;
   cursor: pointer;
-  border-top: 1px solid #bdbdbd;
+  border-top: 1px solid #bdbdbd !important;
 }
 
 li:first-child {
@@ -595,7 +599,7 @@ li:first-child {
 }
 .months .month {
   width: 90px;
-  border: 1px solid rgb(50, 58, 68);
+  border: 1px solid rgb(50, 58, 68) !important;
   margin: 0 25px 5px 0;
   padding: 8px 0;
   text-transform: uppercase;
@@ -653,7 +657,7 @@ li:first-child {
   bottom: 2px;
   left: 0;
   font-size: 10px;
-  color: green;
+  color: #70ad4d;
 }
 .days .day .text {
   font-size: 12px;
@@ -696,4 +700,8 @@ button {
 }
 iframe {
   border: 0;
+}
+#terminal_names {
+  display: flex;
+  flex-direction: row;
 }
