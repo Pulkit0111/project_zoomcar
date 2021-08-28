@@ -531,4 +531,3 @@ let check = JSON.parse(localStorage.getItem("logindone"));
 if (check == "yes") {
   changeNav();
 }
-
