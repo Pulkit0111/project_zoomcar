@@ -52,7 +52,7 @@ body {
   border-radius: 20px;
   text-decoration: none;
   color: aliceblue;
-  margin: 15px 0;
+  margin: 20px 0;
   float: right;
 }
 #home #navbar #nav_ul li a:hover {
@@ -138,7 +138,7 @@ body {
   padding: 10px;
   top: 70%;
   border-radius: 4px;
-  right: 335px;
+  right: 425px;
   text-align: center;
   align-items: center;
 }
@@ -201,7 +201,7 @@ body {
   padding: 10px;
   top: 70%;
   border-radius: 4px;
-  right: 200px;
+  right: 350px;
   text-align: center;
   align-items: center;
 }
@@ -248,7 +248,7 @@ body {
   padding: 10px;
   top: 70%;
   border-radius: 4px;
-  right: 150px;
+  right: 280px;
   text-align: center;
   align-items: center;
 }
@@ -261,7 +261,7 @@ body {
   position: absolute;
   width: 11px;
   height: 11px;
-  left: 360px;
+  left: 380px;
   top: 45px;
   background-color: white;
   transform: rotate(45deg);
@@ -286,7 +286,7 @@ body {
   height: 90px;
   top: 70%;
   border-radius: 4px;
-  right: 110px;
+  right: 200px;
   text-align: center;
   align-items: center;
 }
@@ -634,7 +634,7 @@ body {
   color: grey;
 }
 .log_r_top_cont_face {
-  background-color: #39579A;
+  background-color: #39579a;
   margin: 20px auto 20px;
   width: 300px;
   height: 22px;
@@ -647,7 +647,7 @@ body {
   color: white;
 }
 .log_r_top_cont_gmail {
-  background-color: #DC4E41;
+  background-color: #dc4e41;
   margin: 20px auto 20px;
   width: 300px;
   color: white;
@@ -826,7 +826,7 @@ body {
   font-weight: 600;
 }
 .log_r_top_cont_face2 {
-  background-color: #39579A;
+  background-color: #39579a;
   margin: 20px auto 20px;
   width: 300px;
   height: 22px;
@@ -839,7 +839,7 @@ body {
   color: white;
 }
 .log_r_top_cont_gmail2 {
-  background-color: #DC4E41;
+  background-color: #dc4e41;
   margin: 20px auto 20px;
   width: 300px;
   color: white;
@@ -1040,7 +1040,7 @@ body {
   width: 70%;
 }
 .row {
- /*  display: flex;
+  /*  display: flex;
       -ms-flex-pack: distribute;
       justify-content: space-around; */
 
@@ -1073,8 +1073,8 @@ body {
 
 .row .price {
   font-size: 22px;
-  margin-left: 500px; 
-} 
+  margin-left: 500px;
+}
 
 .row .groups {
   font-size: 16px;
