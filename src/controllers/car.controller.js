@@ -25,7 +25,7 @@ router.post("/", async (request, response) => {
   }
 });
 
-router.patch("/fuel/:value", async (request, response) => {
+/*router.patch("/fuel/:value", async (request, response) => {
   try {
     let value = request.params.value;
     let temp = await Car.updateMany(
@@ -33,6 +33,17 @@ router.patch("/fuel/:value", async (request, response) => {
       { $set: { fuelRatio: value } }
     );
     return response.send(temp);
+  } catch (err) {
+    return response.send(err.message);
+  }
+});*/
+
+router.patch("/:id", async (request, response) => {
+  try {
+    let updated = await Car.findByIdAndUpdate(request.params.id, request.body, {
+      new: true,
+    });
+    return response.send(updated);
   } catch (err) {
     return response.send(err.message);
   }
