@@ -4,9 +4,10 @@ var landingdiv = document.getElementById("landingdiv");
 var modaldiv = document.getElementById("modalouter");
 var searchBox = document.getElementById("inputcity");
 var warning = document.getElementById("info");
+// localStorage.setItem("SelectedCity", "");
 
 // List of popular cities
-var popularcitieslist = [
+/*var popularcitieslist = [
   {
     link: "https://s3-ap-southeast-1.amazonaws.com/zoomcar/photos/original/2c335cd7b3bea26f8ee2e399572e7b1bab86a921.png?1497538647",
     cityname: "Chandigarh",
@@ -68,20 +69,24 @@ var othercitieslist = [
   "Trichy",
   "Vizag",
   "Ahmedabad",
-];
+];*/
 
 // Adding Popular cities to the page
 
-function AddPopularCities() {
-  for (city of popularcitieslist) {
+let res1;
+let res2;
+async function AddPopularCities() {
+  let list = await fetch("http://localhost:4321/popularcity");
+  let citieslist = await list.json();
+  for (city of citieslist) {
     let btn = document.createElement("button");
     btn.setAttribute("class", "deselectedpopularcities");
 
     let image = document.createElement("img");
-    image.src = city.link;
+    image.src = city.image;
 
     let p_name = document.createElement("p");
-    p_name.innerHTML = city.cityname;
+    p_name.innerHTML = city.city;
 
     btn.addEventListener("mouseover", () => {
       btn.style.cursor = "pointer";
@@ -95,17 +100,21 @@ function AddPopularCities() {
     btn.append(image, p_name);
     popularcitiesdiv.append(btn);
   }
+  Addons();
+  return citieslist;
 }
 
 // Adding Other cities to the page
 
-function AddOtherCities() {
-  for (othercity of othercitieslist) {
+async function AddOtherCities() {
+  let list = await fetch("http://localhost:4321/othercity");
+  let citieslist = await list.json();
+  for (othercity of citieslist) {
     let btn = document.createElement("button");
     btn.setAttribute("class", "deselectedothercities");
 
     let p_name = document.createElement("p");
-    p_name.innerHTML = othercity;
+    p_name.innerHTML = othercity.city;
 
     btn.addEventListener("mouseover", () => {
       btn.style.cursor = "pointer";
@@ -120,40 +129,58 @@ function AddOtherCities() {
     btn.append(p_name);
     othercitiesdiv.append(btn);
   }
+  Addons();
+  return citieslist;
 }
 
-AddPopularCities();
-AddOtherCities();
+// console.log(res1, res2);
+// console.log(res1, res2);
 
-// Selected city should always be in Green
+res1 = AddPopularCities();
+// console.log("res1:", res1);
+res2 = AddOtherCities();
+// console.log("res2:", res2);
 
-let chosenCity = localStorage.getItem("SelectedCity");
-let buttons = document.querySelectorAll("button");
-setInterval(() => {
-  buttons.forEach((el) => {
-    if (el.innerText == chosenCity) {
-      if (el.children.length == 1) {
-        el.setAttribute("class", "selectedothercities");
-      } else {
-        el.setAttribute("class", "selectedpopularcities");
-      }
-    }
-  });
-}, 100);
+async function Addons() {
+  // (res1 != undefined && res2 != undefined) {
+  // Selected city should always be in Green
+  let list1 = await res1;
+  // console.log("list1:", list1);
+  let list2 = await res2;
+  // console.log("list2:", list2);
+  if (list1.length > 0 && list2.length > 0) {
+    let chosenCity = localStorage.getItem("SelectedCity");
+    let buttons = document.querySelectorAll("button");
+    // console.log("buttons:", buttons);
+    setInterval(() => {
+      buttons.forEach((el) => {
+        // console.log("el:", el);
 
-// Implementing Search Functionality
-searchBox.addEventListener("input", () => {
-  let searchedValue = searchBox.value;
-  searchedValue = searchedValue.toLowerCase();
-  buttons.forEach((el) => {
-    let cityname = el.innerText.toLowerCase();
-    if (cityname.includes(searchedValue)) {
-      el.style.opacity = "0.54";
-      el.disabled = false;
-    } else {
-      el.style.opacity = "0.15";
-      el.disabled = true;
-      el.style.cursor = "default";
-    }
-  });
-});
+        if (el.innerText == chosenCity) {
+          if (el.children.length == 1) {
+            el.setAttribute("class", "selectedothercities");
+          } else {
+            el.setAttribute("class", "selectedpopularcities");
+          }
+        }
+      });
+    }, 100);
+
+    // Implementing Search Functionality
+    searchBox.addEventListener("input", () => {
+      let searchedValue = searchBox.value;
+      searchedValue = searchedValue.toLowerCase();
+      buttons.forEach((el) => {
+        let cityname = el.innerText.toLowerCase();
+        if (cityname.includes(searchedValue)) {
+          el.style.opacity = "0.54";
+          el.disabled = false;
+        } else {
+          el.style.opacity = "0.15";
+          el.disabled = true;
+          el.style.cursor = "default";
+        }
+      });
+    });
+  }
+}
