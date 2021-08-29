@@ -39,10 +39,59 @@ function off() {
 //multiple cities select
 var div = document.getElementById("choosed");
 var selectedCity = document.getElementById("selectedCity");
-function cities() {
-  selectedCity.textContent = null;
-  div.innerHTML =
-    '<input type="text" placeholder="Enter city" autofocus="autofocus"><span></span><ul><li>Ahmedabad</li><li>Bangalore</li><li>Bhopal</li><li>Bhubaneswar</li><li>Calicut</li><li>Chandigarh</li><li>Chennai</li><li>Coimbatore</li><li>Delhi NCR</li><li>Guwahati</li><li>Hyderabad</li><li>Indore</li><li>Jaipur</li><li>Kochi</li><li>Kolkata</li><li>Lucknow</li><li>Mumbai</li><li>Mysore</li><li>Nagpur</li><li>Nashik</li><li>Patna</li><li>Pune</li><li>Raipur</li><li>Siliguri</li><li>Trichy</li><li>Udupi-Manipal</li><li>Vadodara</li><li>Vijayawada</li><li>Vizag</li></ul>';
+selectedCity.innerText = localStorage.getItem("SelectedCity");
+async function cities() {
+  let list1 = await fetch("http://localhost:4321/othercity");
+  let citieslist1 = await list1.json();
+  let list2 = await fetch("http://localhost:4321/popularcity");
+  let citieslist2 = await list2.json();
+  // selectedCity.innerText = null;
+  let input = document.createElement("input");
+  input.placeholder = "Enter city";
+  input.type = "text";
+  input.autofocus = "autofocus";
+  let list = document.createElement("ul");
+  for (city of citieslist1) {
+    let cityname1 = document.createElement("li");
+    cityname1.innerText = city.city;
+    list.append(cityname1);
+    cityname1.addEventListener("click", () => {
+      localStorage.setItem("SelectedCity", cityname1.innerText);
+      addPopularPlaces();
+      window.location.reload();
+      list.innerHTML = null;
+    });
+    cityname1.addEventListener("mouseover", () => {
+      cityname1.style.backgroundColor = "#70ad4d";
+      cityname1.style.color = "white";
+    });
+    cityname1.addEventListener("mouseout", () => {
+      cityname1.style.backgroundColor = "white";
+      cityname1.style.color = "black";
+    });
+  }
+  for (place of citieslist2) {
+    let cityname2 = document.createElement("li");
+    cityname2.innerText = place.city;
+    list.append(cityname2);
+    cityname2.addEventListener("click", () => {
+      localStorage.setItem("SelectedCity", cityname2.innerText);
+      addPopularPlaces();
+      list.innerHTML = null;
+      window.location.reload();
+    });
+    cityname2.addEventListener("mouseover", () => {
+      cityname2.style.backgroundColor = "#70ad4d";
+      cityname2.style.color = "white";
+    });
+    cityname2.addEventListener("mouseout", () => {
+      cityname2.style.backgroundColor = "white";
+      cityname2.style.color = "black";
+    });
+  }
+  // div.innerHTML =
+  //   '<input type="text" placeholder="Enter city" autofocus="autofocus"><span></span><ul><li>Ahmedabad</li><li>Bangalore</li><li>Bhopal</li><li>Bhubaneswar</li><li>Calicut</li><li>Chandigarh</li><li>Chennai</li><li>Coimbatore</li><li>Delhi NCR</li><li>Guwahati</li><li>Hyderabad</li><li>Indore</li><li>Jaipur</li><li>Kochi</li><li>Kolkata</li><li>Lucknow</li><li>Mumbai</li><li>Mysore</li><li>Nagpur</li><li>Nashik</li><li>Patna</li><li>Pune</li><li>Raipur</li><li>Siliguri</li><li>Trichy</li><li>Udupi-Manipal</li><li>Vadodara</li><li>Vijayawada</li><li>Vizag</li></ul>';
+  div.append(list);
 }
 
 var list = document.querySelector("input");
@@ -111,7 +160,6 @@ async function addPopularPlaces() {
     terminallist.append(p);
   }
 }
-
 
 /*let proceeding = document.getElementById("nextbtn");
 
