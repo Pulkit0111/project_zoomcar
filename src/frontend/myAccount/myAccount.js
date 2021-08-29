@@ -57,7 +57,7 @@ function show_dr_box() {
 }
 
 function logoutFunc() {
-  window.location.href = "./myAccount.html";
+  window.location.href = "../Homepage-main.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 

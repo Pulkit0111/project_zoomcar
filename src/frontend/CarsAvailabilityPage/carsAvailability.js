@@ -1032,7 +1032,7 @@ function show_dr_box() {
 }
 
 function logoutFunc() {
-  window.location.href = "./carsAvailability.html";
+  window.location.href = "../Homepage-main.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
