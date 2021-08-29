@@ -138,7 +138,7 @@ body {
   padding: 10px;
   top: 70%;
   border-radius: 4px;
-  right: 335px;
+  right: 425px;
   text-align: center;
   align-items: center;
 }
@@ -201,7 +201,7 @@ body {
   padding: 10px;
   top: 70%;
   border-radius: 4px;
-  right: 200px;
+  right: 350px;
   text-align: center;
   align-items: center;
 }
@@ -248,7 +248,7 @@ body {
   padding: 10px;
   top: 70%;
   border-radius: 4px;
-  right: 150px;
+  right: 280px;
   text-align: center;
   align-items: center;
 }
@@ -261,7 +261,7 @@ body {
   position: absolute;
   width: 11px;
   height: 11px;
-  left: 360px;
+  left: 380px;
   top: 45px;
   background-color: white;
   transform: rotate(45deg);
@@ -286,7 +286,7 @@ body {
   height: 90px;
   top: 70%;
   border-radius: 4px;
-  right: 110px;
+  right: 200px;
   text-align: center;
   align-items: center;
 }
