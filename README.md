@@ -16,7 +16,7 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
   <li>HTML</li>
   <li>CSS</li>
   <li>JS DOM</li>
-  <li>Node</li>
+  <li>NodeJS</li>
   <li>Express</li>
   <li>Mongoose</li>
   <li>Mongo DB Cluster using Mongo Atlas</li>
@@ -60,10 +60,14 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
 
 ## Team Members 
 <ul>
-<li>[Sabareesh Subramanian] (https://github.com/Sabareesh-Subramanian) </li>
-<li>[Pulkit Tyagi] (https://github.com/Pulkit0111) </li>
-<li>[Jagadish Hospet] (https://github.com/Jagadish1217) </li>
+<li><a href="https://github.com/Sabareesh-Subramanian">Sabareesh Subramanian</a>
+<li><a href="https://github.com/Pulkit0111">Pulkit Tyagi</a>
+<li><a href="https://github.com/Jagadish1217">Jagadish Hospet</a>
 </ul>
+
+## Related Blogs
+
+https://tyagi0111.medium.com/cloning-zoomcar-com-in-a-span-of-5-days-with-html5-css3-js-and-mongodb-92f0e37c92e5
 
 ## A quick Glimpse of our Work
 
