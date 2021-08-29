@@ -356,7 +356,7 @@ function showcod() {
   alert(
     "You Need to Pay Booking Amount Before The Date Of Journey Start At The Starting Location"
   );
-  window.location.href = "../Homepage-main.html";
+  // window.location.href = "../Homepage-main.html";
 }
 
 function checkchange() {
@@ -531,4 +531,3 @@ let check = JSON.parse(localStorage.getItem("logindone"));
 if (check == "yes") {
   changeNav();
 }
-
