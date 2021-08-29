@@ -317,6 +317,7 @@ function setEndDate1() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth1();
 }
 function setEndDate2() {
   let endDate1 = document.getElementById("day1");
@@ -370,6 +371,7 @@ function setEndDate2() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth1();
 }
 function setEndDate3() {
   let endDate1 = document.getElementById("day1");
@@ -423,6 +425,7 @@ function setEndDate3() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth1();
 }
 function setEndDate4() {
   let endDate1 = document.getElementById("day1");
@@ -476,6 +479,7 @@ function setEndDate4() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth2();
 }
 function setEndDate5() {
   let endDate1 = document.getElementById("day1");
@@ -529,6 +533,7 @@ function setEndDate5() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth2();
 }
 
 function setEndDate6() {
@@ -583,6 +588,7 @@ function setEndDate6() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth2();
 }
 
 function setEndDate7() {
@@ -637,6 +643,7 @@ function setEndDate7() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
+  setMonth2();
 }
 
 function setEndTime1() {

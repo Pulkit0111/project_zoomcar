@@ -379,12 +379,12 @@ function TransmissionTypeFiltering() {
       // free100kms.style.cursor = "pointer";
       automaticflag = true;
       CarTransmissionFilterList.push("Automatic");
-      var automaticCarArray = [];
+      /*var automaticCarArray = [];
       for (car of carslist) {
         if (car.cartransmissiontype == "Automatic") {
           automaticCarArray.push(car);
         }
-      }
+      }*/
       // showCars(automaticCarArray);
       FilterCarsBasedOnChoice();
     }
@@ -407,12 +407,12 @@ function TransmissionTypeFiltering() {
       manualflag = true;
       CarTransmissionFilterList.push("Manual");
       FilterCarsBasedOnChoice();
-      var manualCarArray = [];
+      /*var manualCarArray = [];
       for (car of carslist) {
         if (car.cartransmissiontype == "Manual") {
           manualCarArray.push(car);
         }
-      }
+      }*/
       // showCars(manualCarArray);
     }
   });
@@ -518,10 +518,8 @@ let GetCars = async () => {
   return cars2;
 };
 
-// Function which helps us display the available cars for the user
-let DisplayCars = async () => {
-  let cararray = await GetCars();
-
+// Function to display cars list
+async function showAvailableCars(cararray) {
   let bookingDetailsold = await fetch("http://localhost:4321/details/");
   let bookingDetails = await bookingDetailsold.json();
   bookingDetails = bookingDetails[0];
@@ -600,6 +598,9 @@ let DisplayCars = async () => {
 
       let detailsdiv = document.createElement("div");
       detailsdiv.style.display = "flex";
+      // detailsdiv.style.justifyContent = "spaceBetween";
+
+      let seatdiv = document.createElement("div");
 
       let car_seat_pic = document.createElement("img");
       car_seat_pic.src = car.seatImage;
@@ -610,6 +611,8 @@ let DisplayCars = async () => {
       car_seat_details.innerHTML = car.seater;
       car_seat_details.setAttribute("class", "cardetailstyling");
 
+      seatdiv.append(car_seat_pic, car_seat_details);
+
       let car_transmission_pic = document.createElement("img");
       car_transmission_pic.src = car.transmissionImage;
       car_transmission_pic.setAttribute("class", "cardetailimagestyling");
@@ -618,6 +621,9 @@ let DisplayCars = async () => {
       car_transmission_details.innerHTML = car.transmissionType;
       car_transmission_details.setAttribute("class", "cardetailstyling");
 
+      let transmissiondiv = document.createElement("div");
+      transmissiondiv.append(car_transmission_pic, car_transmission_details);
+
       let car_bag_pic = document.createElement("img");
       car_bag_pic.src = car.luggageImage;
       car_bag_pic.setAttribute("class", "cardetailimagestyling");
@@ -625,6 +631,9 @@ let DisplayCars = async () => {
       let car_bag_details = document.createElement("p");
       car_bag_details.innerHTML = car.luggageSize;
       car_bag_details.setAttribute("class", "cardetailstyling");
+
+      let bagdiv = document.createElement("div");
+      bagdiv.append(car_bag_pic, car_bag_details);
 
       let car_driver_details = document.createElement("p");
       car_driver_details.innerHTML = car.driverAge;
@@ -644,6 +653,14 @@ let DisplayCars = async () => {
         separator,
         car_driver_details
       );
+
+      /*detailsdiv.append(
+        seatdiv,
+        transmissiondiv,
+        bagdiv,
+        separator,
+        car_driver_details
+      );*/
 
       let pickuppointdiv = document.createElement("div");
       pickuppointdiv.innerHTML = `${car.pickUpDistance} km from Starting Point`;
@@ -787,53 +804,59 @@ let DisplayCars = async () => {
       });
     }
   }
-  // }
-  // showCars(carslistnew);
-};
+}
 
-function FilterCarsBasedOnChoice() {
+// Function to receive input from DB and pass to other function
+let DisplayCars = async () => {
+  let cararraytemp = await GetCars();
   if (
     CarTransmissionFilterList.length == 0 &&
     CarCategoryFilterList.length == 0
   ) {
-    DisplayCars();
+    showAvailableCars(cararraytemp);
   } else if (
     CarCategoryFilterList.length == 0 &&
     CarTransmissionFilterList.length != 0
   ) {
     let FilteredArray = [];
-    for (car of carslist) {
-      if (CarTransmissionFilterList.includes(car.cartransmissiontype)) {
+    for (car of cararraytemp) {
+      if (CarTransmissionFilterList.includes(car.transmissionType)) {
         FilteredArray.push(car);
       }
     }
-    showCars(FilteredArray);
+    showAvailableCars(FilteredArray);
   } else if (
     CarCategoryFilterList.length != 0 &&
     CarTransmissionFilterList.length == 0
   ) {
     let FilteredArray = [];
-    for (car of carslist) {
-      if (CarCategoryFilterList.includes(car.carcategory)) {
+    for (car of cararraytemp) {
+      if (CarCategoryFilterList.includes(car.category)) {
         FilteredArray.push(car);
       }
     }
-    showCars(FilteredArray);
+    showAvailableCars(FilteredArray);
   } else if (
     CarCategoryFilterList.length != 0 &&
     CarTransmissionFilterList.length != 0
   ) {
     let FilteredArray = [];
-    for (car of carslist) {
+    for (car of cararraytemp) {
       if (
-        CarTransmissionFilterList.includes(car.cartransmissiontype) &&
-        CarCategoryFilterList.includes(car.carcategory)
+        CarTransmissionFilterList.includes(car.transmissionType) &&
+        CarCategoryFilterList.includes(car.category)
       ) {
         FilteredArray.push(car);
       }
     }
-    showCars(FilteredArray);
+    showAvailableCars(FilteredArray);
   }
+  // }
+  // showCars(carslistnew);
+};
+
+function FilterCarsBasedOnChoice() {
+  DisplayCars();
 }
 
 // Function to find the difference in hours between pick up and drop of the vehicle
@@ -1009,4 +1032,13 @@ function logoutFunc() {
 let check = JSON.parse(localStorage.getItem("logindone"));
 if (check == "yes") {
   changeNav();
+}
+
+function NavigatePickuplocation() {
+  setTimeout(() => {
+    window.location.href = "../PickuplocationSelection/PickUpLocation.html";
+    let toggle = document.getElementById("differentcity");
+    toggle.innerHTML = `<input onclick=NavigatePickuplocation() type="checkbox">
+                        <span class="toggle-slider round"></span>`;
+  }, 3000);
 }

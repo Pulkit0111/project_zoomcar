@@ -312,6 +312,7 @@ function setStartDate1() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth1();
 }
 function setStartDate2() {
   let startDate1 = document.getElementById("day1");
@@ -365,6 +366,7 @@ function setStartDate2() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth1();
 }
 function setStartDate3() {
   let startDate1 = document.getElementById("day1");
@@ -418,6 +420,7 @@ function setStartDate3() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth1();
 }
 function setStartDate4() {
   let startDate1 = document.getElementById("day1");
@@ -471,6 +474,7 @@ function setStartDate4() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth2();
 }
 function setStartDate5() {
   let startDate1 = document.getElementById("day1");
@@ -524,6 +528,7 @@ function setStartDate5() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth2();
 }
 
 function setStartDate6() {
@@ -578,6 +583,7 @@ function setStartDate6() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth2();
 }
 
 function setStartDate7() {
@@ -632,6 +638,7 @@ function setStartDate7() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
+  setStartMonth2();
 }
 
 function setStartTime1() {
