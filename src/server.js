@@ -7,6 +7,8 @@ const carsController = require("./controllers/car.controller");
 const checkoutController = require("./controllers/checkout.controller");
 const popularpointsController = require("./controllers/popularpoints.controller");
 const bookingdetailController = require("./controllers/bookingdetail.controller");
+const popularcityController = require("./controllers/popularcity.controller");
+const othercityController = require("./controllers/othercity.controller");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -21,6 +23,10 @@ app.use(cors());
 app.use("/popularpoints", popularpointsController);
 app.use(cors());
 app.use("/details", bookingdetailController);
+app.use(cors());
+app.use("/popularcity", popularcityController);
+app.use(cors());
+app.use("/othercity", othercityController);
 
 app.listen(4321, async () => {
   await connect();
