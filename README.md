@@ -60,7 +60,8 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
 
 ## Team Members 
 <ul>
-  <li>@Sabareesh-Subramanian</li>
+  <li>[Sabareesh Subramanian](https://github.com/Sabareesh-Subramanian)</li>
+ 
   <li>Pulkit Tyagi</li>
   <li>Jagadish Hospet</li>
 </ul>
