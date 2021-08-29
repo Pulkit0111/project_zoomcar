@@ -523,6 +523,7 @@ async function showAvailableCars(cararray) {
   let bookingDetailsold = await fetch("http://localhost:4321/details/");
   let bookingDetails = await bookingDetailsold.json();
   bookingDetails = bookingDetails[0];
+  // console.log("bookingDetails:", bookingDetails);
 
   // showData(bookingDetails, cararray);
 
@@ -672,18 +673,18 @@ async function showAvailableCars(cararray) {
       pricedisplaydiv.setAttribute("class", "pricedisplaydiv");
 
       var monthArray = [
-        "January",
-        "February",
-        "March",
-        "April",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
         "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ];
 
       let formattedStartDate = new Date(
@@ -700,6 +701,7 @@ async function showAvailableCars(cararray) {
         bookingDetails.endtime[0] + bookingDetails.endtime[1],
         bookingDetails.endtime[3] + bookingDetails.endtime[4]
       );
+
       let totalHours = FindHoursDifferencebetweenPickupAndDrop(
         formattedStartDate,
         formattedEndDate
@@ -878,7 +880,7 @@ function FindCostOfVehicleBasedOnCategoryAndTime(
   fuelcost,
   deliveryCharge
 ) {
-  if (categorytype == "Hatchback" && geartype == "Manual") {
+  /*if (categorytype == "Hatchback" && geartype == "Manual") {
     let n = ThousandsSeparatorForPrice(
       Math.round(
         totaltime * costratio * freekmsrange * fuelcost + deliveryCharge
@@ -934,7 +936,12 @@ function FindCostOfVehicleBasedOnCategoryAndTime(
       )
     );
     return n;
-  }
+  }*/
+  // console.log(totaltime, costratio, freekmsrange, fuelcost, deliveryCharge);
+  let n = ThousandsSeparatorForPrice(
+    Math.round(totaltime * costratio * freekmsrange * fuelcost + deliveryCharge)
+  );
+  return n;
 }
 
 function ThousandsSeparatorForPrice(num) {
