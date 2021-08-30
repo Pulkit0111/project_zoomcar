@@ -425,7 +425,7 @@ function setEndDate3() {
   )} ${localStorage.getItem("endDate")} ${localStorage.getItem(
     "endMonth"
   )}, 2021 ${localStorage.getItem("endTime")}`;
-  setMonth1();
+  setMonth2();
 }
 function setEndDate4() {
   let endDate1 = document.getElementById("day1");
