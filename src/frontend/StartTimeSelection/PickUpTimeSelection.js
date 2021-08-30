@@ -420,7 +420,7 @@ function setStartDate3() {
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
     "startMonth"
   )}, 2021 ${localStorage.getItem("startTime")}`;
-  setStartMonth1();
+  setStartMonth2();
 }
 function setStartDate4() {
   let startDate1 = document.getElementById("day1");
