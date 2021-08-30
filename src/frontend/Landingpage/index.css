@@ -1621,3 +1621,6 @@ button {
   height: 25px;
   margin: 22px auto;
 }
+.top-margin {
+  margin-top: 1%;
+}
