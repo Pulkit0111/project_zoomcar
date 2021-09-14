@@ -1,20 +1,16 @@
 // Few default values and setting up local storage
-var addressDisplayDiv = document.getElementById("addressDisplay");
-addressDisplayDiv.innerHTML = `${localStorage.getItem("address")}`;
-var startDetailsDisplayDiv = document.getElementById("startDetailsDisplay");
 localStorage.setItem("startMonth", "");
 localStorage.setItem("startDate", "");
 localStorage.setItem("startTime", "");
 localStorage.setItem("weekDay", "");
+localStorage.setItem("endMonth", "");
+localStorage.setItem("endDate", "");
+localStorage.setItem("endTime", "");
+localStorage.setItem("endweekDay", "");
 
 document.title = `Book a car in ${localStorage.getItem(
   "SelectedCity"
 )} | Rent Cars @ Most Affordable Rates - ZoomCar`;
-
-// Navigation to next page
-function drive1() {
-  window.location.href = "../PickuplocationSelection/PickUpLocation.html";
-}
 
 // Standard values in global context for references at multiple functions
 var todayDate = new Date();
@@ -34,6 +30,17 @@ var months = [
   "Dec",
 ];
 var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// Navigation to next page
+function drive1() {
+  window.location.href = "../PickuplocationSelection/PickUpLocation.html";
+}
+
+// Displaying the pickup location details in the footer
+function setAddressDetails() {
+  var addressDisplayDiv = document.getElementById("addressDisplay");
+  addressDisplayDiv.innerHTML = `${localStorage.getItem("address")}`;
+}
 
 // Function to populate months in the div - calculated based on current date
 function PopulateMonths() {
@@ -170,6 +177,7 @@ function setDefaultDate() {
 
 // Function to display the values chosen in the footer
 function setDateToBottom() {
+  var startDetailsDisplayDiv = document.getElementById("startDetailsDisplay");
   startDetailsDisplayDiv.innerHTML = `${localStorage.getItem(
     "weekDay"
   )} ${localStorage.getItem("startDate")} ${localStorage.getItem(
@@ -218,6 +226,7 @@ function PopulateTimes() {
   }
 }
 
+setAddressDetails();
 setDefaultDate();
 PopulateDates();
 PopulateMonths();
