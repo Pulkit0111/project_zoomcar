@@ -479,7 +479,8 @@ function initial(id) {
 const book = () => {
   let check = JSON.parse(localStorage.getItem("logindone"));
   if (check == null || check == "no") {
-    alert("To make a booking, please login to the website first");
+    // alert("To make a booking, please login to the website first");
+    popupCome2();
   } else {
     window.location.href = "./PickuplocationSelection/PickUpLocation.html";
   }
