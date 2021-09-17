@@ -17,6 +17,7 @@ body {
   float: left;
   /* border: 2px solid violet; */
   margin-top: 5%;
+  padding-top: 1%;
 }
 #cardetaildiv {
   background-color: #f7f7f7;
@@ -29,12 +30,14 @@ body {
 }
 #pickuplocationdiv {
   width: 100%;
-  height: 35vh;
+  /* height: 35vh; */
   /* border: 2px solid black; */
 }
 #startendtimediv {
   width: 100%;
-  height: 25vh;
+  /* height: 25vh; */
+  overflow: hidden;
+  padding-bottom: 5%;
   /* border: 2px solid red; */
   border-bottom: 0.5px solid grey;
 }
@@ -53,7 +56,7 @@ body {
 }
 #pickuplocationtitle > p {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.85em;
   opacity: 0.54;
   margin-left: 18%;
 }
@@ -62,15 +65,15 @@ body {
 #picktimedetails > div,
 #droptimedetails > div {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75em;
   opacity: 0.54;
   padding-top: 2%;
 }
 #pickuppoint > p + p {
   /* font-weight: 0; */
-  font-size: 12px;
+  font-size: 100%;
   opacity: 0.9;
-  padding-top: 2%;
+  margin-top: 4%;
 }
 #pickuplocationaddress {
   width: 80%;
@@ -98,12 +101,12 @@ body {
 #pickuppoint {
   height: 40%;
   border-bottom: 0.5px solid lightgrey;
-  padding-left: 5%;
-  /* padding-top: 2%; */
+  padding: 4% 5%;
 }
 #pickuppoint ~ div {
   height: 30%;
   border-bottom: 0.5px solid lightgrey;
+  overflow: hidden;
   padding-left: 3%;
   /* padding-top: 2%; */
 }
@@ -124,7 +127,7 @@ body {
 #pickuppoint ~ div > span {
   margin-left: 3%;
   opacity: 0.54;
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 600;
 }
 #pickuppoint + div + div {
@@ -140,7 +143,7 @@ body {
 #starttimedisplay,
 #endtimedisplay {
   /* float: left; */
-  font-size: 12px;
+  font-size: 0.75em;
   opacity: 0.54;
   margin-top: 2%;
   margin-left: 35%;
@@ -153,7 +156,7 @@ body {
 }
 #kmspackagetitle {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75em;
   opacity: 0.54;
   margin-left: 10%;
 }
@@ -166,8 +169,9 @@ body {
   border-right: 1px solid lightgrey;
   border-radius: 3px;
   text-align: center;
-  padding-top: 3%;
+  padding: 3% 0%;
   cursor: pointer;
+  font-size: 100%;
 }
 #free200kms {
   height: 50%;
@@ -178,7 +182,7 @@ body {
   border-right: 1px solid lightgrey;
   border-radius: 3px;
   text-align: center;
-  padding-top: 3%;
+  padding: 3% 0%;
   cursor: pointer;
 }
 #free300kms {
@@ -191,13 +195,13 @@ body {
   border-radius: 3px;
   cursor: pointer;
   text-align: center;
-  padding-top: 3%;
+  padding: 3% 0%;
 }
 #free100kms > div,
 #free200kms > div,
 #free300kms > div {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75em;
   opacity: 0.54;
   padding-top: 2%;
 }
@@ -206,12 +210,13 @@ body {
 #free300kms > p {
   /* margin-left: 3%; */
   opacity: 1;
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 600;
 }
 #cartypediv {
   width: 100%;
-  height: 20vh;
+  /* height: 20vh; */
+  overflow: hidden;
   /* border: 1px solid red; */
 }
 #hatchbacktype,
@@ -227,6 +232,7 @@ body {
   text-align: center;
   /* border-radius: 3px; */
   cursor: pointer;
+  padding: 3% 0%;
 }
 #hatchbacktype {
   margin-left: 10%;
@@ -250,14 +256,15 @@ body {
 #sedantype > p,
 #luxurytype > p,
 #suvtype > p {
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 600px;
   opacity: 0.54;
   margin-top: -20%;
 }
 #transmissiontypediv {
   width: 100%;
-  height: 25vh;
+  /* height: 25vh; */
+  overflow: hidden;
 }
 #automatictype,
 #manualtype {
@@ -267,7 +274,7 @@ body {
   background-color: white;
   border: 1px solid lightgrey;
   text-align: center;
-  padding: 3%;
+  padding: 3% 0%;
   cursor: pointer;
 }
 #automatictype {
@@ -281,7 +288,7 @@ body {
 }
 #automatictype > p,
 #manualtype > p {
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 600px;
   opacity: 0.54;
 }
@@ -290,8 +297,8 @@ body {
   width: 100%;
   height: 5%;
   /* text-align: center; */
-  padding: 15px;
-  font-size: 16px;
+  padding: 1em;
+  font-size: 1em;
   font-weight: 600;
   color: #323a44;
   display: flex;
@@ -302,11 +309,11 @@ body {
   width: 100%;
   height: 4%;
   background-color: #e6e6e6;
-  padding: 10px 20px;
+  padding: 1em 1em;
   display: flex;
 }
 #sortfeaturediv > p {
-  font-size: 14px;
+  font-size: 0.85em;
   color: #323a44;
 }
 #sortfeaturediv > div {
@@ -314,10 +321,10 @@ body {
   border-radius: 2px;
   background-color: #fff;
   border: 1px solid #d8d8d8;
-  padding: 3px 10px;
-  font-size: 11px;
+  padding: 0.5em 1em;
+  font-size: 0.75em;
   color: #9b9b9b;
-  margin-left: 10px;
+  margin-left: 1em;
   cursor: pointer;
   position: relative;
 }
@@ -328,14 +335,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 0px;
+  padding: 1em 0em;
   /* border: 2px solid red; */
 }
 #withoutfuelcontainer {
   width: 18%;
   height: 35%;
   border: 1px solid lightgrey;
-  padding: 10px 20px;
+  padding: 0.75em;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   /* border-radius: 5px; */
@@ -347,7 +354,7 @@ body {
   width: 18%;
   height: 35%;
   border: 1px solid lightgrey;
-  padding: 10px 20px;
+  padding: 0.75em;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   /* border-radius: 5px; */
@@ -356,45 +363,45 @@ body {
 #withoutfuelcontainer > p,
 #withfuelcontainer > p {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75em;
 }
 #withoutfuelcontainer > p + p,
 #withfuelcontainer > p + P {
   font-weight: 600;
-  font-size: 10px;
+  font-size: 0.65em;
 }
 #withfuelcontainer > p {
   text-align: right;
 }
 #carlistdiv {
   background-color: #f7f7f7;
-  padding: 0px 10px;
+  padding: 0px 0.75em;
   margin-top: -1%;
 }
 .carnamestyling {
   color: #33414f;
-  font-size: 19px;
+  font-size: 1.25em;
   font-weight: 500;
-  margin: 0px 0 10px 20px;
+  margin: 0px 0 0.65em 1em;
   /* font-family: "Open Sans"; */
 }
 .cardetailimagestyling {
-  height: 20px;
-  width: 20px;
+  height: 1em;
+  width: 1em;
   margin-left: 10%;
   opacity: 0.54;
 }
 .cardetailstyling {
-  font-size: 12px;
+  font-size: 0.85em;
   margin-left: 1%;
   opacity: 0.54;
 }
 .pickuplocationstyling {
   color: #33414f;
-  font-size: 14px;
+  font-size: 0.95em;
   font-weight: 600;
   /* margin: 0px 0 10px 20px; */
-  padding: 15px 20px 0px;
+  padding: 0.85em 1.5em 0px;
   opacity: 0.6;
 }
 .pricedisplaydiv {
@@ -406,7 +413,7 @@ body {
   /* padding: 14px 10px 16px 8px; */
 }
 .rupeespan {
-  font-size: 14px;
+  font-size: 0.85em;
   color: #70ad4d;
   font-weight: 600;
   /* margin-top: -100%; */
@@ -416,7 +423,7 @@ body {
   /* text-align: center; */
 }
 .costspan {
-  font-size: 30px;
+  font-size: 2em;
   color: #70ad4d;
   font-weight: 600;
   /* float: left; */
@@ -424,19 +431,20 @@ body {
 .excesscostspan {
   clear: both;
   opacity: 0.54;
-  font-size: 12px;
+  font-size: 0.75em;
   color: black;
   font-weight: 500;
 }
 .booknowbutton {
-  width: 112px;
-  height: 32px;
+  width: 8em;
+  height: 2em;
   margin: auto;
-  margin-top: 20px;
-  padding: 6px 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.4em 1em;
   background-color: #70ad4d;
   color: #fff;
-  font-size: 14px;
+  font-size: 0.85em;
   font-weight: 600;
   border-radius: 2px;
   cursor: pointer;
@@ -444,10 +452,10 @@ body {
 .door-delivery-toggle {
   position: relative;
   display: inline-block;
-  width: 30px;
-  height: 15px;
+  width: 2em;
+  height: 1em;
   margin-left: 75%;
-  margin-top: -10%;
+  margin-top: -8%;
   clear: both;
 }
 
@@ -474,8 +482,8 @@ body {
 .toggle-slider:before {
   position: absolute;
   content: "";
-  height: 15px;
-  width: 15px;
+  height: 1em;
+  width: 1em;
   left: 0px;
   bottom: 0px;
   background-color: white;
@@ -492,9 +500,9 @@ input:focus + .toggle-slider {
 }
 
 input:checked + .toggle-slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
+  -webkit-transform: translateX(1em);
+  -ms-transform: translateX(1em);
+  transform: translateX(1em);
 }
 
 /* Rounded sliders */
@@ -542,4 +550,28 @@ button {
 }
 .top-margin {
   margin-top: -6%;
+}
+#startdatedisplay,
+#startmonthdisplay,
+#starttimedisplay,
+#droptimedetails,
+#enddatedisplay,
+#endmonthdisplay,
+#endtimedisplay,
+#pickuppoint :hover {
+  cursor: pointer;
+}
+#differentcitydiv {
+  padding-bottom: 5%;
+}
+#deliverytogglediv {
+  /* padding: 1% 0% 2% 0%; */
+  padding: 5% 0%;
+  border-bottom: 0.5px solid lightgrey;
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+#deliverytogglediv div {
+  display: flex;
+  flex-direction: column;
 }
