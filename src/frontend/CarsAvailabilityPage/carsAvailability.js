@@ -1,16 +1,6 @@
 document.title = `Book A Car In ${localStorage.getItem(
   "SelectedCity"
 )} | Rent Cars @ Most Affordable Rates - Zoomcar`;
-// Details coming from local storage - stored from selector page's details
-// var pickupdetails = {
-//   address: localStorage.getItem("address"),
-//   startDate: localStorage.getItem("startDate"),
-//   startMonth: localStorage.getItem("startMonth"),
-//   startTime: localStorage.getItem("startTime"),
-//   endDate: localStorage.getItem("endDate"),
-//   endMonth: localStorage.getItem("endMonth"),
-//   endTime: localStorage.getItem("endTime"),
-// };
 
 var CarCategoryFilterList = [];
 var CarTransmissionFilterList = [];
@@ -30,10 +20,6 @@ async function FillPickupLocationDetails() {
   let bookingDetails = await bookingDetailsold.json();
   bookingDetails = bookingDetails[0];
   pickuppointaddress.innerHTML = bookingDetails.location;
-
-  pickuppointaddress.addEventListener("mouseover", function () {
-    pickuppointaddress.style.cursor = "pointer";
-  });
 
   // To redirect the user to select location page in case he/she wishes to change pickup point
   pickuppointaddress.addEventListener("click", function () {
@@ -61,9 +47,11 @@ async function FillPickupDropOffDateTimeDetails() {
 
   // Function to fill the pick up and drop off time from local storage
   var starttimedisplay = document.getElementById("starttimedisplay");
-  if (bookingDetails.starttime > "12:00") {
+  // console.log("bookingDetails:", bookingDetails.starttime);
+  if (bookingDetails.starttime >= "12:00") {
     var time1 = bookingDetails.starttime.split("");
     var res = time1[0] + time1[1];
+    // console.log("res:", res);
     if (Number(res) < 12) {
       res = bookingDetails.starttime + " am";
     } else if (Number(res) == "12") {
@@ -80,17 +68,22 @@ async function FillPickupDropOffDateTimeDetails() {
       // console.log(res);
     }
   } else {
-    var res = bookingDetails.starttime + " am";
+    // console.log("bookingDetails:", bookingDetails.starttime);
+    if (bookingDetails.starttime == "00:00") {
+      var res = "12:00" + " am";
+    } else {
+      var res = bookingDetails.starttime + " am";
+    }
   }
   starttimedisplay.innerHTML = res;
   var endtimedisplay = document.getElementById("endtimedisplay");
-  if (bookingDetails.endtime > "12:00") {
+  if (bookingDetails.endtime >= "12:00") {
     var time2 = bookingDetails.endtime.split("");
     var res1 = time2[0] + time2[1];
     if (Number(res1) < 12) {
-      res1 = bookingDetails.starttime + " am";
+      res1 = bookingDetails.endtime + " am";
     } else if (Number(res1) == "12") {
-      res1 = bookingDetails.starttime + " pm";
+      res1 = bookingDetails.endtime + " pm";
     } else {
       res1 = Number(res1) - 12;
       // console.log(res1.l);
@@ -103,52 +96,39 @@ async function FillPickupDropOffDateTimeDetails() {
       // console.log(res1);
     }
   } else {
-    var res1 = bookingDetails.endtime + " am";
+    if (bookingDetails.endtime == "00:00") {
+      var res1 = "12:00" + " am";
+    } else {
+      var res1 = bookingDetails.endtime + " am";
+    }
   }
   endtimedisplay.innerHTML = res1;
 
-  startdatedisplay.addEventListener("mouseover", function () {
-    startdatedisplay.style.cursor = "pointer";
-  });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   startdatedisplay.addEventListener("click", function () {
     window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
   });
 
-  enddatedisplay.addEventListener("mouseover", function () {
-    enddatedisplay.style.cursor = "pointer";
-  });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   enddatedisplay.addEventListener("click", function () {
     window.location.href = "../DropTimeSelection/DropTimeSelection.html";
   });
 
-  startmonthdisplay.addEventListener("mouseover", function () {
-    startmonthdisplay.style.cursor = "pointer";
-  });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   startmonthdisplay.addEventListener("click", function () {
     window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
   });
-  endmonthdisplay.addEventListener("mouseover", function () {
-    endmonthdisplay.style.cursor = "pointer";
-  });
+
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   endmonthdisplay.addEventListener("click", function () {
     window.location.href = "../DropTimeSelection/DropTimeSelection.html";
   });
 
-  starttimedisplay.addEventListener("mouseover", function () {
-    starttimedisplay.style.cursor = "pointer";
-  });
   // To redirect the user to select pickup time page in case he/she wishes to change pickup time
   starttimedisplay.addEventListener("click", function () {
     window.location.href = "../StartTimeSelection/PickUpTimeSelection.html";
   });
 
-  endtimedisplay.addEventListener("mouseover", function () {
-    endtimedisplay.style.cursor = "pointer";
-  });
   // To redirect the user to select drop off  time page in case he/she wishes to change drop off time
   endtimedisplay.addEventListener("click", function () {
     window.location.href = "../DropTimeSelection/DropTimeSelection.html";
@@ -270,7 +250,6 @@ function CarTypeFiltering() {
           hatchbackCarArray.push(car);
         }
       }
-      // showCars(hatchbackCarArray);
     }
   });
 
@@ -297,7 +276,6 @@ function CarTypeFiltering() {
           sedanCarArray.push(car);
         }
       }
-      // showCars(sedanCarArray);
     }
   });
 
@@ -324,7 +302,6 @@ function CarTypeFiltering() {
           suvCarArray.push(car);
         }
       }
-      // showCars(suvCarArray);
     }
   });
 
@@ -351,7 +328,6 @@ function CarTypeFiltering() {
           luxuryCarArray.push(car);
         }
       }
-      // showCars(luxuryCarArray);
     }
   });
 }
