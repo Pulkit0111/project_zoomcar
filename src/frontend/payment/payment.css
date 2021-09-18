@@ -2,7 +2,7 @@ body {
   margin: 0%;
   padding: 0%;
   overflow-x: hidden;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif !important;
 }
 
@@ -100,7 +100,7 @@ body {
 
 #dropdown_5 .drop_d_links button:hover {
   /* font-size: 14px; */
-  background-color: yellowgreen;
+  background-color: #70ad4d;
 }
 
 .arrowmiddle55 {
@@ -583,8 +583,8 @@ margin-right: 50px;
 .deta_add_btn {
   width: 230px;
   height: 30px;
-  background: greenyellow;
-  border: 2px solid greenyellow;
+  background: #70ad4d;
+  border: 2px solid #70ad4d;
   border-radius: 5px;
 }
 
@@ -788,8 +788,8 @@ margin-right: 50px;
 .deta_add_btn {
   width: 230px;
   height: 30px;
-  background: greenyellow;
-  border: 2px solid greenyellow;
+  background: #70ad4d;
+  border: 2px solid #70ad4d;
   border-radius: 5px;
 }
 
@@ -864,7 +864,7 @@ margin-right: 50px;
 }
 
 #viewoff a {
-  color: green;
+  color: #70ad4d;
 }
 
 #paymentApp {
@@ -1379,11 +1379,11 @@ div {
 }
 
 .green {
-  background: rgb(99, 161, 62) !important;
+  background: #70ad4d !important;
 }
 
 .green_line {
-  border-top: 1px rgb(99, 161, 62) solid !important;
+  border-top: 1px #70ad4d solid !important;
 }
 
 #txt {
