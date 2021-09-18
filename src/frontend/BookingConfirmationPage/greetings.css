@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Anton");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
 h1 {
   text-align: center;
 }
 
 .rainbow {
   /* Font options */
-  font-family: "Pacifico", cursive;
+  /* font-family: "Pacifico", cursive; */
   text-shadow: 2px 2px 4px #000000;
   font-size: 40px;
 
