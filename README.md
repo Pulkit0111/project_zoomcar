@@ -6,7 +6,7 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
   <li>Clone the repo into the local machine.</li>
   <ul>
     <li>https://github.com/Pulkit0111/project_zoomcar</li>
-    <li>cd src/frontend</li>
+    <li>cd frontend</li>
     <li>Execute the Homepage-main.html file in the browser, and enjoy the process of booking a car using our website</li>
   </ul>
 </ul>
