@@ -152,7 +152,7 @@ const saveData = async (e) => {
   console.log(userData);
 
   await axios.post("http://localhost:4321/users", userData);
-  window.location.href = "./Homepage-main.html";
+  window.location.href = "../index.html";
 };
 
 const loginacc = async (e) => {
@@ -305,7 +305,7 @@ function add() {
   window.location.href = "./UserProfile/userProfile.html";
 }
 function logoutFunc() {
-  window.location.href = "./Homepage-main.html";
+  window.location.href = "../index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 

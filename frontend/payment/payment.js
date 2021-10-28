@@ -139,7 +139,7 @@ function saveData(e) {
   localStorage.setItem("users", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "../Homepage-main.html";
+  window.location.href = "../index.html";
 }
 
 //LOGIN AFTERCLICK IN POPUP
@@ -356,7 +356,7 @@ function showcod() {
   alert(
     "You Need to Pay Booking Amount Before The Date Of Journey Start At The Starting Location"
   );
-  // window.location.href = "../Homepage-main.html";
+  // window.location.href = "../index.html";
 }
 
 function checkchange() {
@@ -523,7 +523,7 @@ function show_dr_box() {
 }
 
 function logoutFunc() {
-  window.location.href = "../Homepage-main.html";
+  window.location.href = "../index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoom Car</title>
+  <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Landingpage/index.css">
+  
+  <link rel="icon" href="https://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+    type="image/x-icon">
+</head>
+
+<body>
+  
+  <div id="h_page">
+    <div id="home">
+      <nav id="navbar">
+        <div id="logo">
+          <a href="#"><img src="./img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
+        </div>
+        <ul id="nav_ul">
+          <li class="item"><a href="./OffersPage/Offers.html" onclick="login_nav()">OFFERS</a></li>
+          <li class="item hov">
+            <a href="#">SUBSCRIPTION</a>
+            <div class="details" id="sub_det_item">
+              <div class="arrowmiddle"></div>
+              <div class="subdetail">
+                <span class="sublogo1"></span>
+                <p>Hassle-free way of getting your personal car for flexible long term duration. You also have an option
+                  to share your car with other Zoomcar customers &amp; save up to 70% of the monthly subscription fee.
+                </p>
+                <button class="subscr_btn">KNOW MORE</button>
+              </div>
+            </div>
+          </li>
+          <li class="item"><a href="#">AMIGO</a>
+            <div class="details2">
+              <div class="arrowmiddle2"></div>
+              <div class="amigo_detail">
+                <span class="amigo-logo2"></span>
+                <p>A unique Community Vehicle Pooling program that allows you to share your car with your community and
+                  friends while the car not in use and earn money.</p>
+                <button class="subscr_btn">KNOW MORE</button>
+              </div>
+            </div>
+          </li>
+          <li class="item"><a href="#">ZMS</a>
+            <div class="details3">
+              <div class="arrowmiddle3"></div>
+              <div class="zms_detail">
+                <span class="zms-logo3"></span>
+                <p>Connected technology offerings and shared mobility solutions for businesses worldwide.</p>
+                <button class="subscr_btn">KNOW MORE</button>
+              </div>
+            </div>
+          </li>
+          <li class="item mob_wid"><a href="#">MOBILE APP
+              <div class="mob_det">
+                <div class="arrowmiddle4"></div>
+                <div class="details4">
+                  <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
+                    class="mob_anc">
+                    <div class="mob1">
+                      <img src="./img/g_play_logo2.png" alt="">Google Play
+                    </div>
+                  </a>
+                  <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
+                    class="mob_anc">
+                    <div class="mob2"><img src="./img/apple_log.png" alt="">Apple Store</div>
+                  </a>
+                </div>
+              </div>
+
+          </li>
+          <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
+          <li class="item" id="login_btn"><a href="#" id="login_text">LOGIN</a></li>
+
+        </ul>
+      </nav>
+
+      <div id="front_intro">
+        <div id="title">
+          <h1 class="firstline">DRIVE IN A SANITIZED ZOOMCAR</h1>
+          <h3 class="subhead">
+            Self Drive Car Rental in
+            <select name="city" id="city" onclick="checkCity()">
+              <!-- <option value="select">City</option> -->
+              <option id="cityvalue" value="select">City</option>
+            </select>
+          </h3>
+          <div id="journey">
+            <a href="#" onclick="book()"><div class="top-margin">Start your wonderful journey</div> <img src="./img/next.png" alt=""/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- SIGNUP POPUP -->
+      <div id="pop1">
+        <div class="log_in_cont">
+          <div class="close1">+</div>
+          <!-- div slider started  -->
+          <div class="slider">
+            <div class="slides">
+
+              <input type="radio" name="radio-btn" id="radio1">
+              <input type="radio" name="radio-btn" id="radio2">
+              <input type="radio" name="radio-btn" id="radio3">
+
+
+              <div class="slide first">
+                <div id="Promo1">
+                  <div class="pr1">
+                    <img src="./img/promo-3.fuel.png" alt="" />
+                  </div>
+                  <h2>Free Fuel</h2>
+                  <p>
+                    The fuel is on us for your complete trip. In case you re-fuel a
+                    zoomcar, we will re-fill your pockets and that’s a promise.
+                  </p>
+                </div>
+              </div>
+
+              <div class="slide">
+                <div id="Promo2">
+                  <div class="pr1">
+                    <img src="./img/super_log-removebg-preview.png" alt="" />
+                  </div>
+                  <h2>Supermiler Club</h2>
+                  <p>
+                    Premium club which rewards you everytime you drive with us.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <div id="Promo3">
+                  <div class="pr1">
+                    <img src="./img/pro1.png" alt="" />
+                  </div>
+                  <h2>Refer &amp; Earn</h2>
+                  <p>
+                    Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="navigation_auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="log_right">
+            <div class="log_r_top">
+              <div class="log_r_top_logo">
+                <img src="./img/zoom-logo-color.png" alt="">
+              </div>
+              <div class="log_r_top_cont">
+                <label for="">Continue with</label>
+                <a
+                  href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
+                  <div class="log_r_top_cont_face">FACEBOOK</div>
+                </a>
+                <a
+                  href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
+                  <div class="log_r_top_cont_gmail">GOOGLE</div>
+                </a>
+              </div>
+            </div>
+            <div class="log_r_bot">
+              <input type="text" placeholder="Enter your Email or Mobile number" class="log_input_email_mob">
+              <div class="log_r_bot_btn">
+                <button class="btn_log_sub" onclick="signinacc(event)"></button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGIN POPUP -->
+      <div id="pop2">
+        <div class="log_in_cont2">
+          <div class="close12">+</div>
+          <!-- div slider started  -->
+          <div class="slider22">
+            <div class="slides22">
+
+              <input type="radio" name="radio-btn2" id="radio12">
+              <input type="radio" name="radio-btn2" id="radio22">
+              <input type="radio" name="radio-btn2" id="radio32">
+
+
+              <div class="slide22 first2">
+                <div id="Promo12">
+                  <div class="pr2">
+                    <img src="./img/promo-3.fuel.png" alt="" />
+                  </div>
+                  <h2>Free Fuel</h2>
+                  <p>
+                    The fuel is on us for your complete trip. In case you re-fuel a
+                    zoomcar, we will re-fill your pockets and that’s a promise.
+                  </p>
+                </div>
+              </div>
+
+              <div class="slide22">
+                <div id="Promo22">
+                  <div class="pr2">
+                    <img src="./img/super_log-removebg-preview.png" alt="" />
+                  </div>
+                  <h2>Supermiler Club</h2>
+                  <p>
+                    Premium club which rewards you everytime you drive with us.
+                  </p>
+                </div>
+              </div>
+              <div class="slide22">
+                <div id="Promo32">
+                  <div class="pr2">
+                    <img src="./img/pro1.png" alt="" />
+                  </div>
+                  <h2>Refer &amp; Earn</h2>
+                  <p>
+                    Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="navigation_auto2">
+                <div class="auto-btn12"></div>
+                <div class="auto-btn22"></div>
+                <div class="auto-btn32"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="log_right2">
+            <div class="log_r_top2">
+              <div class="log_r_top_logo2">
+                <img src="./img/zoom-logo-color.png" alt="">
+              </div>
+              <div class="log_r_top_cont2">
+                <label for="">Continue with your</label>
+                <a
+                  href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
+                  <div class="log_r_top_cont_face2">FACEBOOK</div>
+                </a>
+
+                <a
+                  href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
+                  <div class="log_r_top_cont_gmail2">GOOGLE</div>
+                </a>
+              </div>
+            </div>
+            <div class="log_r_bot2">
+              <input type="text" placeholder="Enter your Email or Mobile number" class="log_input_email_mob2">
+              <div class="log_r_bot_btn2">
+                <button class="btn_log_sub2" onclick="loginacc(event)"></button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div id="zoom_adv">
+        <div id="adv_head">
+          <h2>THE ZOOM CAR ADVANTAGE</h2>
+          <p>
+            We simplified car rentals,so you can focus on what's important to
+            you.
+          </p>
+        </div>
+        <div id="adv_grid">
+          <div class="adv_grid_box">
+            <img src="./img/fuel_log.png" alt="" class="fuel" />
+            <h3>Fuel Cost Included</h3>
+            <p class="font-size-12px">
+              Don't worry about mileage! All fuel costs are included. If you
+              refill fuel, we'll pay you back!
+            </p>
+          </div>
+          <div class="adv_grid_box">
+            <img src="./img/adv2.png" alt="" />
+            <h3>No Hidden Charges</h3>
+            <p class="font-size-12px">
+              Our prices include taxes and insurance. What you see is what you
+              really pay!
+            </p>
+          </div>
+          <div class="adv_grid_box">
+            <img src="./img/adv3.png" alt="" />
+            <h3>Flexi Pricing Packages</h3>
+            <p class="font-size-12px">
+              One size never fits all! Choose a balance of time and kilometers
+              that works best for you.
+            </p>
+          </div>
+          <div class="adv_grid_box">
+            <img src="./img/adv6.png" alt="" />
+            <h3>Go Anywhere</h3>
+            <p class="font-size-12px">
+              Our cars have all-India permits.Just remember to pay state tolls
+              and entry taxes.
+            </p>
+          </div>
+          <div class="adv_grid_box">
+            <img src="./img/adv5.png" alt="" />
+            <h3>24x7 Roadside Assistance</h3>
+            <p class="font-size-12px">
+              We have round-the-clock, pan India partners. Help is never far
+              away from you.
+            </p>
+          </div>
+          <div class="adv_grid_box">
+            <img src="./img/adv4.png" alt="" />
+            <h3>Damage Insurance</h3>
+            <p class="font-size-12px">
+              All your bookings include damage insurance! Drive safe, but don’t
+              worry!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="sup_club">
+        <div id="sup_background">
+          <div id="sup_sub1">
+            <div class="sup_logo">
+              <img src="./img/super_log-removebg-preview.png" alt="" srcset="" />
+            </div>
+            <h2>Supermiler Club</h2>
+            <p>Premium club which rewards you everytime you drive with us</p>
+            <div class="privileges">
+              <div class="hor_li"></div>
+              <div class="sup_mid">Supermiler Privileges</div>
+              <div class="hor_li"></div>
+            </div>
+
+            <div id="z-points">
+              <div id="z_box"><img src="./img/z_log.png" alt="">
+                <div>Earn Z Points</div>
+              </div>
+              <div id="z-para">
+                <p>Earn Z-Points for every booking and redeem for additional discount</p>
+                <button id="z-btn">Learn More</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIDDLE Homepage -->
+  <div class="middle">
+
+    <div id="supermillerhead">
+
+
+      <!-- <img class="img1" src="./img/car_bg.jpg"/> -->
+
+      <h2 class="h2">A Car for every need</h2>
+
+      <p class="title_para">We have a range of cars, so something will perfectly fit your trip</p>
+
+
+      <div class="carList">
+
+        <div class="arrowmiddle leftmiddle" onclick="plusMove(-1)"></div> <div class="arrowmiddle rightmiddle"
+          onclick="plusMove(1)"></div>
+        
+        <div class="row">
+
+
+          <img class="carimg" alt="Hatchback" src="./img/Hatcback_car.png">
+
+          <div class="name">HATCHBACK</div>
+          <p class="price">Price Starting at ₹ 70/hr (Fuel Free)</p>
+          <p class="groups">Cars Available: Ford Figo, Maruti Swift, Baleno, Mahindra KUV 100, Maruti Ritz, Hyundai i20
+            Elite, Jazz SMT 1.5 IDTEC, The Raptor, Grand i10</p>
+
+          <p class="changep">A quick drive to sunrise point</p>
+        </div>
+
+        <div class="row">
+          <img class="carimg" alt="Sedan" src="./img/sedan_car.png">
+          <div class="details">
+            <div class="name">Sedan</div>
+            <p class="price">Price Starting at ₹ 75/hr (Fuel Free)</p>
+            <p class="groups">Cars Available: Honda City, Maruti Ciaz, Ford Aspire</p>
+          </div>
+          <p class="changep">Grab dinner and a movie</p>
+        </div>
+
+
+        <div class="row">
+          <img class="carimg" alt="SUV" src="./img/suv_car.png">
+          <div class="details">
+            <div class="name">SUV</div>
+            <p class="price">Price Starting at ₹ 90/hr (Fuel Free)</p>
+            <p class="groups">Cars Available: Ford Ecosport, Mahindra Scorpio, Ford Endeavour, Hyundai Creta, Toyota
+              Fortuner</p>
+          </div>
+          <p class="changep">Head outstation with the entire family</p>
+        </div>
+
+        <div class="row">
+          <img class="carimg" alt="LUXURY" src="./img/luxury_car.png">
+          <div class="details">
+            <div class="name">LUXURY</div>
+            <p class="price">Price Starting at ₹ 70/hr (Fuel Free)</p>
+            <p class="groups">Cars Available: Mercedes GLA, Audi Q3</p>
+          </div>
+          <p class="changep">Go out for a special meal</p>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="howItWorks">
+    <h2 class="h2">How Zoomcar Works</h2>
+    <p>Drive yourself to an adventure and back in 5 simple steps</p>
+
+    <div class="blocks">
+
+      <div>
+        <img alt="Book" src="./img/book.svg" class="margin-top-20px" />
+        <h4>Book</h4>
+        <p>Search for and book a car on our site!</p>
+      </div>
+
+      <div>
+        <img src="./img/upload_licence.svg" class="margin-top-20px" />
+        <h4>Upload License</h4>
+        <p>Upload your driver’s license, and pay a small security deposit.</p>
+      </div>
+
+      <div>
+        <img src="./img/unlock.png" class="margin-top-20px height-40px" />
+        <h4>Unlock</h4>
+        <p>We SMS your car details 20 minutes before pickup.Unlock it via the Zoomcar app.</p>
+      </div>
+
+      <div>
+        <img src="./img/zoom.svg" class="margin-top-20px" />
+        <h4>Zoom</h4>
+        <p>Fill the start checklist in the Zoomcar app. Grab the keys from the glove-box and drive.</p>
+      </div>
+
+      <div>
+        <img src="./img/return.svg" class="margin-top-20px" />
+        <h4>Return</h4>
+        <p>Return the car to the same location and fill the end checklist to end your trip.</p>
+      </div>
+
+    </div>
+
+    <a class="signbtn" id="signup_button2">Sign up</a>
+
+  </div>
+
+  <div class="apps">
+    <img src="./img/appstore_bg.jpg"/>
+    <div class="zoomGo">
+      <h2 >Zoom on the Go!</h2>
+      <p >
+        Make a booking, unlock your car, and end your reservation all from our app</p>
+      <div class="store">
+        <a id="playstorelink" data-src="./img/google_play.238b318d8ac107d46226f4c40f3aae9b.png"
+          href="https://play.google.com/store/apps/details?id=com.zoomcar&amp;referrer=utm_source%3DHomepage%26utm_medium%3DBanner%26utm_campaign%3DApr2015"
+          ></a>
+
+        <a id="appstorelink" data-src="./img/apple_store.958abff9e074193ff35f2aa40e13cb98.png"
+          href="https://click.google-analytics.com/redirect?tid=UA-38347989-3&amp;url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fzoomcar-self-drive-cars%2Fid889910218%3Fmt%3D8&amp;aid=com.zoomcar.ZoomCar&amp;idfa=none&amp;cs=Homepage&amp;cm=Banner&amp;cn=Apr2015"
+          ></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="imgdiv">
+
+    <img alt="Rides Daily" src="./img/riders_daily.svg" />
+
+    <img alt="Happy usersk" src="./img/happy_user.svg" />
+
+    <img alt="Km Travelled" src="./img/km_travelled.svg" />
+
+    <img alt="Number of Zoomcars" src="./img/numberOf_zoomCar.svg" />
+
+    <img id="ratings-image" alt="Number of Ratings" src="./img/numberOf_ratings.svg"  />
+
+    <b>3,000+</b>
+    <b>48,00,000+</b>
+    <b>36,00,00,000+</b>
+    <b>6,500+</b>
+    <b>Rating 4.7/5.0</b>
+
+    <p>Rides Daily</p>
+    <p>Happy users</p>
+    <p>Km Travelled <br><span>(enough for 470 round trips to the moon!)</span></p>
+    <p>Number of Zoomcars</p>
+    <p>Rated by 3,00,000+ customers <br><span> 10,00,000+ bookings</span></p>
+
+  </div>
+
+
+  <div id="ending">
+    <div class="bg_image">
+      <!-- <img class="bg1" src="./img/bg_image.jpg" /> -->
+      <div class="quotation">
+        <img src="./img/quotation.png" />
+
+      </div>
+      <div class="items">
+        <div class="arrowend leftend" onclick="plusItems(-1)"></div>
+
+        <div class="item2">
+          <p>At the outset, let me thank you for introducing Zoomcar in Bangalore and for giving me an opportunity to
+            use your
+            service. Your customer support was impeccable and vehicle was well-maintained and top-notch.</p>
+          <div>D. Samuel</div>
+        </div>
+        <div class="item2">
+          <p>I just wanted to let you know that I really appreciate the efforts you are making personally, to ensure
+            that the
+            customer is satisfied... I really hope you carry forward this culture and make a model for other companies.
+          </p>
+          <div>Bejoy Babu</div>
+        </div>
+        <div class="item2">
+          <p>You certainly do have a very regular customer here... Must say, Greg went that extra mile... You have a
+            great journey
+            together!</p>
+          <div>Deepak Sharma</div>
+        </div>
+        <div class="item2">
+          <p>It was great pleasure use zoom service, As all process being online it was really hassle free experience.
+            good service
+            please keep it going.</p>
+          <div>Mustak R</div>
+        </div>
+        <div class="item2">
+          <p>I could not believe my ears on the benefits, especially the reimbursement of fuel. I would surely continue
+            to use your
+            professional services in months to come.</p>
+          <div>D. Samuel</div>
+        </div>
+        <div class="item2">
+          <p>Appreciate the totally new welcome Concept. As an prospective customer, I feel this is going to really set
+            an example in
+            car rentals scenery. Wishing you the very Best and come out in flying colors!!</p>
+          <div>Yekula Santosh</div>
+        </div>
+        <div class="item2">
+          <p>I have loved your concept since the time I saw it online. Now, after using your services, this concept is
+            wonderful and
+            a delight to all customers. A service in other major cities would go a long way in establishing your brand
+            as well as
+            loyalty of customers.</p>
+          <div>Rohit R</div>
+        </div>
+        <div class="item2">
+          <p>The experience with Zoomcar has been excellent. Your process is well thought out and the service definitely
+            fills a
+            void. Maybe you could start a school which teaches "real customer service"!</p>
+          <div>Sunil Rastogi</div>
+        </div>
+        <div class="item2">
+          <p>I belong to Mumbai and am currently based out of Pune. I have used many such services like Carzonrent,
+            Girikand,
+            Autodrive while being here but none have matched the convenience, affordability as well as efficiency of
+            your service.</p>
+          <div>Rohit</div>
+        </div>
+        <div class="item2">
+          <p>Excellent customer service. Would highly recommend ZOOM to anybody who is in need of self drive cars. Would
+            be great if
+            they start opening more pick up points throughout bangalore</p>
+          <div>Arun M</div>
+        </div>
+        <div class="item2">
+          <p>Select your car. Pay. Drive. Return. The zoomcar booking process is as simple as this. Butter cannot be
+            smoother than
+            this.</p>
+          <div>Diptarko C</div>
+        </div>
+        <span class="arrowend rightend" onclick="plusItems(1)"></span>
+      </div>
+
+
+
+    </div>
+
+    <div class="press">
+      <div class="arrowend2 leftend2" onclick="plusSlides(-1)"></div>
+      <div class="wrap">
+
+        <div class="slides1">
+          <div class="grid">
+            <div class="container">
+              <a href="https://www.zoomcar.com/build/img/ET-Brand-Equity.120c0a2cd6c7da8179d9f13db35b9e42.png"
+                title="ET Brand Equity" class="icon03"><img src="./img/ET-Brand-Equity.png" /></a>
+            </div>
+            <div class="container">
+              <a href="https://www.thehindubusinessline.com/companies/zoomcar-raises-30-million-as-part-of-its-100-million-ongoing-series-d-fund-raise-plans/article30613104.ece"
+                target="_blank" title="Hindu Business Line" class="icon01"><img src="./img/The-Business-Line.png" /></a>
+            </div>
+            <div class="container">
+              <a href="https://www.livemint.com/companies/start-ups/zoomcar-is-now-back-in-bengaluru-hyderabad-other-cities-with-new-offers-11590481609351.html"
+                target="_blank" title="Live Mint" class="icon02"><img src="./img/LiveMint.png" /></a>
+            </div>
+
+            <div class="container">
+              <a href="https://www.zoomcar.com/build/img/CNBC.a1adc56311cc01301a8efe1440baedb7.png" title="CNBC"
+                class="icon04"><img src="./img/CNBC.png" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="slides1">
+          <div class="grid">
+            <div class="container"><a
+                href="https://www.timesnownews.com/videos/et-now/shows/what-trends-stood-out-for-zoomcar-startup-central/49980"
+                target="_blank" title="ET NOW" class="icon07"><img src="./img/ET-Now.png" /></a></div>
+            <div class="container">
+              <a href="https://economictimes.indiatimes.com/small-biz/startups/newsbuzz/zoomcar-resumes-operations-in-35-cities-after-easing-of-lockdown-restrictions/articleshow/75999150.cms"
+                target="_blank" title="The Economic Times" class="icon05"><img src="./img/The economic times.png" /></a>
+            </div>
+            <div class="container"><a
+                href="https://timesofindia.indiatimes.com/business/india-business/self-drive-platform-zoomcar-raises-30-million/articleshow/73474528.cms"
+                target="_blank" title="The Times of India" class="icon06"><img src="./img/Times of india.jpg" /></a></div>
+
+            <div class="container"><a
+                href="http://blogs.wsj.com/indiarealtime/2016/08/25/ford-bets-on-india-car-rental-startup-zoomcar/"
+                target="_blank" title="The Wall Street Journal" class="icon08"><img src="./img/wsj.png" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="slides1">
+          <div class="grid">
+            <div class="container">
+              <a href="https://techcrunch.com/2016/08/24/ford-leads-24m-investment-in-india-based-vehicle-rental-company-zoomcar/"
+                target="_blank" title="Tech Crunch" class="icon09"><img src="./img/tc.png" /></a>
+            </div>
+            <div class="container"><a
+                href="http://www.business-standard.com/article/companies/zoomcar-launches-doorstep-delivery-service-116011401061_1.html"
+                target="_blank" title="Business Standard" class="icon10"><img src="./img/Business Standard.png" /></a>
+            </div>
+            <div class="container"><a
+                href="http://qz.com/458266/how-two-americans-zoomed-into-indias-self-driven-car-rental-market/"
+                target="_blank" title="Quartz" class="icon11"><img src="./img/Quartz.png" /></a></div>
+            <div class="container"><a
+                href="https://yourstory.com/2020/05/zoomcar-resumes-operations-35-cities-coronavirus-lockdown"
+                target="_blank" title="Your Story" class="icon12"><img src="./img/your-story.png" /></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="arrowend2 rightend2" onclick="plusSlides(1)"></div>
+
+
+    </div>
+
+
+    <div class="footer">
+      <div class="Button">
+        <button id="1" onmouseover="changeColor(1)" onmouseout="initial(1)"><a class="link" href=""><img
+              src="./img/Question logo.svg" alt="How Zoomcar works" width="50px" height="50px"
+              data-src="./img/zc-works.2adcbe18edb84c7c1fdf0c8d6c894f8b.svg"
+              src="./img/zc-works.2adcbe18edb84c7c1fdf0c8d6c894f8b.svg">
+          </a>
+          <p id="p1">How zoomcar works?</p>
+        </button>
+        <button id="2" onmouseover="changeColor(2)" onmouseout="initial(2)"><a class="link" href=""><img
+              src="./img/policies.svg" alt="How Zoomcar Policies" width="50px" height="50px"
+              data-src="./img/policies.ceddb15a4eef16af85ba8666b1522741.svg"
+              src="./img/policies.ceddb15a4eef16af85ba8666b1522741.svg">
+          </a>
+          <p id="p2">Policies</p>
+        </button>
+        <button id="3" onmouseover="changeColor(3)" onmouseout="initial(3)"><a class="link" href=""><img
+              src="./img/help-support.svg" alt="Help Support" width="50px" height="50px"
+              data-src="./img/help-support.acf244c0683e201bd2d978f1ddc5d33d.svg"
+              src="./img/help-support.acf244c0683e201bd2d978f1ddc5d33d.svg">
+          </a>
+          <p id="p3">Help Support</p>
+        </button>
+        <button id="4" onmouseover="changeColor(4)" onmouseout="initial(4)"><a class="link" href=""><img
+              src="./img/safety.svg" alt="Zoom Safety" width="50px" height="50px"
+              data-src="./img/safety.127607759cd86e3d75f5698a641d5b83.svg"
+              src="./img/safety.127607759cd86e3d75f5698a641d5b83.svg">
+          </a>
+          <p id="p4">Zoom in Safety</p>
+        </button>
+
+      </div>
+
+      <h4>About Us</h4>
+      <div class="aboutus">
+        <div><a href="https://www.zoomcar.com/about">Zoomcar Team</a></div>
+        <div><a href="https://www.zoomcar.com/zap/subscribe">Zoomcar Subscription</div></a>
+        <div><a href="https://www.zoomcar.com/blog/">Zoomcar Blog</a></div>
+        <div><a href="https://www.zoomcar.com/careers">Careers @ Zoomcar</a></div>
+        <div><a href="https://www.zoomcar.com/location">Locations & Cars</a></div>
+        <div><a href="https://www.zoomcar.com/mumbai/">Self Drive Cars</a></div>
+        <div><a
+            href="https://info.ourcrowd.com/zoomcar/?utm_source=zoomcar&utm_medium=website&utm_campaign=invest_button">Invest
+            via OurCrowd</a></div>
+      </div>
+      <h4>Cities</h4>
+      <div class="cities">
+        <div class="help"><a href="https://www.zoomcar.com/bangalore/">Self drive cars in Bangalore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/pune/">Self drive cars in Pune</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/delhi/">Self drive cars in Delhi </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/mumbai/">Self drive cars in Mumbai</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/chennai/">Self drive cars in Chennai </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/hyderabad/">Self drive cars in Hyderabad</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/chandigarh/">Self drive cars in Chandigarh</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/kolkata/">Self drive cars in Kolkata </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/ahmedabad/">Self drive cars in Ahmedabad</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/coimbatore/">Self drive cars in Coimbatore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/indore/">Self drive cars in Indore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/jaipur/">Self drive cars in Jaipur</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/ludhiana/">Self drive cars in Ludhiana</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/mangalore/">Self drive cars in Mangalore-Manipal</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/mysore/">Self drive cars in Mysore</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/vizag/">Self drive cars in Vizag</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/nagpur/">Self drive cars in Nagpur</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/kochi/">Self drive cars in Kochi</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/udaipur/">Self drive cars in Udaipur</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/vijayawada/">Self drive cars in Vijayawada</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/surat/">Self drive cars in Surat</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/siliguri/">Self drive cars in Siliguri</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/lucknow/">Self drive cars in Lucknow </a></div>
+        <div class="help"><a href="https://www.zoomcar.com/guwahati/">Self drive cars in Guwahati</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/bhubaneswar/">Self drive cars in Bhubaneswar</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/hassan/">Self drive cars in Hassan</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/vadodara/">Self drive cars in Vadodara</a></div>
+        <div class="help"><a href="https://www.zoomcar.com/trivandrum/">Self drive cars in Trivandrum</a></div>
+      </div>
+
+      <h4>Airport Services</h4>
+      <div class="airport">
+        <div><a href="https://www.zoomcar.com/bangalore/airport-taxi-service">Car rental from Bangalore Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/pune/airport-taxi-service">Car rental from Pune Airport</a></div>
+        <div><a href="https://www.zoomcar.com/delhi/airport-taxi-service">Car rental from Delhi Airport</a></div>
+        <div><a href="https://www.zoomcar.com/mumbai/airport-taxi-service">Car rental from Mumbai Airport</a></div>
+        <div><a href="https://www.zoomcar.com/chennai/airport-taxi-service">Car rental from Chennai Airport</a></div>
+        <div><a href="https://www.zoomcar.com/hyderabad/airport-taxi-service">Car rental from Hyderabad Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/chandigarh/airport-taxi-service">Car rental from Chandigarh Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/kolkata/airport-taxi-service">Car rental from Kolkata Airport</a></div>
+        <div><a href="https://www.zoomcar.com/ahmedabad/airport-taxi-service">Car rental from Ahmedabad Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/coimbatore/airport-taxi-service">Car rental from Coimbatore Airport</a>
+        </div>
+        <div><a href="https://www.zoomcar.com/indore/airport-taxi-service">Car rental from Indore Airport</a></div>
+        <div><a href="https://www.zoomcar.com/jaipur/airport-taxi-service">Car rental from Jaipur Airport</a></div>
+        <div><a href="https://www.zoomcar.com/vizag/airport-taxi-service">Car rental from Vizag Airport</a></div>
+        <div><a href="https://www.zoomcar.com/udaipur/airport-taxi-service">Car rental from Udaipur Airport</a></div>
+        <div><a href="https://www.zoomcar.com/surat/airport-taxi-service">Car rental from Surat Airport</a></div>
+        <div><a href="https://www.zoomcar.com/lucknow/airport-taxi-service">Car rental from Lucknow Airport</a></div>
+        <div><a href="https://www.zoomcar.com/guwahati/airport-taxi-service">Car rental from Guwahati Airport</a></div>
+      </div>
+
+      <hr>
+      </hr>
+      <div class="address">
+        <h4>Let's Keep in Touch</h4>
+        <p>7th Floor, Tower-B, Diamond District, 150, HAL Airport Road, Kodihalli, Bangalore – 560008</p>
+        <div class="social">
+          <a class="link" href="https://www.facebook.com/zoomcar.in?ref=hl" rel="nofollow" target="_blank"
+            title="Connect with us on Facebook!">
+            <img src="./img/FB logo.svg" alt="zoomcar-facebook"
+              data-src="./img/FB.71c8c954ebf0a73be3a2fa723bd62747.svg"></a>
+          <a class="link" href="https://twitter.com/ZoomCarIndia" rel="nofollow" target="_blank"
+            title="Follow us on Twitter!">
+            <img src="./img/Twitter.svg" alt="zoomcar-twitter" class="lazy-img"
+              data-src="./img/Twitter_2.1fcd40979beb7132d30c04e19c76deab.svg"></a>
+          <a class="link" href="https://www.instagram.com/zoomcar_india/" rel="nofollow" target="_blank"
+            title="Follow us on Instagram!">
+            <img src="./img/Instagram logo.svg" alt="zoomcar-instagram"
+              data-src="./img/Insta.aa7386bfed43a8acf0551e8c276b559f.svg"></a>
+          <a class="link" href="https://www.youtube.com/channel/UCIX42GaSQ6S_1RMwNfO-DYA/" rel="nofollow"
+            target="_blank" title="Youtube"><img src="./img/Youtube.svg" alt="zoomcar-twitter" class="lazy-img"
+              data-src="./img/Youtube.44df3b5bfd3ac80cf0d292928e29dd89.svg"></a>
+          <a class="link" href="https://www.zoomcar.com/blog/" rel="nofollow" target="_blank"
+            title="Catch up with us on our Blog!">
+            <img src="./img/Blog.svg" alt="zoomcar-blog"
+              data-src="./img/Blog_2.d0a034e8ec8e3ba6897a6d3b3de13e27.svg"></a>
+          <a class="link" href="https://in.linkedin.com/company/zoomcar-india-pvt-ltd-" rel="nofollow" target="_blank"
+            title="Follow us on LinkedIn!">
+            <img src="./img/LinkdIn.svg" alt="zoomcar-linkedIn"
+              data-src="./img/LinkdIn.660ed09532750dce008ff1d3543e3d0d.svg"></a>
+        </div>
+        <p>© Copyright 2017 Zoomcar India Private Ltd. All rights reserved.</p>
+      </div>
+      </div>
+      </div>
+      <div class="contentInc">
+      <div class="content">
+        <p>
+        <h3>SELF DRIVE CARS IN MUMBAI</h3><span>The financial capital of India, Mumbai is a city which never sleeps.
+          Buzzing with activity, it also holds the distinction of being the entertainment hub of the country. With a
+          beach
+          in its backyard and the picturesque Western Ghats a stone’s throw away, the city attracts visitors from all
+          over
+          the word. From the Gateway of India which opens the doors to India’s mysteries, to the ancient caves of
+          Elephanta Island, and from the iconic Stock Exchange to the many studios where Bollywood movies are made, the
+          city offers a multitude of sights and experiences.<br>The downside of life in Mumbai is the difficulty
+          commuting
+          poses. Overloaded public transport and increasing distances add to the stress of living in Mumbai. Whether you
+          are a visitor to this melting-pot of cultures, or a resident of the city, it is important to have a
+          <b>self-drive car</b> at your disposal to make the most of your time. If you do not plan to buy a car of your
+          own, Zoomcar offers the perfect solution by making the process of <b>self-drive car</b> booking in Mumbai
+          convenient and affordable. The Zoomcar app allows you the freedom of booking a <b>self drive car</b> at your
+          fingertips.</span><br>
+        <h3>CAR ON RENT IN MUMBAI</h3><span>On many occasions, working professionals and business persons want to
+          commute to different parts of the city in the same day. Usually, they hire a chauffeur driven car and pay
+          extra
+          for the waiting charges. This option, while popular, is also more expensive. It is more economical to opt for
+          a
+          <b>self-drive car rental in Mumbai</b>. You can spend any amount of time at a meeting without having to worry
+          about the waiting charges, and use the car to explore Mumbai after work at your leisure. Zoomcar also provides
+          <a href="https://www.zoomcar.com/mumbai/airport-taxi-service">Mumbai airport taxi</a> service, using which you
+          can pick up one of our cars right at the airport when you land. We have a variety of <b>self drive cars</b> in
+          our fleet including luxury brands which makes it easier to book luxury <b>self drive cars on rent in
+            Mumbai</b>.</span>
+        <h3>CAR RENTAL IN MUMBAI</h3><span>An ideal way to relax after a stressful week at the office is to go on a
+          long drive from <a href="https://www.zoomcar.com/car-rentals/mumbai-pune-cab-services">Mumbai to Pune</a> or
+          from <a href="https://www.zoomcar.com/car-rentals/mumbai-pune-cab-services">Mumbai to Nasik</a>. Enjoy the
+          drive
+          on the wide 6-lane Mumbai – Pune expressway with your loved ones by taking a <b>self drive car on hire </b>in
+          Mumbai. There are many religious sites, parks, and museums in Nasik which makes it an ideal location to
+          unwind.</span>
+        <h3>ABOUT ZOOMCAR</h3><span>No more worries about petrol mileage, insurance, and car breakdowns! Zoomcar has
+          enabled driving convenience for travellers around the country and is fast expanding its reach to cities
+          including Ahmedabad, Bangalore, Chandigarh, Chennai, Coimbatore, Delhi-NCR, Hyderabad, Jaipur, Kochi, Kolkata,
+          Ludhiana, Mangalore, Mumbai, Mysore, Pune, Siliguri, Vizag, Nagpur, Udaipur, Vijayawada, Surat, Lucknow and
+          Guwahati.<br><b>Self drive cars</b> from Zoomcar have given customers more control, privacy, and freedom. Book
+          a
+          <b>self drive car</b> in any city you visit with the Zoomcar app on your phone and feel at home wherever you
+          go.</span>
+          <p></p>
+      </div>
+    </div>
+</body>
+
+</html>
+<script src="./Landingpage/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+

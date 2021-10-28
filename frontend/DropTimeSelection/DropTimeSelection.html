@@ -1,96 +1,101 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="progress.css">
+  <head>
+    <link rel="stylesheet" href="progress.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <!-- add icon link -->
-    <link rel="icon" href="http://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
-        type="image/x-icon">
-    
-</head>
+    <link
+      rel="icon"
+      href="http://assets.zoomcar.com/assets/favicon-94c70086866938b66cbd6706cfb6e048.png"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
+  <body>
     <div>
-        <div class="search-input">
-            <div id="progress_head">
-                <div id="progress_bar">
-                    <div class="item finished">
-                        <div class="circle"></div>
-                        <div class="green_position">Starting Point</div>
-                    </div>
-                    <div class="item finished">
-                        <div class="circle"></div>
-                        <div class="green_position">Pickup Time</div>
-                    </div>
-                    <div class="item">
-                        <div class="circle selected"></div>
-                        <div id="green_position">Dropoff Time</div>
-                    </div>
-                </div> <a href=""><img
-                        src="https://www.zoomcar.com/assets/component-images/home-icon.148123dbffda052b1327ffd47f245138.png"
-                        alt="Homepage" id="homepage"></a>
+      <div class="search-input">
+        <div id="progress_head">
+          <div id="progress_bar">
+            <div class="item finished">
+              <div class="circle"></div>
+              <div class="green_position">Starting Point</div>
             </div>
-            <div class="component-start-date">
-                <div class="title">Till when do you need it? </div>
-                <div class="component-month">
-                    <div class="heading">Select a month</div>
-                    <div class="months" id="monthsdiv">
-                        
-                    </div>
-                </div>
-                <div class="component-date">
-                    <div class="heading">Start date <i>(Prices will be higher than usual on Weekends/Festive days)</i>
-                    </div>
-                    <div class="days" id="daysdiv">
-                        
-                    </div>
-                    <!---->
-                </div>
-                <div class="component-time">
-                    <div class="heading">
-                        Select time
-                        <!---->
-                        <!---->
-                    </div>
-                    <div class="time" id="timesdiv">
-                        
-                    </div>
-                </div>
+            <div class="item finished">
+              <div class="circle"></div>
+              <div class="green_position">Pickup Time</div>
             </div>
+            <div class="item">
+              <div class="circle selected"></div>
+              <div id="green_position">Dropoff Time</div>
+            </div>
+          </div>
+          <a href="../index.html"
+            ><img
+              src="https://www.zoomcar.com/assets/component-images/home-icon.148123dbffda052b1327ffd47f245138.png"
+              alt="Homepage"
+              id="homepage"
+          /></a>
         </div>
-        <div class="component-breadcrumb">
-            <div class="breadcrumb">
-                <div onclick="drive1()" class="item">
-                    <div class="name">STARTING POINT</div>
-                    <div class="breadcrumb-location">
-                        <div class="breadcrumb-location-container">
-                            <div id="addressDisplay" class="label"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onclick="drive2()" class="item">
-                    <div class="name">PICKUP TIME</div>
-                    <div class="breadcrumb-location">
-                        <div id="startDetailsDisplay" class="label time-label">Sat 24 Jul, 2021 08:30 morning</div>
-                    </div>
-                </div>
-                <div class="item selected">
-                    <div class="name">DROP OFF TIME</div>
-                    <div class="breadcrumb-location">
-                        <div id="endDetailsDisplay" class="label time-label">Sat 24 Jul, 2021 08:00</div>
-                    </div>
-                </div>
+        <div class="component-start-date">
+          <div class="title">Till when do you need it?</div>
+          <div class="component-month">
+            <div class="heading">Select a month</div>
+            <div class="months" id="monthsdiv"></div>
+          </div>
+          <div class="component-date">
+            <div class="heading">
+              Start date
+              <i>(Prices will be higher than usual on Weekends/Festive days)</i>
             </div>
-            <div class="actions">
-                    <button onclick="SendData()" class="proceed">Done</button>
+            <div class="days" id="daysdiv"></div>
+            <!---->
+          </div>
+          <div class="component-time">
+            <div class="heading">
+              Select time
+              <!---->
+              <!---->
             </div>
+            <div class="time" id="timesdiv"></div>
+          </div>
         </div>
+      </div>
+      <div class="component-breadcrumb">
+        <div class="breadcrumb">
+          <div onclick="drive1()" class="item">
+            <div class="name">STARTING POINT</div>
+            <div class="breadcrumb-location">
+              <div class="breadcrumb-location-container">
+                <div id="addressDisplay" class="label"></div>
+              </div>
+            </div>
+          </div>
+          <div onclick="drive2()" class="item">
+            <div class="name">PICKUP TIME</div>
+            <div class="breadcrumb-location">
+              <div id="startDetailsDisplay" class="label time-label">
+                Sat 24 Jul, 2021 08:30 morning
+              </div>
+            </div>
+          </div>
+          <div class="item selected">
+            <div class="name">DROP OFF TIME</div>
+            <div class="breadcrumb-location">
+              <div id="endDetailsDisplay" class="label time-label">
+                Sat 24 Jul, 2021 08:00
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="SendData()" class="proceed">Done</button>
+        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
 
 <script src="DropTimeSelection.js"></script>
