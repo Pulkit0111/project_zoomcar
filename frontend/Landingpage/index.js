@@ -5,7 +5,7 @@ document.title = `Self Drive Car Rentals in ${localStorage.getItem(
 var cityValue = document.getElementById("cityvalue");
 cityValue.innerHTML = localStorage.getItem("SelectedCity");
 cityValue.addEventListener("click", function () {
-  window.location.href = "./CityPopupPage/CityPopup.html";
+  window.location.href = "./frontend/CityPopupPage/CityPopup.html";
 });
 //LogIn POP
 var logIn = document.getElementById("login_btn");
@@ -302,7 +302,7 @@ function show_dr_box() {
 }
 
 function add() {
-  window.location.href = "./UserProfile/userProfile.html";
+  window.location.href = "./frontend/UserProfile/userProfile.html";
 }
 function logoutFunc() {
   window.location.href = "../../index.html";
@@ -482,7 +482,8 @@ const book = () => {
     // alert("To make a booking, please login to the website first");
     popupCome2();
   } else {
-    window.location.href = "./PickuplocationSelection/PickUpLocation.html";
+    window.location.href =
+      "./frontend/PickuplocationSelection/PickUpLocation.html";
   }
   // localStorage.setItem("logindone", JSON.stringify("no"));
 };
