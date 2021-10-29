@@ -86,7 +86,7 @@ function show_dr_box() {
 }
 
 function logoutFunc() {
-  window.location.href = "../index.html";
+  window.location.href = "../../index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 

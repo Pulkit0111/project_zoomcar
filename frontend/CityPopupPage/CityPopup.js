@@ -93,7 +93,7 @@ async function AddPopularCities() {
     });
 
     btn.addEventListener("click", function () {
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
       localStorage.setItem("SelectedCity", p_name.innerHTML);
     });
 
@@ -123,7 +123,7 @@ async function AddOtherCities() {
     btn.addEventListener("click", function () {
       localStorage.setItem("SelectedCity", p_name.innerHTML);
       console.log(localStorage.getItem("SelectedCity"));
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
     });
 
     btn.append(p_name);
