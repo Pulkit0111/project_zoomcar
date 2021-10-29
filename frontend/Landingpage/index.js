@@ -372,7 +372,7 @@ setInterval(function () {
 
 function checkCity() {
   var city = document.getElementById("city").value;
-  window.location.href = "./CityPopupPage/CityPopup.html";
+  window.location.href = "../CityPopupPage/CityPopup.html";
 }
 
 //                                      MIDDLE PAGE JS                             //
