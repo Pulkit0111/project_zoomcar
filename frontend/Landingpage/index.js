@@ -305,7 +305,7 @@ function add() {
   window.location.href = "./frontend/UserProfile/userProfile.html";
 }
 function logoutFunc() {
-  window.location.href = "../../index.html";
+  window.location.href = "./index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
