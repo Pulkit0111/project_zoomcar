@@ -30,7 +30,7 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
   <li>Mongo DB Cluster using Mongo Atlas</li>
 </ul>
 
-## Used libraries
+## Libraries used
 <ul>
   <li>Font awesome</li>
   <li>Google fonts</li>
@@ -38,7 +38,7 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
   <li>Flaticon</li>
 </ul>
 
-## Created Pages 
+## Pages Created 
 <ul>
   <li>Landing Page</li>
   <li>City Selection Page</li>
@@ -73,9 +73,10 @@ This project is a complete clone UI of the Zoomcar website with the functionalit
 <li><a href="https://github.com/Jagadish1217">Jagadish Hospet</a>
 </ul>
 
-## Related Blogs
+## Related Links
 
-https://tyagi0111.medium.com/cloning-zoomcar-com-in-a-span-of-5-days-with-html5-css3-js-and-mongodb-92f0e37c92e5
+<p>Blog - <a href="https://tyagi0111.medium.com/cloning-zoomcar-com-in-a-span-of-5-days-with-html5-css3-js-and-mongodb-92f0e37c92e5">Cloning zoomcar.com in a span of 5 days with HTML5, CSS3, JS and MongoDB</a></p>
+<p>To watch a live demo of booking a car, please try this <a href="https://drive.google.com/file/d/12IpnAufyHURn5AQX5j8I0doDJWiDzQVr/view?usp=sharing">video.</a></p>
 
 ## A quick Glimpse of our Work
 
